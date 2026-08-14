@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1373" viewBox="0 0 1500 1373">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<style>text{font-family:Menlo,Consolas,monospace}.title{font-size:24px;font-weight:700}.subtitle{font-size:12px;fill:#667085}.axis{stroke:#d8dee9;stroke-width:1}.label{font-size:12px;fill:#344054}.tick{font-size:10px;fill:#667085}.value{font-size:9px;fill:#101828}.legend{font-size:11px;fill:#344054}.idx{font-size:9px;fill:#101828;font-weight:700}</style>
+<text x="28" y="34" class="title">Combined stall reasons at 1024^3</text>
+<text x="28" y="56" class="subtitle">Each algorithm shows only its own top five stall reasons. Bar width is normalized within that algorithm; labels show real stall percentages.</text>
+<line x1="245.0" y1="78" x2="245.0" y2="1328" class="axis"/>
+<text x="231.0" y="70" class="tick">0%</text>
+<line x1="482.0" y1="78" x2="482.0" y2="1328" class="axis"/>
+<text x="468.0" y="70" class="tick">20%</text>
+<line x1="719.0" y1="78" x2="719.0" y2="1328" class="axis"/>
+<text x="705.0" y="70" class="tick">40%</text>
+<line x1="956.0" y1="78" x2="956.0" y2="1328" class="axis"/>
+<text x="942.0" y="70" class="tick">60%</text>
+<line x1="1193.0" y1="78" x2="1193.0" y2="1328" class="axis"/>
+<text x="1179.0" y="70" class="tick">80%</text>
+<line x1="1430.0" y1="78" x2="1430.0" y2="1328" class="axis"/>
+<text x="1416.0" y="70" class="tick">100%</text>
+<rect x="18" y="84" width="1464" height="114" fill="#f8fafc"/>
+<rect x="28" y="110" width="16" height="16" fill="#2d5b9f" rx="3"/>
+<text x="52" y="123" class="label">cuBLAS</text>
+<text x="235" y="120" text-anchor="end" class="legend">1.not_selected</text>
+<rect x="245" y="110" width="1185.0" height="12" fill="#c4d1e4" rx="2"><title>cuBLAS not_selected: 30.77% (100.0% of this algorithm max)</title></rect>
+<text x="1435.0" y="120" class="value">30.8%</text>
+<text x="235" y="139" text-anchor="end" class="legend">2.selected</text>
+<rect x="245" y="129" width="1084.1" height="12" fill="#a9bcd8" rx="2"><title>cuBLAS selected: 28.15% (91.5% of this algorithm max)</title></rect>
+<text x="1334.1" y="139" class="value">28.1%</text>
+<text x="235" y="158" text-anchor="end" class="legend">3.mio_throttle</text>
+<rect x="245" y="148" width="464.1" height="12" fill="#8fa8cc" rx="2"><title>cuBLAS mio_throttle: 12.05% (39.2% of this algorithm max)</title></rect>
+<text x="714.1" y="158" class="value">12.1%</text>
+<text x="235" y="177" text-anchor="end" class="legend">4.mio_throttle_pipe_mio</text>
+<rect x="245" y="167" width="464.1" height="12" fill="#7593c0" rx="2"><title>cuBLAS mio_throttle_pipe_mio: 12.05% (39.2% of this algorithm max)</title></rect>
+<text x="714.1" y="177" class="value">12.1%</text>
+<text x="235" y="196" text-anchor="end" class="legend">5.barrier</text>
+<rect x="245" y="186" width="412.1" height="12" fill="#5b7fb4" rx="2"><title>cuBLAS barrier: 10.70% (34.8% of this algorithm max)</title></rect>
+<text x="662.1" y="196" class="value">10.7%</text>
+<rect x="28" y="232" width="16" height="16" fill="#7a7a7a" rx="3"/>
+<text x="52" y="245" class="label">v1</text>
+<text x="235" y="242" text-anchor="end" class="legend">1.mio_throttle</text>
+<rect x="245" y="232" width="1185.0" height="12" fill="#d9d9d9" rx="2"><title>v1 mio_throttle: 47.36% (100.0% of this algorithm max)</title></rect>
+<text x="1435.0" y="242" class="value">47.4%</text>
+<text x="235" y="261" text-anchor="end" class="legend">2.mio_throttle_pipe_mio</text>
+<rect x="245" y="251" width="1185.0" height="12" fill="#c9c9c9" rx="2"><title>v1 mio_throttle_pipe_mio: 47.36% (100.0% of this algorithm max)</title></rect>
+<text x="1435.0" y="261" class="value">47.4%</text>
+<text x="235" y="280" text-anchor="end" class="legend">3.long_scoreboard</text>
+<rect x="245" y="270" width="423.6" height="12" fill="#b8b8b8" rx="2"><title>v1 long_scoreboard: 16.93% (35.7% of this algorithm max)</title></rect>
+<text x="673.6" y="280" class="value">16.9%</text>
+<text x="235" y="299" text-anchor="end" class="legend">4.long_scoreboard_pipe_l1tex</text>
+<rect x="245" y="289" width="423.6" height="12" fill="#a7a7a7" rx="2"><title>v1 long_scoreboard_pipe_l1tex: 16.93% (35.7% of this algorithm max)</title></rect>
+<text x="673.6" y="299" class="value">16.9%</text>
+<text x="235" y="318" text-anchor="end" class="legend">5.barrier</text>
+<rect x="245" y="308" width="285.5" height="12" fill="#979797" rx="2"><title>v1 barrier: 11.41% (24.1% of this algorithm max)</title></rect>
+<text x="535.5" y="318" class="value">11.4%</text>
+<rect x="18" y="328" width="1464" height="114" fill="#f8fafc"/>
+<rect x="28" y="354" width="16" height="16" fill="#008578" rx="3"/>
+<text x="52" y="367" class="label">v2</text>
+<text x="235" y="364" text-anchor="end" class="legend">1.mio_throttle</text>
+<rect x="245" y="354" width="1185.0" height="12" fill="#b7dcd9" rx="2"><title>v2 mio_throttle: 20.60% (100.0% of this algorithm max)</title></rect>
+<text x="1435.0" y="364" class="value">20.6%</text>
+<text x="235" y="383" text-anchor="end" class="legend">2.mio_throttle_pipe_mio</text>
+<rect x="245" y="373" width="1185.0" height="12" fill="#97cdc8" rx="2"><title>v2 mio_throttle_pipe_mio: 20.60% (100.0% of this algorithm max)</title></rect>
+<text x="1435.0" y="383" class="value">20.6%</text>
+<text x="235" y="402" text-anchor="end" class="legend">3.not_selected</text>
+<rect x="245" y="392" width="1140.7" height="12" fill="#77beb7" rx="2"><title>v2 not_selected: 19.83% (96.3% of this algorithm max)</title></rect>
+<text x="1390.7" y="402" class="value">19.8%</text>
+<text x="235" y="421" text-anchor="end" class="legend">4.short_scoreboard</text>
+<rect x="245" y="411" width="751.8" height="12" fill="#57afa6" rx="2"><title>v2 short_scoreboard: 13.07% (63.4% of this algorithm max)</title></rect>
+<text x="1001.8" y="421" class="value">13.1%</text>
+<text x="235" y="440" text-anchor="end" class="legend">5.long_scoreboard</text>
+<rect x="245" y="430" width="689.1" height="12" fill="#389f95" rx="2"><title>v2 long_scoreboard: 11.98% (58.2% of this algorithm max)</title></rect>
+<text x="939.1" y="440" class="value">12.0%</text>
+<rect x="28" y="476" width="16" height="16" fill="#be6428" rx="3"/>
+<text x="52" y="489" class="label">v3</text>
+<text x="235" y="486" text-anchor="end" class="legend">1.mio_throttle</text>
+<rect x="245" y="476" width="1185.0" height="12" fill="#ecd3c2" rx="2"><title>v3 mio_throttle: 42.97% (100.0% of this algorithm max)</title></rect>
+<text x="1435.0" y="486" class="value">43.0%</text>
+<text x="235" y="505" text-anchor="end" class="legend">2.mio_throttle_pipe_mio</text>
+<rect x="245" y="495" width="1185.0" height="12" fill="#e4c0a7" rx="2"><title>v3 mio_throttle_pipe_mio: 42.97% (100.0% of this algorithm max)</title></rect>
+<text x="1435.0" y="505" class="value">43.0%</text>
+<text x="235" y="524" text-anchor="end" class="legend">3.not_selected</text>
+<rect x="245" y="514" width="496.4" height="12" fill="#dcac8d" rx="2"><title>v3 not_selected: 18.00% (41.9% of this algorithm max)</title></rect>
+<text x="746.4" y="524" class="value">18.0%</text>
+<text x="235" y="543" text-anchor="end" class="legend">4.barrier</text>
+<rect x="245" y="533" width="267.5" height="12" fill="#d49972" rx="2"><title>v3 barrier: 9.70% (22.6% of this algorithm max)</title></rect>
+<text x="517.5" y="543" class="value">9.7%</text>
+<text x="235" y="562" text-anchor="end" class="legend">5.long_scoreboard</text>
+<rect x="245" y="552" width="251.8" height="12" fill="#cc8657" rx="2"><title>v3 long_scoreboard: 9.13% (21.2% of this algorithm max)</title></rect>
+<text x="501.8" y="562" class="value">9.1%</text>
+<rect x="18" y="572" width="1464" height="114" fill="#f8fafc"/>
+<rect x="28" y="598" width="16" height="16" fill="#239641" rx="3"/>
+<text x="52" y="611" class="label">v4</text>
+<text x="235" y="608" text-anchor="end" class="legend">1.mio_throttle</text>
+<rect x="245" y="598" width="1185.0" height="12" fill="#c1e1c9" rx="2"><title>v4 mio_throttle: 21.57% (100.0% of this algorithm max)</title></rect>
+<text x="1435.0" y="608" class="value">21.6%</text>
+<text x="235" y="627" text-anchor="end" class="legend">2.mio_throttle_pipe_mio</text>
+<rect x="245" y="617" width="1185.0" height="12" fill="#a5d4b2" rx="2"><title>v4 mio_throttle_pipe_mio: 21.57% (100.0% of this algorithm max)</title></rect>
+<text x="1435.0" y="627" class="value">21.6%</text>
+<text x="235" y="646" text-anchor="end" class="legend">3.not_selected</text>
+<rect x="245" y="636" width="1043.3" height="12" fill="#8ac79a" rx="2"><title>v4 not_selected: 18.99% (88.0% of this algorithm max)</title></rect>
+<text x="1293.3" y="646" class="value">19.0%</text>
+<text x="235" y="665" text-anchor="end" class="legend">4.short_scoreboard</text>
+<rect x="245" y="655" width="773.5" height="12" fill="#6eba82" rx="2"><title>v4 short_scoreboard: 14.08% (65.3% of this algorithm max)</title></rect>
+<text x="1023.5" y="665" class="value">14.1%</text>
+<text x="235" y="684" text-anchor="end" class="legend">5.long_scoreboard</text>
+<rect x="245" y="674" width="641.1" height="12" fill="#53ad6a" rx="2"><title>v4 long_scoreboard: 11.67% (54.1% of this algorithm max)</title></rect>
+<text x="891.1" y="684" class="value">11.7%</text>
+<rect x="28" y="720" width="16" height="16" fill="#965aaa" rx="3"/>
+<text x="52" y="733" class="label">v5</text>
+<text x="235" y="730" text-anchor="end" class="legend">1.mio_throttle</text>
+<rect x="245" y="720" width="1185.0" height="12" fill="#e1d0e7" rx="2"><title>v5 mio_throttle: 38.03% (100.0% of this algorithm max)</title></rect>
+<text x="1435.0" y="730" class="value">38.0%</text>
+<text x="235" y="749" text-anchor="end" class="legend">2.mio_throttle_pipe_mio</text>
+<rect x="245" y="739" width="1185.0" height="12" fill="#d4bcdc" rx="2"><title>v5 mio_throttle_pipe_mio: 38.03% (100.0% of this algorithm max)</title></rect>
+<text x="1435.0" y="749" class="value">38.0%</text>
+<text x="235" y="768" text-anchor="end" class="legend">3.not_selected</text>
+<rect x="245" y="758" width="641.0" height="12" fill="#c7a7d1" rx="2"><title>v5 not_selected: 20.57% (54.1% of this algorithm max)</title></rect>
+<text x="891.0" y="768" class="value">20.6%</text>
+<text x="235" y="787" text-anchor="end" class="legend">4.short_scoreboard</text>
+<rect x="245" y="777" width="318.5" height="12" fill="#ba92c7" rx="2"><title>v5 short_scoreboard: 10.22% (26.9% of this algorithm max)</title></rect>
+<text x="568.5" y="787" class="value">10.2%</text>
+<text x="235" y="806" text-anchor="end" class="legend">5.barrier</text>
+<rect x="245" y="796" width="308.8" height="12" fill="#ad7ebc" rx="2"><title>v5 barrier: 9.91% (26.1% of this algorithm max)</title></rect>
+<text x="558.8" y="806" class="value">9.9%</text>
+<rect x="18" y="816" width="1464" height="114" fill="#f8fafc"/>
+<rect x="28" y="842" width="16" height="16" fill="#d24646" rx="3"/>
+<text x="52" y="855" class="label">v6</text>
+<text x="235" y="852" text-anchor="end" class="legend">1.not_selected</text>
+<rect x="245" y="842" width="1185.0" height="12" fill="#f2cbcb" rx="2"><title>v6 not_selected: 26.50% (100.0% of this algorithm max)</title></rect>
+<text x="1435.0" y="852" class="value">26.5%</text>
+<text x="235" y="871" text-anchor="end" class="legend">2.mio_throttle</text>
+<rect x="245" y="861" width="773.6" height="12" fill="#ecb4b4" rx="2"><title>v6 mio_throttle: 17.30% (65.3% of this algorithm max)</title></rect>
+<text x="1023.6" y="871" class="value">17.3%</text>
+<text x="235" y="890" text-anchor="end" class="legend">3.mio_throttle_pipe_mio</text>
+<rect x="245" y="880" width="773.6" height="12" fill="#e79c9c" rx="2"><title>v6 mio_throttle_pipe_mio: 17.30% (65.3% of this algorithm max)</title></rect>
+<text x="1023.6" y="890" class="value">17.3%</text>
+<text x="235" y="909" text-anchor="end" class="legend">4.short_scoreboard</text>
+<rect x="245" y="899" width="742.7" height="12" fill="#e18585" rx="2"><title>v6 short_scoreboard: 16.61% (62.7% of this algorithm max)</title></rect>
+<text x="992.7" y="909" class="value">16.6%</text>
+<text x="235" y="928" text-anchor="end" class="legend">5.selected</text>
+<rect x="245" y="918" width="550.0" height="12" fill="#db6e6e" rx="2"><title>v6 selected: 12.30% (46.4% of this algorithm max)</title></rect>
+<text x="800.0" y="928" class="value">12.3%</text>
+<rect x="28" y="964" width="16" height="16" fill="#5082d2" rx="3"/>
+<text x="52" y="977" class="label">v7</text>
+<text x="235" y="974" text-anchor="end" class="legend">1.mio_throttle</text>
+<rect x="245" y="964" width="1185.0" height="12" fill="#cedcf2" rx="2"><title>v7 mio_throttle: 46.40% (100.0% of this algorithm max)</title></rect>
+<text x="1435.0" y="974" class="value">46.4%</text>
+<text x="235" y="993" text-anchor="end" class="legend">2.mio_throttle_pipe_mio</text>
+<rect x="245" y="983" width="1185.0" height="12" fill="#b8ccec" rx="2"><title>v7 mio_throttle_pipe_mio: 46.40% (100.0% of this algorithm max)</title></rect>
+<text x="1435.0" y="993" class="value">46.4%</text>
+<text x="235" y="1012" text-anchor="end" class="legend">3.not_selected</text>
+<rect x="245" y="1002" width="537.1" height="12" fill="#a2bce7" rx="2"><title>v7 not_selected: 21.03% (45.3% of this algorithm max)</title></rect>
+<text x="787.1" y="1012" class="value">21.0%</text>
+<text x="235" y="1031" text-anchor="end" class="legend">4.barrier</text>
+<rect x="245" y="1021" width="240.8" height="12" fill="#8cade1" rx="2"><title>v7 barrier: 9.43% (20.3% of this algorithm max)</title></rect>
+<text x="490.8" y="1031" class="value">9.4%</text>
+<text x="235" y="1050" text-anchor="end" class="legend">5.selected</text>
+<rect x="245" y="1040" width="187.2" height="12" fill="#769ddb" rx="2"><title>v7 selected: 7.33% (15.8% of this algorithm max)</title></rect>
+<text x="437.2" y="1050" class="value">7.3%</text>
+<rect x="18" y="1060" width="1464" height="114" fill="#f8fafc"/>
+<rect x="28" y="1086" width="16" height="16" fill="#eb962d" rx="3"/>
+<text x="52" y="1099" class="label">v8</text>
+<text x="235" y="1096" text-anchor="end" class="legend">1.not_selected</text>
+<rect x="245" y="1086" width="1185.0" height="12" fill="#f9e1c4" rx="2"><title>v8 not_selected: 24.74% (100.0% of this algorithm max)</title></rect>
+<text x="1435.0" y="1096" class="value">24.7%</text>
+<text x="235" y="1115" text-anchor="end" class="legend">2.selected</text>
+<rect x="245" y="1105" width="951.3" height="12" fill="#f6d4a9" rx="2"><title>v8 selected: 19.86% (80.3% of this algorithm max)</title></rect>
+<text x="1201.3" y="1115" class="value">19.9%</text>
+<text x="235" y="1134" text-anchor="end" class="legend">3.short_scoreboard</text>
+<rect x="245" y="1124" width="631.8" height="12" fill="#f4c78f" rx="2"><title>v8 short_scoreboard: 13.19% (53.3% of this algorithm max)</title></rect>
+<text x="881.8" y="1134" class="value">13.2%</text>
+<text x="235" y="1153" text-anchor="end" class="legend">4.dispatch_stall</text>
+<rect x="245" y="1143" width="631.3" height="12" fill="#f1ba75" rx="2"><title>v8 dispatch_stall: 13.18% (53.3% of this algorithm max)</title></rect>
+<text x="881.3" y="1153" class="value">13.2%</text>
+<text x="235" y="1172" text-anchor="end" class="legend">5.mio_throttle</text>
+<rect x="245" y="1162" width="388.5" height="12" fill="#efad5b" rx="2"><title>v8 mio_throttle: 8.11% (32.8% of this algorithm max)</title></rect>
+<text x="638.5" y="1172" class="value">8.1%</text>
+<rect x="28" y="1208" width="16" height="16" fill="#5a5ab4" rx="3"/>
+<text x="52" y="1221" class="label">v9</text>
+<text x="235" y="1218" text-anchor="end" class="legend">1.short_scoreboard</text>
+<rect x="245" y="1208" width="1185.0" height="12" fill="#d0d0ea" rx="2"><title>v9 short_scoreboard: 30.45% (100.0% of this algorithm max)</title></rect>
+<text x="1435.0" y="1218" class="value">30.4%</text>
+<text x="235" y="1237" text-anchor="end" class="legend">2.mio_throttle</text>
+<rect x="245" y="1227" width="993.1" height="12" fill="#bcbce0" rx="2"><title>v9 mio_throttle: 25.52% (83.8% of this algorithm max)</title></rect>
+<text x="1243.1" y="1237" class="value">25.5%</text>
+<text x="235" y="1256" text-anchor="end" class="legend">3.mio_throttle_pipe_mio</text>
+<rect x="245" y="1246" width="993.1" height="12" fill="#a7a7d7" rx="2"><title>v9 mio_throttle_pipe_mio: 25.52% (83.8% of this algorithm max)</title></rect>
+<text x="1243.1" y="1256" class="value">25.5%</text>
+<text x="235" y="1275" text-anchor="end" class="legend">4.selected</text>
+<rect x="245" y="1265" width="490.3" height="12" fill="#9292cd" rx="2"><title>v9 selected: 12.60% (41.4% of this algorithm max)</title></rect>
+<text x="740.3" y="1275" class="value">12.6%</text>
+<text x="235" y="1294" text-anchor="end" class="legend">5.not_selected</text>
+<rect x="245" y="1284" width="363.9" height="12" fill="#7e7ec4" rx="2"><title>v9 not_selected: 9.35% (30.7% of this algorithm max)</title></rect>
+<text x="613.9" y="1294" class="value">9.3%</text>
+<text x="245" y="1351" class="subtitle">Scale is per algorithm: the largest stall reason inside each algorithm maps to full width.</text>
+</svg>

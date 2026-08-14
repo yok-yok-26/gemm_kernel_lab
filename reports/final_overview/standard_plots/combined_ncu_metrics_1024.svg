@@ -1,0 +1,495 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="3485" viewBox="0 0 1900 3485">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<style>text{font-family:Menlo,Consolas,monospace}.title{font-size:26px;font-weight:700}.subtitle{font-size:13px;fill:#667085}.axis{stroke:#d8dee9;stroke-width:1}.label{font-size:13px;fill:#344054}.tick{font-size:11px;fill:#667085}.value{font-size:11px;fill:#101828}.legend{font-size:12px;fill:#344054}.idx{font-size:11px;fill:#101828;font-weight:700}.alg{font-size:15px;font-weight:700;fill:#101828}.panel{fill:#f8fafc;stroke:#eaecf0}.metricBox{fill:#ffffff;stroke:#eaecf0}</style>
+<text x="32" y="38" class="title">Combined NCU metrics at 1024^3</text>
+<text x="32" y="64" class="subtitle">Metric index table is separated from the plot. Bars are normalized per metric; raw values are shown on the right.</text>
+<rect x="32" y="88" width="1836" height="207" rx="8" class="panel"/>
+<rect x="46.0" y="112" width="909.0" height="21" rx="4" class="metricBox"/>
+<text x="55.0" y="126" class="legend">1. Duration<title>lower is better</title></text>
+<rect x="46.0" y="135" width="909.0" height="21" rx="4" class="metricBox"/>
+<text x="55.0" y="149" class="legend">2. Compute (SM) Throughput<title>higher is better</title></text>
+<rect x="46.0" y="158" width="909.0" height="21" rx="4" class="metricBox"/>
+<text x="55.0" y="172" class="legend">3. Memory Throughput / Mem Busy<title>higher is better</title></text>
+<rect x="46.0" y="181" width="909.0" height="21" rx="4" class="metricBox"/>
+<text x="55.0" y="195" class="legend">4. DRAM Throughput<title>higher is better</title></text>
+<rect x="46.0" y="204" width="909.0" height="21" rx="4" class="metricBox"/>
+<text x="55.0" y="218" class="legend">5. L1/TEX Cache Throughput<title>higher is better</title></text>
+<rect x="46.0" y="227" width="909.0" height="21" rx="4" class="metricBox"/>
+<text x="55.0" y="241" class="legend">6. L2 Cache Throughput<title>higher is better</title></text>
+<rect x="46.0" y="250" width="909.0" height="21" rx="4" class="metricBox"/>
+<text x="55.0" y="264" class="legend">7. Issue Slots Busy<title>higher is better</title></text>
+<rect x="967.0" y="112" width="909.0" height="21" rx="4" class="metricBox"/>
+<text x="976.0" y="126" class="legend">8. Achieved Occupancy<title>higher is better</title></text>
+<rect x="967.0" y="135" width="909.0" height="21" rx="4" class="metricBox"/>
+<text x="976.0" y="149" class="legend">9. Eligible Warps Per Scheduler<title>higher is better</title></text>
+<rect x="967.0" y="158" width="909.0" height="21" rx="4" class="metricBox"/>
+<text x="976.0" y="172" class="legend">10. Warp Cycles Per Issued Instruction<title>lower is better</title></text>
+<rect x="967.0" y="181" width="909.0" height="21" rx="4" class="metricBox"/>
+<text x="976.0" y="195" class="legend">11. Registers Per Thread<title>lower is better</title></text>
+<rect x="967.0" y="204" width="909.0" height="21" rx="4" class="metricBox"/>
+<text x="976.0" y="218" class="legend">12. Dynamic Shared Memory Per Block<title>lower is better</title></text>
+<rect x="967.0" y="227" width="909.0" height="21" rx="4" class="metricBox"/>
+<text x="976.0" y="241" class="legend">13. Executed Ipc Active<title>higher is better</title></text>
+<rect x="967.0" y="250" width="909.0" height="21" rx="4" class="metricBox"/>
+<text x="976.0" y="264" class="legend">14. Executed Instructions<title>lower is better</title></text>
+<line x1="215.0" y1="341" x2="215.0" y2="3433" class="axis"/>
+<text x="200.0" y="332" class="tick">0%</text>
+<line x1="423.0" y1="341" x2="423.0" y2="3433" class="axis"/>
+<text x="408.0" y="332" class="tick">20%</text>
+<line x1="631.0" y1="341" x2="631.0" y2="3433" class="axis"/>
+<text x="616.0" y="332" class="tick">40%</text>
+<line x1="839.0" y1="341" x2="839.0" y2="3433" class="axis"/>
+<text x="824.0" y="332" class="tick">60%</text>
+<line x1="1047.0" y1="341" x2="1047.0" y2="3433" class="axis"/>
+<text x="1032.0" y="332" class="tick">80%</text>
+<line x1="1255.0" y1="341" x2="1255.0" y2="3433" class="axis"/>
+<text x="1240.0" y="332" class="tick">100%</text>
+<text x="215" y="321" class="label">Normalized per metric</text>
+<text x="1285" y="321" class="label">Raw value</text>
+<rect x="40" y="345" width="1830" height="293" fill="#f8fafc"/>
+<rect x="55" y="369" width="18" height="18" fill="#2d5b9f" rx="3"><title>cuBLAS: cuBLAS SGEMM baseline: generic library implementation used as the fair performance baseline.</title></rect>
+<text x="81" y="384" class="alg">cuBLAS<title>cuBLAS SGEMM baseline: generic library implementation used as the fair performance baseline.</title></text>
+<text x="197" y="410.0" class="idx" text-anchor="end">1</text>
+<rect x="215" y="401.0" width="162.8" height="10" fill="#c8d4e6" rx="2"><title>cuBLAS | Duration: 149 us; best by rule (lower is better): cuBLAS: 149 us</title></rect>
+<text x="1285" y="410.0" class="value">149 us</text>
+<text x="197" y="427.0" class="idx" text-anchor="end">2</text>
+<rect x="215" y="418.0" width="725.1" height="10" fill="#c0cde2" rx="2"><title>cuBLAS | Compute (SM) Throughput: 66.2% %; best by rule (higher is better): v1: 95.0% %</title></rect>
+<text x="1285" y="427.0" class="value">66.2% %</text>
+<text x="197" y="444.0" class="idx" text-anchor="end">3</text>
+<rect x="215" y="435.0" width="620.8" height="10" fill="#b7c7de" rx="2"><title>cuBLAS | Memory Throughput / Mem Busy: 56.7% %; best by rule (higher is better): v1: 95.0% %</title></rect>
+<text x="1285" y="444.0" class="value">56.7% %</text>
+<text x="197" y="461.0" class="idx" text-anchor="end">4</text>
+<rect x="215" y="452.0" width="1040.0" height="10" fill="#afc0da" rx="2"><title>cuBLAS | DRAM Throughput: 8.5% %; best by rule (higher is better): cuBLAS: 8.5% %</title></rect>
+<text x="1285" y="461.0" class="value">8.5% %</text>
+<text x="197" y="478.0" class="idx" text-anchor="end">5</text>
+<rect x="215" y="469.0" width="700.0" height="10" fill="#a6bad6" rx="2"><title>cuBLAS | L1/TEX Cache Throughput: 64.4% %; best by rule (higher is better): v1: 95.7% %</title></rect>
+<text x="1285" y="478.0" class="value">64.4% %</text>
+<text x="197" y="495.0" class="idx" text-anchor="end">6</text>
+<rect x="215" y="486.0" width="1040.0" height="10" fill="#9eb3d2" rx="2"><title>cuBLAS | L2 Cache Throughput: 25.7% %; best by rule (higher is better): cuBLAS: 25.7% %</title></rect>
+<text x="1285" y="495.0" class="value">25.7% %</text>
+<text x="197" y="512.0" class="idx" text-anchor="end">7</text>
+<rect x="215" y="503.0" width="1040.0" height="10" fill="#96adcf" rx="2"><title>cuBLAS | Issue Slots Busy: 75.2% %; best by rule (higher is better): cuBLAS: 75.2% %</title></rect>
+<text x="1285" y="512.0" class="value">75.2% %</text>
+<text x="197" y="529.0" class="idx" text-anchor="end">8</text>
+<rect x="215" y="520.0" width="238.5" height="10" fill="#8da6cb" rx="2"><title>cuBLAS | Achieved Occupancy: 22.3% %; best by rule (higher is better): v1: 97.2% %</title></rect>
+<text x="1285" y="529.0" class="value">22.3% %</text>
+<text x="197" y="546.0" class="idx" text-anchor="end">9</text>
+<rect x="215" y="537.0" width="727.1" height="10" fill="#859fc7" rx="2"><title>cuBLAS | Eligible Warps Per Scheduler: 1.58 warp/sched; best by rule (higher is better): v7: 2.26 warp/sched</title></rect>
+<text x="1285" y="546.0" class="value">1.58 warp/sched</text>
+<text x="197" y="563.0" class="idx" text-anchor="end">10</text>
+<rect x="215" y="554.0" width="108.3" height="10" fill="#7c99c3" rx="2"><title>cuBLAS | Warp Cycles Per Issued Instruction: 3.55 cycles; best by rule (lower is better): cuBLAS: 3.55 cycles</title></rect>
+<text x="1285" y="563.0" class="value">3.55 cycles</text>
+<text x="197" y="580.0" class="idx" text-anchor="end">11</text>
+<rect x="215" y="571.0" width="1040.0" height="10" fill="#7492bf" rx="2"><title>cuBLAS | Registers Per Thread: 128 regs; best by rule (lower is better): v1: 40.0 regs</title></rect>
+<text x="1285" y="580.0" class="value">128 regs</text>
+<text x="197" y="597.0" class="idx" text-anchor="end">12</text>
+<rect x="215" y="588.0" width="458.8" height="10" fill="#6c8cbb" rx="2"><title>cuBLAS | Dynamic Shared Memory Per Block: 30.7 KB; best by rule (lower is better): v1: 0.00 KB</title></rect>
+<text x="1285" y="597.0" class="value">30.7 KB</text>
+<text x="197" y="614.0" class="idx" text-anchor="end">13</text>
+<rect x="215" y="605.0" width="1040.0" height="10" fill="#6385b7" rx="2"><title>cuBLAS | Executed Ipc Active: 3.01 ; best by rule (higher is better): cuBLAS: 3.01</title></rect>
+<text x="1285" y="614.0" class="value">3.01 </text>
+<text x="197" y="631.0" class="idx" text-anchor="end">14</text>
+<rect x="215" y="622.0" width="302.8" height="10" fill="#5b7fb4" rx="2"><title>cuBLAS | Executed Instructions: 42.0M M inst; best by rule (lower is better): v8: 39.2M M inst</title></rect>
+<text x="1285" y="631.0" class="value">42.0M M inst</text>
+<rect x="55" y="674" width="18" height="18" fill="#7a7a7a" rx="3"><title>v1: Shared-memory tiled GEMM, 16x16 block, one C element per thread.</title></rect>
+<text x="81" y="689" class="alg">v1<title>Shared-memory tiled GEMM, 16x16 block, one C element per thread.</title></text>
+<text x="197" y="715.0" class="idx" text-anchor="end">1</text>
+<rect x="215" y="706.0" width="1040.0" height="10" fill="#dcdcdc" rx="2"><title>v1 | Duration: 954 us; best by rule (lower is better): cuBLAS: 149 us</title></rect>
+<text x="1285" y="715.0" class="value">954 us</text>
+<text x="197" y="732.0" class="idx" text-anchor="end">2</text>
+<rect x="215" y="723.0" width="1040.0" height="10" fill="#d7d7d7" rx="2"><title>v1 | Compute (SM) Throughput: 95.0% %; best by rule (higher is better): v1: 95.0% %</title></rect>
+<text x="1285" y="732.0" class="value">95.0% %</text>
+<text x="197" y="749.0" class="idx" text-anchor="end">3</text>
+<rect x="215" y="740.0" width="1040.0" height="10" fill="#d1d1d1" rx="2"><title>v1 | Memory Throughput / Mem Busy: 95.0% %; best by rule (higher is better): v1: 95.0% %</title></rect>
+<text x="1285" y="749.0" class="value">95.0% %</text>
+<text x="197" y="766.0" class="idx" text-anchor="end">4</text>
+<rect x="215" y="757.0" width="162.2" height="10" fill="#cccccc" rx="2"><title>v1 | DRAM Throughput: 1.3% %; best by rule (higher is better): cuBLAS: 8.5% %</title></rect>
+<text x="1285" y="766.0" class="value">1.3% %</text>
+<text x="197" y="783.0" class="idx" text-anchor="end">5</text>
+<rect x="215" y="774.0" width="1040.0" height="10" fill="#c7c7c7" rx="2"><title>v1 | L1/TEX Cache Throughput: 95.7% %; best by rule (higher is better): v1: 95.7% %</title></rect>
+<text x="1285" y="783.0" class="value">95.7% %</text>
+<text x="197" y="800.0" class="idx" text-anchor="end">6</text>
+<rect x="215" y="791.0" width="702.2" height="10" fill="#c1c1c1" rx="2"><title>v1 | L2 Cache Throughput: 17.3% %; best by rule (higher is better): cuBLAS: 25.7% %</title></rect>
+<text x="1285" y="800.0" class="value">17.3% %</text>
+<text x="197" y="817.0" class="idx" text-anchor="end">7</text>
+<rect x="215" y="808.0" width="472.9" height="10" fill="#bcbcbc" rx="2"><title>v1 | Issue Slots Busy: 34.2% %; best by rule (higher is better): cuBLAS: 75.2% %</title></rect>
+<text x="1285" y="817.0" class="value">34.2% %</text>
+<text x="197" y="834.0" class="idx" text-anchor="end">8</text>
+<rect x="215" y="825.0" width="1040.0" height="10" fill="#b7b7b7" rx="2"><title>v1 | Achieved Occupancy: 97.2% %; best by rule (higher is better): v1: 97.2% %</title></rect>
+<text x="1285" y="834.0" class="value">97.2% %</text>
+<text x="197" y="851.0" class="idx" text-anchor="end">9</text>
+<rect x="215" y="842.0" width="644.2" height="10" fill="#b1b1b1" rx="2"><title>v1 | Eligible Warps Per Scheduler: 1.40 warp/sched; best by rule (higher is better): v7: 2.26 warp/sched</title></rect>
+<text x="1285" y="851.0" class="value">1.40 warp/sched</text>
+<text x="197" y="868.0" class="idx" text-anchor="end">10</text>
+<rect x="215" y="859.0" width="1040.0" height="10" fill="#acacac" rx="2"><title>v1 | Warp Cycles Per Issued Instruction: 34.1 cycles; best by rule (lower is better): cuBLAS: 3.55 cycles</title></rect>
+<text x="1285" y="868.0" class="value">34.1 cycles</text>
+<text x="197" y="885.0" class="idx" text-anchor="end">11</text>
+<rect x="215" y="876.0" width="325.0" height="10" fill="#a7a7a7" rx="2"><title>v1 | Registers Per Thread: 40.0 regs; best by rule (lower is better): v1: 40.0 regs</title></rect>
+<text x="1285" y="885.0" class="value">40.0 regs</text>
+<text x="197" y="902.0" class="idx" text-anchor="end">12</text>
+<rect x="215" y="893.0" width="0.0" height="10" fill="#a1a1a1" rx="2"><title>v1 | Dynamic Shared Memory Per Block: 0.00 KB; best by rule (lower is better): v1: 0.00 KB</title></rect>
+<text x="1285" y="902.0" class="value">0.00 KB</text>
+<text x="197" y="919.0" class="idx" text-anchor="end">13</text>
+<rect x="215" y="910.0" width="473.4" height="10" fill="#9c9c9c" rx="2"><title>v1 | Executed Ipc Active: 1.37 ; best by rule (higher is better): cuBLAS: 3.01</title></rect>
+<text x="1285" y="919.0" class="value">1.37 </text>
+<text x="197" y="936.0" class="idx" text-anchor="end">14</text>
+<rect x="215" y="927.0" width="1040.0" height="10" fill="#979797" rx="2"><title>v1 | Executed Instructions: 144.2M M inst; best by rule (lower is better): v8: 39.2M M inst</title></rect>
+<text x="1285" y="936.0" class="value">144.2M M inst</text>
+<rect x="40" y="955" width="1830" height="293" fill="#f8fafc"/>
+<rect x="55" y="979" width="18" height="18" fill="#008578" rx="3"><title>v2: TILE=4 micro-tile: each thread computes 4x4 outputs; shared A/B tiling with padding to improve reuse.</title></rect>
+<text x="81" y="994" class="alg">v2<title>TILE=4 micro-tile: each thread computes 4x4 outputs; shared A/B tiling with padding to improve reuse.</title></text>
+<text x="197" y="1020.0" class="idx" text-anchor="end">1</text>
+<rect x="215" y="1011.0" width="268.3" height="10" fill="#bcdfdb" rx="2"><title>v2 | Duration: 246 us; best by rule (lower is better): cuBLAS: 149 us</title></rect>
+<text x="1285" y="1020.0" class="value">246 us</text>
+<text x="197" y="1037.0" class="idx" text-anchor="end">2</text>
+<rect x="215" y="1028.0" width="583.8" height="10" fill="#b2dad6" rx="2"><title>v2 | Compute (SM) Throughput: 53.3% %; best by rule (higher is better): v1: 95.0% %</title></rect>
+<text x="1285" y="1037.0" class="value">53.3% %</text>
+<text x="197" y="1054.0" class="idx" text-anchor="end">3</text>
+<rect x="215" y="1045.0" width="793.5" height="10" fill="#a8d5d1" rx="2"><title>v2 | Memory Throughput / Mem Busy: 72.5% %; best by rule (higher is better): v1: 95.0% %</title></rect>
+<text x="1285" y="1054.0" class="value">72.5% %</text>
+<text x="197" y="1071.0" class="idx" text-anchor="end">4</text>
+<rect x="215" y="1062.0" width="629.1" height="10" fill="#9ed0cb" rx="2"><title>v2 | DRAM Throughput: 5.2% %; best by rule (higher is better): cuBLAS: 8.5% %</title></rect>
+<text x="1285" y="1071.0" class="value">5.2% %</text>
+<text x="197" y="1088.0" class="idx" text-anchor="end">5</text>
+<rect x="215" y="1079.0" width="886.6" height="10" fill="#93cbc6" rx="2"><title>v2 | L1/TEX Cache Throughput: 81.6% %; best by rule (higher is better): v1: 95.7% %</title></rect>
+<text x="1285" y="1088.0" class="value">81.6% %</text>
+<text x="197" y="1105.0" class="idx" text-anchor="end">6</text>
+<rect x="215" y="1096.0" width="732.6" height="10" fill="#89c6c0" rx="2"><title>v2 | L2 Cache Throughput: 18.1% %; best by rule (higher is better): cuBLAS: 25.7% %</title></rect>
+<text x="1285" y="1105.0" class="value">18.1% %</text>
+<text x="197" y="1122.0" class="idx" text-anchor="end">7</text>
+<rect x="215" y="1113.0" width="695.6" height="10" fill="#7fc2bb" rx="2"><title>v2 | Issue Slots Busy: 50.3% %; best by rule (higher is better): cuBLAS: 75.2% %</title></rect>
+<text x="1285" y="1122.0" class="value">50.3% %</text>
+<text x="197" y="1139.0" class="idx" text-anchor="end">8</text>
+<rect x="215" y="1130.0" width="462.3" height="10" fill="#75bdb6" rx="2"><title>v2 | Achieved Occupancy: 43.2% %; best by rule (higher is better): v1: 97.2% %</title></rect>
+<text x="1285" y="1139.0" class="value">43.2% %</text>
+<text x="197" y="1156.0" class="idx" text-anchor="end">9</text>
+<rect x="215" y="1147.0" width="694.9" height="10" fill="#6bb8b0" rx="2"><title>v2 | Eligible Warps Per Scheduler: 1.51 warp/sched; best by rule (higher is better): v7: 2.26 warp/sched</title></rect>
+<text x="1285" y="1156.0" class="value">1.51 warp/sched</text>
+<text x="197" y="1173.0" class="idx" text-anchor="end">10</text>
+<rect x="215" y="1164.0" width="313.7" height="10" fill="#60b3ab" rx="2"><title>v2 | Warp Cycles Per Issued Instruction: 10.3 cycles; best by rule (lower is better): cuBLAS: 3.55 cycles</title></rect>
+<text x="1285" y="1173.0" class="value">10.3 cycles</text>
+<text x="197" y="1190.0" class="idx" text-anchor="end">11</text>
+<rect x="215" y="1181.0" width="585.0" height="10" fill="#56aea5" rx="2"><title>v2 | Registers Per Thread: 72.0 regs; best by rule (lower is better): v1: 40.0 regs</title></rect>
+<text x="1285" y="1190.0" class="value">72.0 regs</text>
+<text x="197" y="1207.0" class="idx" text-anchor="end">12</text>
+<rect x="215" y="1198.0" width="0.0" height="10" fill="#4ca9a0" rx="2"><title>v2 | Dynamic Shared Memory Per Block: 0.00 KB; best by rule (lower is better): v1: 0.00 KB</title></rect>
+<text x="1285" y="1207.0" class="value">0.00 KB</text>
+<text x="197" y="1224.0" class="idx" text-anchor="end">13</text>
+<rect x="215" y="1215.0" width="694.5" height="10" fill="#42a49b" rx="2"><title>v2 | Executed Ipc Active: 2.01 ; best by rule (higher is better): cuBLAS: 3.01</title></rect>
+<text x="1285" y="1224.0" class="value">2.01 </text>
+<text x="197" y="1241.0" class="idx" text-anchor="end">14</text>
+<rect x="215" y="1232.0" width="344.2" height="10" fill="#389f95" rx="2"><title>v2 | Executed Instructions: 47.7M M inst; best by rule (lower is better): v8: 39.2M M inst</title></rect>
+<text x="1285" y="1241.0" class="value">47.7M M inst</text>
+<rect x="55" y="1284" width="18" height="18" fill="#be6428" rx="3"><title>v3: TILE=4 shared-memory layout experiment: changes B shared layout to explore bank/MIO behavior.</title></rect>
+<text x="81" y="1299" class="alg">v3<title>TILE=4 shared-memory layout experiment: changes B shared layout to explore bank/MIO behavior.</title></text>
+<text x="197" y="1325.0" class="idx" text-anchor="end">1</text>
+<rect x="215" y="1316.0" width="343.4" height="10" fill="#eed6c7" rx="2"><title>v3 | Duration: 315 us; best by rule (lower is better): cuBLAS: 149 us</title></rect>
+<text x="1285" y="1325.0" class="value">315 us</text>
+<text x="197" y="1342.0" class="idx" text-anchor="end">2</text>
+<rect x="215" y="1333.0" width="845.9" height="10" fill="#ebd0be" rx="2"><title>v3 | Compute (SM) Throughput: 77.3% %; best by rule (higher is better): v1: 95.0% %</title></rect>
+<text x="1285" y="1342.0" class="value">77.3% %</text>
+<text x="197" y="1359.0" class="idx" text-anchor="end">3</text>
+<rect x="215" y="1350.0" width="845.9" height="10" fill="#e8cab5" rx="2"><title>v3 | Memory Throughput / Mem Busy: 77.3% %; best by rule (higher is better): v1: 95.0% %</title></rect>
+<text x="1285" y="1359.0" class="value">77.3% %</text>
+<text x="197" y="1376.0" class="idx" text-anchor="end">4</text>
+<rect x="215" y="1367.0" width="491.3" height="10" fill="#e6c4ad" rx="2"><title>v3 | DRAM Throughput: 4.0% %; best by rule (higher is better): cuBLAS: 8.5% %</title></rect>
+<text x="1285" y="1376.0" class="value">4.0% %</text>
+<text x="197" y="1393.0" class="idx" text-anchor="end">5</text>
+<rect x="215" y="1384.0" width="937.8" height="10" fill="#e3bda4" rx="2"><title>v3 | L1/TEX Cache Throughput: 86.3% %; best by rule (higher is better): v1: 95.7% %</title></rect>
+<text x="1285" y="1393.0" class="value">86.3% %</text>
+<text x="197" y="1410.0" class="idx" text-anchor="end">6</text>
+<rect x="215" y="1401.0" width="584.0" height="10" fill="#e1b79c" rx="2"><title>v3 | L2 Cache Throughput: 14.4% %; best by rule (higher is better): cuBLAS: 25.7% %</title></rect>
+<text x="1285" y="1410.0" class="value">14.4% %</text>
+<text x="197" y="1427.0" class="idx" text-anchor="end">7</text>
+<rect x="215" y="1418.0" width="600.9" height="10" fill="#deb193" rx="2"><title>v3 | Issue Slots Busy: 43.5% %; best by rule (higher is better): cuBLAS: 75.2% %</title></rect>
+<text x="1285" y="1427.0" class="value">43.5% %</text>
+<text x="197" y="1444.0" class="idx" text-anchor="end">8</text>
+<rect x="215" y="1435.0" width="536.1" height="10" fill="#dbab8a" rx="2"><title>v3 | Achieved Occupancy: 50.1% %; best by rule (higher is better): v1: 97.2% %</title></rect>
+<text x="1285" y="1444.0" class="value">50.1% %</text>
+<text x="197" y="1461.0" class="idx" text-anchor="end">9</text>
+<rect x="215" y="1452.0" width="694.9" height="10" fill="#d9a582" rx="2"><title>v3 | Eligible Warps Per Scheduler: 1.51 warp/sched; best by rule (higher is better): v7: 2.26 warp/sched</title></rect>
+<text x="1285" y="1461.0" class="value">1.51 warp/sched</text>
+<text x="197" y="1478.0" class="idx" text-anchor="end">10</text>
+<rect x="215" y="1469.0" width="422.7" height="10" fill="#d69e79" rx="2"><title>v3 | Warp Cycles Per Issued Instruction: 13.8 cycles; best by rule (lower is better): cuBLAS: 3.55 cycles</title></rect>
+<text x="1285" y="1478.0" class="value">13.8 cycles</text>
+<text x="197" y="1495.0" class="idx" text-anchor="end">11</text>
+<rect x="215" y="1486.0" width="520.0" height="10" fill="#d49871" rx="2"><title>v3 | Registers Per Thread: 64.0 regs; best by rule (lower is better): v1: 40.0 regs</title></rect>
+<text x="1285" y="1495.0" class="value">64.0 regs</text>
+<text x="197" y="1512.0" class="idx" text-anchor="end">12</text>
+<rect x="215" y="1503.0" width="0.0" height="10" fill="#d19268" rx="2"><title>v3 | Dynamic Shared Memory Per Block: 0.00 KB; best by rule (lower is better): v1: 0.00 KB</title></rect>
+<text x="1285" y="1512.0" class="value">0.00 KB</text>
+<text x="197" y="1529.0" class="idx" text-anchor="end">13</text>
+<rect x="215" y="1520.0" width="601.2" height="10" fill="#ce8c5f" rx="2"><title>v3 | Executed Ipc Active: 1.74 ; best by rule (higher is better): cuBLAS: 3.01</title></rect>
+<text x="1285" y="1529.0" class="value">1.74 </text>
+<text x="197" y="1546.0" class="idx" text-anchor="end">14</text>
+<rect x="215" y="1537.0" width="389.6" height="10" fill="#cc8657" rx="2"><title>v3 | Executed Instructions: 54.0M M inst; best by rule (lower is better): v8: 39.2M M inst</title></rect>
+<text x="1285" y="1546.0" class="value">54.0M M inst</text>
+<rect x="40" y="1565" width="1830" height="293" fill="#f8fafc"/>
+<rect x="55" y="1589" width="18" height="18" fill="#239641" rx="3"><title>v4: TILE=4 layout correction plus manually unrolled 4x4 FMA inner loop to reduce indexing/loop overhead.</title></rect>
+<text x="81" y="1604" class="alg">v4<title>TILE=4 layout correction plus manually unrolled 4x4 FMA inner loop to reduce indexing/loop overhead.</title></text>
+<text x="197" y="1630.0" class="idx" text-anchor="end">1</text>
+<rect x="215" y="1621.0" width="266.2" height="10" fill="#c5e3cd" rx="2"><title>v4 | Duration: 244 us; best by rule (lower is better): cuBLAS: 149 us</title></rect>
+<text x="1285" y="1630.0" class="value">244 us</text>
+<text x="197" y="1647.0" class="idx" text-anchor="end">2</text>
+<rect x="215" y="1638.0" width="587.0" height="10" fill="#bddfc6" rx="2"><title>v4 | Compute (SM) Throughput: 53.6% %; best by rule (higher is better): v1: 95.0% %</title></rect>
+<text x="1285" y="1647.0" class="value">53.6% %</text>
+<text x="197" y="1664.0" class="idx" text-anchor="end">3</text>
+<rect x="215" y="1655.0" width="797.8" height="10" fill="#b4dbbe" rx="2"><title>v4 | Memory Throughput / Mem Busy: 72.9% %; best by rule (higher is better): v1: 95.0% %</title></rect>
+<text x="1285" y="1664.0" class="value">72.9% %</text>
+<text x="197" y="1681.0" class="idx" text-anchor="end">4</text>
+<rect x="215" y="1672.0" width="634.0" height="10" fill="#abd7b6" rx="2"><title>v4 | DRAM Throughput: 5.2% %; best by rule (higher is better): cuBLAS: 8.5% %</title></rect>
+<text x="1285" y="1681.0" class="value">5.2% %</text>
+<text x="197" y="1698.0" class="idx" text-anchor="end">5</text>
+<rect x="215" y="1689.0" width="892.2" height="10" fill="#a2d2af" rx="2"><title>v4 | L1/TEX Cache Throughput: 82.1% %; best by rule (higher is better): v1: 95.7% %</title></rect>
+<text x="1285" y="1698.0" class="value">82.1% %</text>
+<text x="197" y="1715.0" class="idx" text-anchor="end">6</text>
+<rect x="215" y="1706.0" width="739.9" height="10" fill="#99cea7" rx="2"><title>v4 | L2 Cache Throughput: 18.3% %; best by rule (higher is better): cuBLAS: 25.7% %</title></rect>
+<text x="1285" y="1715.0" class="value">18.3% %</text>
+<text x="197" y="1732.0" class="idx" text-anchor="end">7</text>
+<rect x="215" y="1723.0" width="698.1" height="10" fill="#91caa0" rx="2"><title>v4 | Issue Slots Busy: 50.5% %; best by rule (higher is better): cuBLAS: 75.2% %</title></rect>
+<text x="1285" y="1732.0" class="value">50.5% %</text>
+<text x="197" y="1749.0" class="idx" text-anchor="end">8</text>
+<rect x="215" y="1740.0" width="460.8" height="10" fill="#88c698" rx="2"><title>v4 | Achieved Occupancy: 43.0% %; best by rule (higher is better): v1: 97.2% %</title></rect>
+<text x="1285" y="1749.0" class="value">43.0% %</text>
+<text x="197" y="1766.0" class="idx" text-anchor="end">9</text>
+<rect x="215" y="1757.0" width="685.7" height="10" fill="#7fc290" rx="2"><title>v4 | Eligible Warps Per Scheduler: 1.49 warp/sched; best by rule (higher is better): v7: 2.26 warp/sched</title></rect>
+<text x="1285" y="1766.0" class="value">1.49 warp/sched</text>
+<text x="197" y="1783.0" class="idx" text-anchor="end">10</text>
+<rect x="215" y="1774.0" width="311.9" height="10" fill="#76bd89" rx="2"><title>v4 | Warp Cycles Per Issued Instruction: 10.2 cycles; best by rule (lower is better): cuBLAS: 3.55 cycles</title></rect>
+<text x="1285" y="1783.0" class="value">10.2 cycles</text>
+<text x="197" y="1800.0" class="idx" text-anchor="end">11</text>
+<rect x="215" y="1791.0" width="585.0" height="10" fill="#6db981" rx="2"><title>v4 | Registers Per Thread: 72.0 regs; best by rule (lower is better): v1: 40.0 regs</title></rect>
+<text x="1285" y="1800.0" class="value">72.0 regs</text>
+<text x="197" y="1817.0" class="idx" text-anchor="end">12</text>
+<rect x="215" y="1808.0" width="0.0" height="10" fill="#65b57a" rx="2"><title>v4 | Dynamic Shared Memory Per Block: 0.00 KB; best by rule (lower is better): v1: 0.00 KB</title></rect>
+<text x="1285" y="1817.0" class="value">0.00 KB</text>
+<text x="197" y="1834.0" class="idx" text-anchor="end">13</text>
+<rect x="215" y="1825.0" width="697.9" height="10" fill="#5cb172" rx="2"><title>v4 | Executed Ipc Active: 2.02 ; best by rule (higher is better): cuBLAS: 3.01</title></rect>
+<text x="1285" y="1834.0" class="value">2.02 </text>
+<text x="197" y="1851.0" class="idx" text-anchor="end">14</text>
+<rect x="215" y="1842.0" width="343.2" height="10" fill="#53ad6a" rx="2"><title>v4 | Executed Instructions: 47.6M M inst; best by rule (lower is better): v8: 39.2M M inst</title></rect>
+<text x="1285" y="1851.0" class="value">47.6M M inst</text>
+<rect x="55" y="1894" width="18" height="18" fill="#965aaa" rx="3"><title>v5: cuda::pipeline / staged double-buffer attempt to overlap copy and compute.</title></rect>
+<text x="81" y="1909" class="alg">v5<title>cuda::pipeline / staged double-buffer attempt to overlap copy and compute.</title></text>
+<text x="197" y="1935.0" class="idx" text-anchor="end">1</text>
+<rect x="215" y="1926.0" width="313.5" height="10" fill="#e3d4e8" rx="2"><title>v5 | Duration: 288 us; best by rule (lower is better): cuBLAS: 149 us</title></rect>
+<text x="1285" y="1935.0" class="value">288 us</text>
+<text x="197" y="1952.0" class="idx" text-anchor="end">2</text>
+<rect x="215" y="1943.0" width="641.7" height="10" fill="#dfcde5" rx="2"><title>v5 | Compute (SM) Throughput: 58.6% %; best by rule (higher is better): v1: 95.0% %</title></rect>
+<text x="1285" y="1952.0" class="value">58.6% %</text>
+<text x="197" y="1969.0" class="idx" text-anchor="end">3</text>
+<rect x="215" y="1960.0" width="700.2" height="10" fill="#dbc6e2" rx="2"><title>v5 | Memory Throughput / Mem Busy: 64.0% %; best by rule (higher is better): v1: 95.0% %</title></rect>
+<text x="1285" y="1969.0" class="value">64.0% %</text>
+<text x="197" y="1986.0" class="idx" text-anchor="end">4</text>
+<rect x="215" y="1977.0" width="538.9" height="10" fill="#d7c0de" rx="2"><title>v5 | DRAM Throughput: 4.4% %; best by rule (higher is better): cuBLAS: 8.5% %</title></rect>
+<text x="1285" y="1986.0" class="value">4.4% %</text>
+<text x="197" y="2003.0" class="idx" text-anchor="end">5</text>
+<rect x="215" y="1994.0" width="782.6" height="10" fill="#d2b9db" rx="2"><title>v5 | L1/TEX Cache Throughput: 72.0% %; best by rule (higher is better): v1: 95.7% %</title></rect>
+<text x="1285" y="2003.0" class="value">72.0% %</text>
+<text x="197" y="2020.0" class="idx" text-anchor="end">6</text>
+<rect x="215" y="2011.0" width="650.0" height="10" fill="#ceb3d7" rx="2"><title>v5 | L2 Cache Throughput: 16.1% %; best by rule (higher is better): cuBLAS: 25.7% %</title></rect>
+<text x="1285" y="2020.0" class="value">16.1% %</text>
+<text x="197" y="2037.0" class="idx" text-anchor="end">7</text>
+<rect x="215" y="2028.0" width="660.4" height="10" fill="#caacd4" rx="2"><title>v5 | Issue Slots Busy: 47.8% %; best by rule (higher is better): cuBLAS: 75.2% %</title></rect>
+<text x="1285" y="2037.0" class="value">47.8% %</text>
+<text x="197" y="2054.0" class="idx" text-anchor="end">8</text>
+<rect x="215" y="2045.0" width="454.3" height="10" fill="#c6a5d1" rx="2"><title>v5 | Achieved Occupancy: 42.4% %; best by rule (higher is better): v1: 97.2% %</title></rect>
+<text x="1285" y="2054.0" class="value">42.4% %</text>
+<text x="197" y="2071.0" class="idx" text-anchor="end">9</text>
+<rect x="215" y="2062.0" width="699.5" height="10" fill="#c29fcd" rx="2"><title>v5 | Eligible Warps Per Scheduler: 1.52 warp/sched; best by rule (higher is better): v7: 2.26 warp/sched</title></rect>
+<text x="1285" y="2071.0" class="value">1.52 warp/sched</text>
+<text x="197" y="2088.0" class="idx" text-anchor="end">10</text>
+<rect x="215" y="2079.0" width="325.3" height="10" fill="#bd98ca" rx="2"><title>v5 | Warp Cycles Per Issued Instruction: 10.7 cycles; best by rule (lower is better): cuBLAS: 3.55 cycles</title></rect>
+<text x="1285" y="2088.0" class="value">10.7 cycles</text>
+<text x="197" y="2105.0" class="idx" text-anchor="end">11</text>
+<rect x="215" y="2096.0" width="650.0" height="10" fill="#b992c6" rx="2"><title>v5 | Registers Per Thread: 80.0 regs; best by rule (lower is better): v1: 40.0 regs</title></rect>
+<text x="1285" y="2105.0" class="value">80.0 regs</text>
+<text x="197" y="2122.0" class="idx" text-anchor="end">12</text>
+<rect x="215" y="2113.0" width="0.0" height="10" fill="#b58bc3" rx="2"><title>v5 | Dynamic Shared Memory Per Block: 0.00 KB; best by rule (lower is better): v1: 0.00 KB</title></rect>
+<text x="1285" y="2122.0" class="value">0.00 KB</text>
+<text x="197" y="2139.0" class="idx" text-anchor="end">13</text>
+<rect x="215" y="2130.0" width="659.9" height="10" fill="#b184c0" rx="2"><title>v5 | Executed Ipc Active: 1.91 ; best by rule (higher is better): cuBLAS: 3.01</title></rect>
+<text x="1285" y="2139.0" class="value">1.91 </text>
+<text x="197" y="2156.0" class="idx" text-anchor="end">14</text>
+<rect x="215" y="2147.0" width="384.8" height="10" fill="#ad7ebc" rx="2"><title>v5 | Executed Instructions: 53.4M M inst; best by rule (lower is better): v8: 39.2M M inst</title></rect>
+<text x="1285" y="2156.0" class="value">53.4M M inst</text>
+<rect x="40" y="2175" width="1830" height="293" fill="#f8fafc"/>
+<rect x="55" y="2199" width="18" height="18" fill="#d24646" rx="3"><title>v6: Explicit cp.async double buffering with dynamic shared memory, TILE=4; improves issue/eligible warps and reduces MIO pressure.</title></rect>
+<text x="81" y="2214" class="alg">v6<title>Explicit cp.async double buffering with dynamic shared memory, TILE=4; improves issue/eligible warps and reduces MIO pressure.</title></text>
+<text x="197" y="2240.0" class="idx" text-anchor="end">1</text>
+<rect x="215" y="2231.0" width="213.4" height="10" fill="#f3cece" rx="2"><title>v6 | Duration: 196 us; best by rule (lower is better): cuBLAS: 149 us</title></rect>
+<text x="1285" y="2240.0" class="value">196 us</text>
+<text x="197" y="2257.0" class="idx" text-anchor="end">2</text>
+<rect x="215" y="2248.0" width="619.9" height="10" fill="#f1c7c7" rx="2"><title>v6 | Compute (SM) Throughput: 56.6% %; best by rule (higher is better): v1: 95.0% %</title></rect>
+<text x="1285" y="2257.0" class="value">56.6% %</text>
+<text x="197" y="2274.0" class="idx" text-anchor="end">3</text>
+<rect x="215" y="2265.0" width="797.1" height="10" fill="#efc0c0" rx="2"><title>v6 | Memory Throughput / Mem Busy: 72.8% %; best by rule (higher is better): v1: 95.0% %</title></rect>
+<text x="1285" y="2274.0" class="value">72.8% %</text>
+<text x="197" y="2291.0" class="idx" text-anchor="end">4</text>
+<rect x="215" y="2282.0" width="791.3" height="10" fill="#edb8b8" rx="2"><title>v6 | DRAM Throughput: 6.5% %; best by rule (higher is better): cuBLAS: 8.5% %</title></rect>
+<text x="1285" y="2291.0" class="value">6.5% %</text>
+<text x="197" y="2308.0" class="idx" text-anchor="end">5</text>
+<rect x="215" y="2299.0" width="893.2" height="10" fill="#ecb1b1" rx="2"><title>v6 | L1/TEX Cache Throughput: 82.2% %; best by rule (higher is better): v1: 95.7% %</title></rect>
+<text x="1285" y="2308.0" class="value">82.2% %</text>
+<text x="197" y="2325.0" class="idx" text-anchor="end">6</text>
+<rect x="215" y="2316.0" width="946.0" height="10" fill="#eaa9a9" rx="2"><title>v6 | L2 Cache Throughput: 23.4% %; best by rule (higher is better): cuBLAS: 25.7% %</title></rect>
+<text x="1285" y="2325.0" class="value">23.4% %</text>
+<text x="197" y="2342.0" class="idx" text-anchor="end">7</text>
+<rect x="215" y="2333.0" width="883.6" height="10" fill="#e8a2a2" rx="2"><title>v6 | Issue Slots Busy: 63.9% %; best by rule (higher is better): cuBLAS: 75.2% %</title></rect>
+<text x="1285" y="2342.0" class="value">63.9% %</text>
+<text x="197" y="2359.0" class="idx" text-anchor="end">8</text>
+<rect x="215" y="2350.0" width="463.4" height="10" fill="#e69b9b" rx="2"><title>v6 | Achieved Occupancy: 43.3% %; best by rule (higher is better): v1: 97.2% %</title></rect>
+<text x="1285" y="2359.0" class="value">43.3% %</text>
+<text x="197" y="2376.0" class="idx" text-anchor="end">9</text>
+<rect x="215" y="2367.0" width="929.6" height="10" fill="#e49393" rx="2"><title>v6 | Eligible Warps Per Scheduler: 2.02 warp/sched; best by rule (higher is better): v7: 2.26 warp/sched</title></rect>
+<text x="1285" y="2376.0" class="value">2.02 warp/sched</text>
+<text x="197" y="2393.0" class="idx" text-anchor="end">10</text>
+<rect x="215" y="2384.0" width="248.1" height="10" fill="#e38c8c" rx="2"><title>v6 | Warp Cycles Per Issued Instruction: 8.13 cycles; best by rule (lower is better): cuBLAS: 3.55 cycles</title></rect>
+<text x="1285" y="2393.0" class="value">8.13 cycles</text>
+<text x="197" y="2410.0" class="idx" text-anchor="end">11</text>
+<rect x="215" y="2401.0" width="528.1" height="10" fill="#e18484" rx="2"><title>v6 | Registers Per Thread: 65.0 regs; best by rule (lower is better): v1: 40.0 regs</title></rect>
+<text x="1285" y="2410.0" class="value">65.0 regs</text>
+<text x="197" y="2427.0" class="idx" text-anchor="end">12</text>
+<rect x="215" y="2418.0" width="275.3" height="10" fill="#df7d7d" rx="2"><title>v6 | Dynamic Shared Memory Per Block: 18.4 KB; best by rule (lower is better): v1: 0.00 KB</title></rect>
+<text x="1285" y="2427.0" class="value">18.4 KB</text>
+<text x="197" y="2444.0" class="idx" text-anchor="end">13</text>
+<rect x="215" y="2435.0" width="884.5" height="10" fill="#dd7676" rx="2"><title>v6 | Executed Ipc Active: 2.56 ; best by rule (higher is better): cuBLAS: 3.01</title></rect>
+<text x="1285" y="2444.0" class="value">2.56 </text>
+<text x="197" y="2461.0" class="idx" text-anchor="end">14</text>
+<rect x="215" y="2452.0" width="343.8" height="10" fill="#db6e6e" rx="2"><title>v6 | Executed Instructions: 47.7M M inst; best by rule (lower is better): v8: 39.2M M inst</title></rect>
+<text x="1285" y="2461.0" class="value">47.7M M inst</text>
+<rect x="55" y="2504" width="18" height="18" fill="#5082d2" rx="3"><title>v7: cp.async variant with vectorized/float4 C stores and larger shared footprint; explores store and resource tradeoffs.</title></rect>
+<text x="81" y="2519" class="alg">v7<title>cp.async variant with vectorized/float4 C stores and larger shared footprint; explores store and resource tradeoffs.</title></text>
+<text x="197" y="2545.0" class="idx" text-anchor="end">1</text>
+<rect x="215" y="2536.0" width="275.7" height="10" fill="#d1def3" rx="2"><title>v7 | Duration: 253 us; best by rule (lower is better): cuBLAS: 149 us</title></rect>
+<text x="1285" y="2545.0" class="value">253 us</text>
+<text x="197" y="2562.0" class="idx" text-anchor="end">2</text>
+<rect x="215" y="2553.0" width="424.5" height="10" fill="#cad9f1" rx="2"><title>v7 | Compute (SM) Throughput: 38.8% %; best by rule (higher is better): v1: 95.0% %</title></rect>
+<text x="1285" y="2562.0" class="value">38.8% %</text>
+<text x="197" y="2579.0" class="idx" text-anchor="end">3</text>
+<rect x="215" y="2570.0" width="536.6" height="10" fill="#c3d4ef" rx="2"><title>v7 | Memory Throughput / Mem Busy: 49.0% %; best by rule (higher is better): v1: 95.0% %</title></rect>
+<text x="1285" y="2579.0" class="value">49.0% %</text>
+<text x="197" y="2596.0" class="idx" text-anchor="end">4</text>
+<rect x="215" y="2587.0" width="612.1" height="10" fill="#bccfed" rx="2"><title>v7 | DRAM Throughput: 5.0% %; best by rule (higher is better): cuBLAS: 8.5% %</title></rect>
+<text x="1285" y="2596.0" class="value">5.0% %</text>
+<text x="197" y="2613.0" class="idx" text-anchor="end">5</text>
+<rect x="215" y="2604.0" width="803.3" height="10" fill="#b5caec" rx="2"><title>v7 | L1/TEX Cache Throughput: 73.9% %; best by rule (higher is better): v1: 95.7% %</title></rect>
+<text x="1285" y="2613.0" class="value">73.9% %</text>
+<text x="197" y="2630.0" class="idx" text-anchor="end">6</text>
+<rect x="215" y="2621.0" width="366.1" height="10" fill="#aec5ea" rx="2"><title>v7 | L2 Cache Throughput: 9.0% %; best by rule (higher is better): cuBLAS: 25.7% %</title></rect>
+<text x="1285" y="2630.0" class="value">9.0% %</text>
+<text x="197" y="2647.0" class="idx" text-anchor="end">7</text>
+<rect x="215" y="2638.0" width="808.4" height="10" fill="#a7c0e8" rx="2"><title>v7 | Issue Slots Busy: 58.5% %; best by rule (higher is better): cuBLAS: 75.2% %</title></rect>
+<text x="1285" y="2647.0" class="value">58.5% %</text>
+<text x="197" y="2664.0" class="idx" text-anchor="end">8</text>
+<rect x="215" y="2655.0" width="711.3" height="10" fill="#a0bbe6" rx="2"><title>v7 | Achieved Occupancy: 66.5% %; best by rule (higher is better): v1: 97.2% %</title></rect>
+<text x="1285" y="2664.0" class="value">66.5% %</text>
+<text x="197" y="2681.0" class="idx" text-anchor="end">9</text>
+<rect x="215" y="2672.0" width="1040.0" height="10" fill="#99b6e4" rx="2"><title>v7 | Eligible Warps Per Scheduler: 2.26 warp/sched; best by rule (higher is better): v7: 2.26 warp/sched</title></rect>
+<text x="1285" y="2681.0" class="value">2.26 warp/sched</text>
+<text x="197" y="2698.0" class="idx" text-anchor="end">10</text>
+<rect x="215" y="2689.0" width="415.6" height="10" fill="#92b1e3" rx="2"><title>v7 | Warp Cycles Per Issued Instruction: 13.6 cycles; best by rule (lower is better): cuBLAS: 3.55 cycles</title></rect>
+<text x="1285" y="2698.0" class="value">13.6 cycles</text>
+<text x="197" y="2715.0" class="idx" text-anchor="end">11</text>
+<rect x="215" y="2706.0" width="520.0" height="10" fill="#8bace1" rx="2"><title>v7 | Registers Per Thread: 64.0 regs; best by rule (lower is better): v1: 40.0 regs</title></rect>
+<text x="1285" y="2715.0" class="value">64.0 regs</text>
+<text x="197" y="2732.0" class="idx" text-anchor="end">12</text>
+<rect x="215" y="2723.0" width="1040.0" height="10" fill="#84a7df" rx="2"><title>v7 | Dynamic Shared Memory Per Block: 69.6 KB; best by rule (lower is better): v1: 0.00 KB</title></rect>
+<text x="1285" y="2732.0" class="value">69.6 KB</text>
+<text x="197" y="2749.0" class="idx" text-anchor="end">13</text>
+<rect x="215" y="2740.0" width="808.5" height="10" fill="#7da2dd" rx="2"><title>v7 | Executed Ipc Active: 2.34 ; best by rule (higher is better): cuBLAS: 3.01</title></rect>
+<text x="1285" y="2749.0" class="value">2.34 </text>
+<text x="197" y="2766.0" class="idx" text-anchor="end">14</text>
+<rect x="215" y="2757.0" width="309.1" height="10" fill="#769ddb" rx="2"><title>v7 | Executed Instructions: 42.9M M inst; best by rule (lower is better): v8: 39.2M M inst</title></rect>
+<text x="1285" y="2766.0" class="value">42.9M M inst</text>
+<rect x="40" y="2785" width="1830" height="293" fill="#f8fafc"/>
+<rect x="55" y="2809" width="18" height="18" fill="#eb962d" rx="3"><title>v8: cp.async double buffering with TILE=8; larger per-thread output tile for higher compute density on large problems.</title></rect>
+<text x="81" y="2824" class="alg">v8<title>cp.async double buffering with TILE=8; larger per-thread output tile for higher compute density on large problems.</title></text>
+<text x="197" y="2850.0" class="idx" text-anchor="end">1</text>
+<rect x="215" y="2841.0" width="254.2" height="10" fill="#f9e3c8" rx="2"><title>v8 | Duration: 233 us; best by rule (lower is better): cuBLAS: 149 us</title></rect>
+<text x="1285" y="2850.0" class="value">233 us</text>
+<text x="197" y="2867.0" class="idx" text-anchor="end">2</text>
+<rect x="215" y="2858.0" width="415.7" height="10" fill="#f9dfc0" rx="2"><title>v8 | Compute (SM) Throughput: 38.0% %; best by rule (higher is better): v1: 95.0% %</title></rect>
+<text x="1285" y="2867.0" class="value">38.0% %</text>
+<text x="197" y="2884.0" class="idx" text-anchor="end">3</text>
+<rect x="215" y="2875.0" width="540.4" height="10" fill="#f8dbb7" rx="2"><title>v8 | Memory Throughput / Mem Busy: 49.4% %; best by rule (higher is better): v1: 95.0% %</title></rect>
+<text x="1285" y="2884.0" class="value">49.4% %</text>
+<text x="197" y="2901.0" class="idx" text-anchor="end">4</text>
+<rect x="215" y="2892.0" width="665.7" height="10" fill="#f7d7af" rx="2"><title>v8 | DRAM Throughput: 5.5% %; best by rule (higher is better): cuBLAS: 8.5% %</title></rect>
+<text x="1285" y="2901.0" class="value">5.5% %</text>
+<text x="197" y="2918.0" class="idx" text-anchor="end">5</text>
+<rect x="215" y="2909.0" width="763.4" height="10" fill="#f6d2a6" rx="2"><title>v8 | L1/TEX Cache Throughput: 70.2% %; best by rule (higher is better): v1: 95.7% %</title></rect>
+<text x="1285" y="2918.0" class="value">70.2% %</text>
+<text x="197" y="2935.0" class="idx" text-anchor="end">6</text>
+<rect x="215" y="2926.0" width="601.4" height="10" fill="#f5ce9e" rx="2"><title>v8 | L2 Cache Throughput: 14.8% %; best by rule (higher is better): cuBLAS: 25.7% %</title></rect>
+<text x="1285" y="2935.0" class="value">14.8% %</text>
+<text x="197" y="2952.0" class="idx" text-anchor="end">7</text>
+<rect x="215" y="2943.0" width="746.9" height="10" fill="#f5ca96" rx="2"><title>v8 | Issue Slots Busy: 54.0% %; best by rule (higher is better): cuBLAS: 75.2% %</title></rect>
+<text x="1285" y="2952.0" class="value">54.0% %</text>
+<text x="197" y="2969.0" class="idx" text-anchor="end">8</text>
+<rect x="215" y="2960.0" width="241.9" height="10" fill="#f4c68d" rx="2"><title>v8 | Achieved Occupancy: 22.6% %; best by rule (higher is better): v1: 97.2% %</title></rect>
+<text x="1285" y="2969.0" class="value">22.6% %</text>
+<text x="197" y="2986.0" class="idx" text-anchor="end">9</text>
+<rect x="215" y="2977.0" width="561.4" height="10" fill="#f3c285" rx="2"><title>v8 | Eligible Warps Per Scheduler: 1.22 warp/sched; best by rule (higher is better): v7: 2.26 warp/sched</title></rect>
+<text x="1285" y="2986.0" class="value">1.22 warp/sched</text>
+<text x="197" y="3003.0" class="idx" text-anchor="end">10</text>
+<rect x="215" y="2994.0" width="153.8" height="10" fill="#f2bd7c" rx="2"><title>v8 | Warp Cycles Per Issued Instruction: 5.04 cycles; best by rule (lower is better): cuBLAS: 3.55 cycles</title></rect>
+<text x="1285" y="3003.0" class="value">5.04 cycles</text>
+<text x="197" y="3020.0" class="idx" text-anchor="end">11</text>
+<rect x="215" y="3011.0" width="1023.8" height="10" fill="#f1b974" rx="2"><title>v8 | Registers Per Thread: 126 regs; best by rule (lower is better): v1: 40.0 regs</title></rect>
+<text x="1285" y="3020.0" class="value">126 regs</text>
+<text x="197" y="3037.0" class="idx" text-anchor="end">12</text>
+<rect x="215" y="3028.0" width="550.5" height="10" fill="#f1b56c" rx="2"><title>v8 | Dynamic Shared Memory Per Block: 36.9 KB; best by rule (lower is better): v1: 0.00 KB</title></rect>
+<text x="1285" y="3037.0" class="value">36.9 KB</text>
+<text x="197" y="3054.0" class="idx" text-anchor="end">13</text>
+<rect x="215" y="3045.0" width="746.3" height="10" fill="#f0b163" rx="2"><title>v8 | Executed Ipc Active: 2.16 ; best by rule (higher is better): cuBLAS: 3.01</title></rect>
+<text x="1285" y="3054.0" class="value">2.16 </text>
+<text x="197" y="3071.0" class="idx" text-anchor="end">14</text>
+<rect x="215" y="3062.0" width="282.5" height="10" fill="#efad5b" rx="2"><title>v8 | Executed Instructions: 39.2M M inst; best by rule (lower is better): v8: 39.2M M inst</title></rect>
+<text x="1285" y="3071.0" class="value">39.2M M inst</text>
+<rect x="55" y="3114" width="18" height="18" fill="#5a5ab4" rx="3"><title>v9: Asymmetric tile variant, N direction TILE=8 and M direction TILE=4, intended to reduce v8 resource pressure.</title></rect>
+<text x="81" y="3129" class="alg">v9<title>Asymmetric tile variant, N direction TILE=8 and M direction TILE=4, intended to reduce v8 resource pressure.</title></text>
+<text x="197" y="3155.0" class="idx" text-anchor="end">1</text>
+<rect x="215" y="3146.0" width="286.8" height="10" fill="#d4d4eb" rx="2"><title>v9 | Duration: 263 us; best by rule (lower is better): cuBLAS: 149 us</title></rect>
+<text x="1285" y="3155.0" class="value">263 us</text>
+<text x="197" y="3172.0" class="idx" text-anchor="end">2</text>
+<rect x="215" y="3163.0" width="412.0" height="10" fill="#cdcde8" rx="2"><title>v9 | Compute (SM) Throughput: 37.6% %; best by rule (higher is better): v1: 95.0% %</title></rect>
+<text x="1285" y="3172.0" class="value">37.6% %</text>
+<text x="197" y="3189.0" class="idx" text-anchor="end">3</text>
+<rect x="215" y="3180.0" width="817.6" height="10" fill="#c6c6e5" rx="2"><title>v9 | Memory Throughput / Mem Busy: 74.7% %; best by rule (higher is better): v1: 95.0% %</title></rect>
+<text x="1285" y="3189.0" class="value">74.7% %</text>
+<text x="197" y="3206.0" class="idx" text-anchor="end">4</text>
+<rect x="215" y="3197.0" width="588.9" height="10" fill="#c0c0e2" rx="2"><title>v9 | DRAM Throughput: 4.8% %; best by rule (higher is better): cuBLAS: 8.5% %</title></rect>
+<text x="1285" y="3206.0" class="value">4.8% %</text>
+<text x="197" y="3223.0" class="idx" text-anchor="end">5</text>
+<rect x="215" y="3214.0" width="933.6" height="10" fill="#b9b9df" rx="2"><title>v9 | L1/TEX Cache Throughput: 85.9% %; best by rule (higher is better): v1: 95.7% %</title></rect>
+<text x="1285" y="3223.0" class="value">85.9% %</text>
+<text x="197" y="3240.0" class="idx" text-anchor="end">6</text>
+<rect x="215" y="3231.0" width="646.0" height="10" fill="#b3b3dc" rx="2"><title>v9 | L2 Cache Throughput: 15.9% %; best by rule (higher is better): cuBLAS: 25.7% %</title></rect>
+<text x="1285" y="3240.0" class="value">15.9% %</text>
+<text x="197" y="3257.0" class="idx" text-anchor="end">7</text>
+<rect x="215" y="3248.0" width="598.5" height="10" fill="#acacd9" rx="2"><title>v9 | Issue Slots Busy: 43.3% %; best by rule (higher is better): cuBLAS: 75.2% %</title></rect>
+<text x="1285" y="3257.0" class="value">43.3% %</text>
+<text x="197" y="3274.0" class="idx" text-anchor="end">8</text>
+<rect x="215" y="3265.0" width="305.7" height="10" fill="#a5a5d6" rx="2"><title>v9 | Achieved Occupancy: 28.6% %; best by rule (higher is better): v1: 97.2% %</title></rect>
+<text x="1285" y="3274.0" class="value">28.6% %</text>
+<text x="197" y="3291.0" class="idx" text-anchor="end">9</text>
+<rect x="215" y="3282.0" width="349.7" height="10" fill="#9f9fd3" rx="2"><title>v9 | Eligible Warps Per Scheduler: 0.76 warp/sched; best by rule (higher is better): v7: 2.26 warp/sched</title></rect>
+<text x="1285" y="3291.0" class="value">0.76 warp/sched</text>
+<text x="197" y="3308.0" class="idx" text-anchor="end">10</text>
+<rect x="215" y="3299.0" width="242.6" height="10" fill="#9898d0" rx="2"><title>v9 | Warp Cycles Per Issued Instruction: 7.95 cycles; best by rule (lower is better): cuBLAS: 3.55 cycles</title></rect>
+<text x="1285" y="3308.0" class="value">7.95 cycles</text>
+<text x="197" y="3325.0" class="idx" text-anchor="end">11</text>
+<rect x="215" y="3316.0" width="771.9" height="10" fill="#9292cd" rx="2"><title>v9 | Registers Per Thread: 95.0 regs; best by rule (lower is better): v1: 40.0 regs</title></rect>
+<text x="1285" y="3325.0" class="value">95.0 regs</text>
+<text x="197" y="3342.0" class="idx" text-anchor="end">12</text>
+<rect x="215" y="3333.0" width="397.6" height="10" fill="#8b8bca" rx="2"><title>v9 | Dynamic Shared Memory Per Block: 26.6 KB; best by rule (lower is better): v1: 0.00 KB</title></rect>
+<text x="1285" y="3342.0" class="value">26.6 KB</text>
+<text x="197" y="3359.0" class="idx" text-anchor="end">13</text>
+<rect x="215" y="3350.0" width="597.7" height="10" fill="#8484c7" rx="2"><title>v9 | Executed Ipc Active: 1.73 ; best by rule (higher is better): cuBLAS: 3.01</title></rect>
+<text x="1285" y="3359.0" class="value">1.73 </text>
+<text x="197" y="3376.0" class="idx" text-anchor="end">14</text>
+<rect x="215" y="3367.0" width="315.0" height="10" fill="#7e7ec4" rx="2"><title>v9 | Executed Instructions: 43.7M M inst; best by rule (lower is better): v8: 39.2M M inst</title></rect>
+<text x="1285" y="3376.0" class="value">43.7M M inst</text>
+<text x="215" y="3461" class="subtitle">Metric names are isolated in the top table to avoid overlap. Hover bars for raw value and metric winner; hover algorithm color/name for optimization idea.</text>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<style>
+text { font-family: Arial, Helvetica, sans-serif; fill: #17202a; }
+.title { font-size: 24px; font-weight: 700; }
+.subtitle { font-size: 13px; fill: #566573; }
+.axis { font-size: 12px; fill: #34495e; }
+.small { font-size: 11px; fill: #566573; }
+.celltext { font-size: 12px; font-weight: 700; fill: #111827; }
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="40" y="45" class="title">WMMA v10-v19 at 1024^3: mean TFLOP/s</text>
+<text x="40" y="68" class="subtitle">FP32-to-half conversion is outside timed loop. cuBLAS half uses half A/B, float C, float accumulate, Tensor Core path.</text>
+<line x1="90" y1="610.0" x2="1240" y2="610.0" stroke="#e5e7eb"/>
+<text x="80" y="614.0" text-anchor="end" class="axis">0.0</text>
+<line x1="90" y1="480.0" x2="1240" y2="480.0" stroke="#e5e7eb"/>
+<text x="80" y="484.0" text-anchor="end" class="axis">10.9</text>
+<line x1="90" y1="350.0" x2="1240" y2="350.0" stroke="#e5e7eb"/>
+<text x="80" y="354.0" text-anchor="end" class="axis">21.8</text>
+<line x1="90" y1="220.0" x2="1240" y2="220.0" stroke="#e5e7eb"/>
+<text x="80" y="224.0" text-anchor="end" class="axis">32.7</text>
+<line x1="90" y1="90.0" x2="1240" y2="90.0" stroke="#e5e7eb"/>
+<text x="80" y="94.0" text-anchor="end" class="axis">43.6</text>
+<rect x="106.7" y="179.6" width="71.1" height="430.4" fill="#4c78a8" rx="3"><title>cuBLAS half: 36.12 TFLOP/s, 0.05945 ms</title></rect>
+<text x="142.3" y="171.6" text-anchor="middle" class="axis">36.1</text>
+<text x="142.3" y="638" text-anchor="middle" class="axis">cuBLAS half</text>
+<rect x="211.3" y="446.3" width="71.1" height="163.7" fill="#72b7b2" rx="3"><title>v10: 13.74 TFLOP/s, 0.15627 ms</title></rect>
+<text x="246.8" y="438.3" text-anchor="middle" class="axis">13.7</text>
+<text x="246.8" y="638" text-anchor="middle" class="axis">v10</text>
+<rect x="315.8" y="459.4" width="71.1" height="150.6" fill="#72b7b2" rx="3"><title>v11: 12.64 TFLOP/s, 0.16986 ms</title></rect>
+<text x="351.4" y="451.4" text-anchor="middle" class="axis">12.6</text>
+<text x="351.4" y="638" text-anchor="middle" class="axis">v11</text>
+<rect x="420.4" y="355.0" width="71.1" height="255.0" fill="#72b7b2" rx="3"><title>v12: 21.40 TFLOP/s, 0.10034 ms</title></rect>
+<text x="455.9" y="347.0" text-anchor="middle" class="axis">21.4</text>
+<text x="455.9" y="638" text-anchor="middle" class="axis">v12</text>
+<rect x="524.9" y="326.1" width="71.1" height="283.9" fill="#72b7b2" rx="3"><title>v13: 23.83 TFLOP/s, 0.09013 ms</title></rect>
+<text x="560.5" y="318.1" text-anchor="middle" class="axis">23.8</text>
+<text x="560.5" y="638" text-anchor="middle" class="axis">v13</text>
+<rect x="629.5" y="179.2" width="71.1" height="430.8" fill="#72b7b2" rx="3"><title>v14: 36.16 TFLOP/s, 0.05938 ms</title></rect>
+<text x="665.0" y="171.2" text-anchor="middle" class="axis">36.2</text>
+<text x="665.0" y="638" text-anchor="middle" class="axis">v14</text>
+<rect x="734.0" y="308.2" width="71.1" height="301.8" fill="#72b7b2" rx="3"><title>v15: 25.33 TFLOP/s, 0.08478 ms</title></rect>
+<text x="769.5" y="300.2" text-anchor="middle" class="axis">25.3</text>
+<text x="769.5" y="638" text-anchor="middle" class="axis">v15</text>
+<rect x="838.5" y="119.2" width="71.1" height="490.8" fill="#72b7b2" rx="3"><title>v16: 41.19 TFLOP/s, 0.05213 ms</title></rect>
+<text x="874.1" y="111.2" text-anchor="middle" class="axis">41.2</text>
+<text x="874.1" y="638" text-anchor="middle" class="axis">v16</text>
+<rect x="943.1" y="211.7" width="71.1" height="398.3" fill="#72b7b2" rx="3"><title>v17: 33.43 TFLOP/s, 0.06426 ms</title></rect>
+<text x="978.6" y="203.7" text-anchor="middle" class="axis">33.4</text>
+<text x="978.6" y="638" text-anchor="middle" class="axis">v17</text>
+<rect x="1047.6" y="98.2" width="71.1" height="511.8" fill="#72b7b2" rx="3"><title>v18: 42.96 TFLOP/s, 0.05002 ms</title></rect>
+<text x="1083.2" y="90.2" text-anchor="middle" class="axis">43.0</text>
+<text x="1083.2" y="638" text-anchor="middle" class="axis">v18</text>
+<rect x="1152.2" y="90.0" width="71.1" height="520.0" fill="#2ca02c" rx="3"><title>v19: 43.65 TFLOP/s, 0.04920 ms</title></rect>
+<text x="1187.7" y="82.0" text-anchor="middle" class="axis">43.6</text>
+<text x="1187.7" y="638" text-anchor="middle" class="axis">v19</text>
+<text x="665.0" y="692" text-anchor="middle" class="subtitle">Current code, 3 benchmark repetitions. Bars show mean release benchmark throughput.</text>
+</svg>

@@ -1,0 +1,829 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1660" height="1436" viewBox="0 0 1660 1436">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<style>text{font-family:Menlo,Consolas,monospace}.title{font:700 24px Menlo,Consolas,monospace}.small{font-size:12px}.label{font-size:13px}.num{font-size:12px}.muted{fill:#667085}</style>
+<text x="30" y="38" class="title">Full-series configs: row-normalized TFLOP/s heatmap</text>
+<text x="30" y="66" class="small muted">Each row has its own color scale: pale = slowest mode for that shape, warm = fastest mode for that same shape.</text>
+<text x="30" y="88" class="small muted">Cell text remains absolute TFLOP/s; color is only within-row relative ranking.</text>
+<rect x="980" y="48" width="50" height="16" rx="3" fill="#e1eaf4"/><text x="1038" y="61" class="small muted">row slowest</text>
+<rect x="1160" y="48" width="50" height="16" rx="3" fill="#e19073"/><text x="1218" y="61" class="small muted">row fastest</text>
+<text x="258" y="120" class="label">cublas</text>
+<text x="370" y="120" class="label">v1</text>
+<text x="482" y="120" class="label">v2</text>
+<text x="594" y="120" class="label">v3</text>
+<text x="706" y="120" class="label">v4</text>
+<text x="818" y="120" class="label">v5</text>
+<text x="930" y="120" class="label">v6</text>
+<text x="1042" y="120" class="label">v7</text>
+<text x="1154" y="120" class="label">v8</text>
+<text x="1266" y="120" class="label">v9</text>
+<rect x="20" y="121" width="1620" height="34" fill="#f8fafc"/>
+<text x="30" y="143" class="label">128x128x128</text>
+<rect x="250" y="124" width="104" height="24" rx="3" fill="#d78356" stroke="#111827" stroke-width="0"><title>128x128x128 library_cublas_gemm 0.62 TFLOP/s; row min 0.19, row max 0.68</title></rect>
+<text x="262" y="141" class="num" fill="#111827">0.62</text>
+<rect x="362" y="124" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>128x128x128 v1 0.68 TFLOP/s; row min 0.19, row max 0.68</title></rect>
+<text x="374" y="141" class="num" fill="#111827">0.68</text>
+<rect x="474" y="124" width="104" height="24" rx="3" fill="#c7a789" stroke="#111827" stroke-width="0"><title>128x128x128 v2 0.50 TFLOP/s; row min 0.19, row max 0.68</title></rect>
+<text x="486" y="141" class="num" fill="#111827">0.50</text>
+<rect x="586" y="124" width="104" height="24" rx="3" fill="#c1c2b1" stroke="#111827" stroke-width="0"><title>128x128x128 v3 0.41 TFLOP/s; row min 0.19, row max 0.68</title></rect>
+<text x="598" y="141" class="num" fill="#111827">0.41</text>
+<rect x="698" y="124" width="104" height="24" rx="3" fill="#c7a789" stroke="#111827" stroke-width="0"><title>128x128x128 v4 0.50 TFLOP/s; row min 0.19, row max 0.68</title></rect>
+<text x="710" y="141" class="num" fill="#111827">0.50</text>
+<rect x="810" y="124" width="104" height="24" rx="3" fill="#c1c2b1" stroke="#111827" stroke-width="0"><title>128x128x128 v5 0.41 TFLOP/s; row min 0.19, row max 0.68</title></rect>
+<text x="822" y="141" class="num" fill="#111827">0.41</text>
+<rect x="922" y="124" width="104" height="24" rx="3" fill="#c8a586" stroke="#111827" stroke-width="0"><title>128x128x128 v6 0.51 TFLOP/s; row min 0.19, row max 0.68</title></rect>
+<text x="934" y="141" class="num" fill="#111827">0.51</text>
+<rect x="1034" y="124" width="104" height="24" rx="3" fill="#d7dddf" stroke="#111827" stroke-width="0"><title>128x128x128 v7 0.26 TFLOP/s; row min 0.19, row max 0.68</title></rect>
+<text x="1046" y="141" class="num" fill="#111827">0.26</text>
+<rect x="1146" y="124" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>128x128x128 v8 0.19 TFLOP/s; row min 0.19, row max 0.68</title></rect>
+<text x="1158" y="141" class="num" fill="#111827">0.19</text>
+<rect x="1258" y="124" width="104" height="24" rx="3" fill="#dbe2e7" stroke="#111827" stroke-width="0"><title>128x128x128 v9 0.23 TFLOP/s; row min 0.19, row max 0.68</title></rect>
+<text x="1270" y="141" class="num" fill="#111827">0.23</text>
+<text x="1378" y="143" class="small muted">best v1</text>
+<text x="30" y="177" class="label">256x256x256</text>
+<rect x="250" y="158" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>256x256x256 library_cublas_gemm 3.27 TFLOP/s; row min 0.82, row max 3.27</title></rect>
+<text x="262" y="175" class="num" fill="#111827">3.27</text>
+<rect x="362" y="158" width="104" height="24" rx="3" fill="#c5c7ba" stroke="#111827" stroke-width="0"><title>256x256x256 v1 1.77 TFLOP/s; row min 0.82, row max 3.27</title></rect>
+<text x="374" y="175" class="num" fill="#111827">1.77</text>
+<rect x="474" y="158" width="104" height="24" rx="3" fill="#c6aa8e" stroke="#111827" stroke-width="0"><title>256x256x256 v2 2.34 TFLOP/s; row min 0.82, row max 3.27</title></rect>
+<text x="486" y="175" class="num" fill="#111827">2.34</text>
+<rect x="586" y="158" width="104" height="24" rx="3" fill="#bebda9" stroke="#111827" stroke-width="0"><title>256x256x256 v3 2.05 TFLOP/s; row min 0.82, row max 3.27</title></rect>
+<text x="598" y="175" class="num" fill="#111827">2.05</text>
+<rect x="698" y="158" width="104" height="24" rx="3" fill="#c6aa8e" stroke="#111827" stroke-width="0"><title>256x256x256 v4 2.34 TFLOP/s; row min 0.82, row max 3.27</title></rect>
+<text x="710" y="175" class="num" fill="#111827">2.34</text>
+<rect x="810" y="158" width="104" height="24" rx="3" fill="#bebda9" stroke="#111827" stroke-width="0"><title>256x256x256 v5 2.05 TFLOP/s; row min 0.82, row max 3.27</title></rect>
+<text x="822" y="175" class="num" fill="#111827">2.05</text>
+<rect x="922" y="158" width="104" height="24" rx="3" fill="#d19169" stroke="#111827" stroke-width="0"><title>256x256x256 v6 2.73 TFLOP/s; row min 0.82, row max 3.27</title></rect>
+<text x="934" y="175" class="num" fill="#111827">2.73</text>
+<rect x="1034" y="158" width="104" height="24" rx="3" fill="#d9e0e4" stroke="#111827" stroke-width="0"><title>256x256x256 v7 1.08 TFLOP/s; row min 0.82, row max 3.27</title></rect>
+<text x="1046" y="175" class="num" fill="#111827">1.08</text>
+<rect x="1146" y="158" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>256x256x256 v8 0.82 TFLOP/s; row min 0.82, row max 3.27</title></rect>
+<text x="1158" y="175" class="num" fill="#111827">0.82</text>
+<rect x="1258" y="158" width="104" height="24" rx="3" fill="#d6ddde" stroke="#111827" stroke-width="0"><title>256x256x256 v9 1.17 TFLOP/s; row min 0.82, row max 3.27</title></rect>
+<text x="1270" y="175" class="num" fill="#111827">1.17</text>
+<text x="1378" y="177" class="small muted">best cublas</text>
+<rect x="20" y="189" width="1620" height="34" fill="#f8fafc"/>
+<text x="30" y="211" class="label">256x512x256</text>
+<rect x="250" y="192" width="104" height="24" rx="3" fill="#d28e66" stroke="#111827" stroke-width="0"><title>256x512x256 library_cublas_gemm 4.67 TFLOP/s; row min 1.64, row max 5.46</title></rect>
+<text x="262" y="209" class="num" fill="#111827">4.67</text>
+<rect x="362" y="192" width="104" height="24" rx="3" fill="#d9e0e4" stroke="#111827" stroke-width="0"><title>256x512x256 v1 2.05 TFLOP/s; row min 1.64, row max 5.46</title></rect>
+<text x="374" y="209" class="num" fill="#111827">2.05</text>
+<rect x="474" y="192" width="104" height="24" rx="3" fill="#d0946e" stroke="#111827" stroke-width="0"><title>256x512x256 v2 4.53 TFLOP/s; row min 1.64, row max 5.46</title></rect>
+<text x="486" y="209" class="num" fill="#111827">4.53</text>
+<rect x="586" y="192" width="104" height="24" rx="3" fill="#c7a88a" stroke="#111827" stroke-width="0"><title>256x512x256 v3 4.07 TFLOP/s; row min 1.64, row max 5.46</title></rect>
+<text x="598" y="209" class="num" fill="#111827">4.07</text>
+<rect x="698" y="192" width="104" height="24" rx="3" fill="#d19068" stroke="#111827" stroke-width="0"><title>256x512x256 v4 4.64 TFLOP/s; row min 1.64, row max 5.46</title></rect>
+<text x="710" y="209" class="num" fill="#111827">4.64</text>
+<rect x="810" y="192" width="104" height="24" rx="3" fill="#c8a789" stroke="#111827" stroke-width="0"><title>256x512x256 v5 4.09 TFLOP/s; row min 1.64, row max 5.46</title></rect>
+<text x="822" y="209" class="num" fill="#111827">4.09</text>
+<rect x="922" y="192" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>256x512x256 v6 5.46 TFLOP/s; row min 1.64, row max 5.46</title></rect>
+<text x="934" y="209" class="num" fill="#111827">5.46</text>
+<rect x="1034" y="192" width="104" height="24" rx="3" fill="#d6ddde" stroke="#111827" stroke-width="0"><title>256x512x256 v7 2.18 TFLOP/s; row min 1.64, row max 5.46</title></rect>
+<text x="1046" y="209" class="num" fill="#111827">2.18</text>
+<rect x="1146" y="192" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>256x512x256 v8 1.64 TFLOP/s; row min 1.64, row max 5.46</title></rect>
+<text x="1158" y="209" class="num" fill="#111827">1.64</text>
+<rect x="1258" y="192" width="104" height="24" rx="3" fill="#d4dad9" stroke="#111827" stroke-width="0"><title>256x512x256 v9 2.31 TFLOP/s; row min 1.64, row max 5.46</title></rect>
+<text x="1270" y="209" class="num" fill="#111827">2.31</text>
+<text x="1378" y="211" class="small muted">best v6</text>
+<text x="30" y="245" class="label">512x256x256</text>
+<rect x="250" y="226" width="104" height="24" rx="3" fill="#d28e66" stroke="#111827" stroke-width="0"><title>512x256x256 library_cublas_gemm 4.68 TFLOP/s; row min 1.64, row max 5.46</title></rect>
+<text x="262" y="243" class="num" fill="#111827">4.68</text>
+<rect x="362" y="226" width="104" height="24" rx="3" fill="#d9e0e4" stroke="#111827" stroke-width="0"><title>512x256x256 v1 2.05 TFLOP/s; row min 1.64, row max 5.46</title></rect>
+<text x="374" y="243" class="num" fill="#111827">2.05</text>
+<rect x="474" y="226" width="104" height="24" rx="3" fill="#d28e65" stroke="#111827" stroke-width="0"><title>512x256x256 v2 4.68 TFLOP/s; row min 1.64, row max 5.46</title></rect>
+<text x="486" y="243" class="num" fill="#111827">4.68</text>
+<rect x="586" y="226" width="104" height="24" rx="3" fill="#c7a789" stroke="#111827" stroke-width="0"><title>512x256x256 v3 4.09 TFLOP/s; row min 1.64, row max 5.46</title></rect>
+<text x="598" y="243" class="num" fill="#111827">4.09</text>
+<rect x="698" y="226" width="104" height="24" rx="3" fill="#d28e65" stroke="#111827" stroke-width="0"><title>512x256x256 v4 4.68 TFLOP/s; row min 1.64, row max 5.46</title></rect>
+<text x="710" y="243" class="num" fill="#111827">4.68</text>
+<rect x="810" y="226" width="104" height="24" rx="3" fill="#c8a789" stroke="#111827" stroke-width="0"><title>512x256x256 v5 4.09 TFLOP/s; row min 1.64, row max 5.46</title></rect>
+<text x="822" y="243" class="num" fill="#111827">4.09</text>
+<rect x="922" y="226" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>512x256x256 v6 5.46 TFLOP/s; row min 1.64, row max 5.46</title></rect>
+<text x="934" y="243" class="num" fill="#111827">5.46</text>
+<rect x="1034" y="226" width="104" height="24" rx="3" fill="#d6ddde" stroke="#111827" stroke-width="0"><title>512x256x256 v7 2.18 TFLOP/s; row min 1.64, row max 5.46</title></rect>
+<text x="1046" y="243" class="num" fill="#111827">2.18</text>
+<rect x="1146" y="226" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>512x256x256 v8 1.64 TFLOP/s; row min 1.64, row max 5.46</title></rect>
+<text x="1158" y="243" class="num" fill="#111827">1.64</text>
+<rect x="1258" y="226" width="104" height="24" rx="3" fill="#d4d9d8" stroke="#111827" stroke-width="0"><title>512x256x256 v9 2.34 TFLOP/s; row min 1.64, row max 5.46</title></rect>
+<text x="1270" y="243" class="num" fill="#111827">2.34</text>
+<text x="1378" y="245" class="small muted">best v6</text>
+<rect x="20" y="257" width="1620" height="34" fill="#f8fafc"/>
+<text x="30" y="279" class="label">256x768x256</text>
+<rect x="250" y="260" width="104" height="24" rx="3" fill="#ced2cc" stroke="#111827" stroke-width="0"><title>256x768x256 library_cublas_gemm 3.79 TFLOP/s; row min 2.20, row max 8.18</title></rect>
+<text x="262" y="277" class="num" fill="#111827">3.79</text>
+<rect x="362" y="260" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>256x768x256 v1 2.20 TFLOP/s; row min 2.20, row max 8.18</title></rect>
+<text x="374" y="277" class="num" fill="#111827">2.20</text>
+<rect x="474" y="260" width="104" height="24" rx="3" fill="#d38d64" stroke="#111827" stroke-width="0"><title>256x768x256 v2 7.01 TFLOP/s; row min 2.20, row max 8.18</title></rect>
+<text x="486" y="277" class="num" fill="#111827">7.01</text>
+<rect x="586" y="260" width="104" height="24" rx="3" fill="#c9a485" stroke="#111827" stroke-width="0"><title>256x768x256 v3 6.14 TFLOP/s; row min 2.20, row max 8.18</title></rect>
+<text x="598" y="277" class="num" fill="#111827">6.14</text>
+<rect x="698" y="260" width="104" height="24" rx="3" fill="#d38d63" stroke="#111827" stroke-width="0"><title>256x768x256 v4 7.02 TFLOP/s; row min 2.20, row max 8.18</title></rect>
+<text x="710" y="277" class="num" fill="#111827">7.02</text>
+<rect x="810" y="260" width="104" height="24" rx="3" fill="#c9a485" stroke="#111827" stroke-width="0"><title>256x768x256 v5 6.14 TFLOP/s; row min 2.20, row max 8.18</title></rect>
+<text x="822" y="277" class="num" fill="#111827">6.14</text>
+<rect x="922" y="260" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>256x768x256 v6 8.18 TFLOP/s; row min 2.20, row max 8.18</title></rect>
+<text x="934" y="277" class="num" fill="#111827">8.18</text>
+<rect x="1034" y="260" width="104" height="24" rx="3" fill="#d4dad9" stroke="#111827" stroke-width="0"><title>256x768x256 v7 3.28 TFLOP/s; row min 2.20, row max 8.18</title></rect>
+<text x="1046" y="277" class="num" fill="#111827">3.28</text>
+<rect x="1146" y="260" width="104" height="24" rx="3" fill="#dee6ee" stroke="#111827" stroke-width="0"><title>256x768x256 v8 2.43 TFLOP/s; row min 2.20, row max 8.18</title></rect>
+<text x="1158" y="277" class="num" fill="#111827">2.43</text>
+<rect x="1258" y="260" width="104" height="24" rx="3" fill="#d1d6d3" stroke="#111827" stroke-width="0"><title>256x768x256 v9 3.51 TFLOP/s; row min 2.20, row max 8.18</title></rect>
+<text x="1270" y="277" class="num" fill="#111827">3.51</text>
+<text x="1378" y="279" class="small muted">best v6</text>
+<text x="30" y="313" class="label">768x256x256</text>
+<rect x="250" y="294" width="104" height="24" rx="3" fill="#c9a485" stroke="#111827" stroke-width="0"><title>768x256x256 library_cublas_gemm 6.15 TFLOP/s; row min 2.18, row max 8.19</title></rect>
+<text x="262" y="311" class="num" fill="#111827">6.15</text>
+<rect x="362" y="294" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>768x256x256 v1 2.18 TFLOP/s; row min 2.18, row max 8.19</title></rect>
+<text x="374" y="311" class="num" fill="#111827">2.18</text>
+<rect x="474" y="294" width="104" height="24" rx="3" fill="#d38d63" stroke="#111827" stroke-width="0"><title>768x256x256 v2 7.02 TFLOP/s; row min 2.18, row max 8.19</title></rect>
+<text x="486" y="311" class="num" fill="#111827">7.02</text>
+<rect x="586" y="294" width="104" height="24" rx="3" fill="#c9a485" stroke="#111827" stroke-width="0"><title>768x256x256 v3 6.14 TFLOP/s; row min 2.18, row max 8.19</title></rect>
+<text x="598" y="311" class="num" fill="#111827">6.14</text>
+<rect x="698" y="294" width="104" height="24" rx="3" fill="#d38d63" stroke="#111827" stroke-width="0"><title>768x256x256 v4 7.02 TFLOP/s; row min 2.18, row max 8.19</title></rect>
+<text x="710" y="311" class="num" fill="#111827">7.02</text>
+<rect x="810" y="294" width="104" height="24" rx="3" fill="#c9a485" stroke="#111827" stroke-width="0"><title>768x256x256 v5 6.14 TFLOP/s; row min 2.18, row max 8.19</title></rect>
+<text x="822" y="311" class="num" fill="#111827">6.14</text>
+<rect x="922" y="294" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>768x256x256 v6 8.19 TFLOP/s; row min 2.18, row max 8.19</title></rect>
+<text x="934" y="311" class="num" fill="#111827">8.19</text>
+<rect x="1034" y="294" width="104" height="24" rx="3" fill="#d4d9d9" stroke="#111827" stroke-width="0"><title>768x256x256 v7 3.28 TFLOP/s; row min 2.18, row max 8.19</title></rect>
+<text x="1046" y="311" class="num" fill="#111827">3.28</text>
+<rect x="1146" y="294" width="104" height="24" rx="3" fill="#dde6ed" stroke="#111827" stroke-width="0"><title>768x256x256 v8 2.46 TFLOP/s; row min 2.18, row max 8.19</title></rect>
+<text x="1158" y="311" class="num" fill="#111827">2.46</text>
+<rect x="1258" y="294" width="104" height="24" rx="3" fill="#d1d6d3" stroke="#111827" stroke-width="0"><title>768x256x256 v9 3.51 TFLOP/s; row min 2.18, row max 8.19</title></rect>
+<text x="1270" y="311" class="num" fill="#111827">3.51</text>
+<text x="1378" y="313" class="small muted">best v6</text>
+<rect x="20" y="325" width="1620" height="34" fill="#f8fafc"/>
+<text x="30" y="347" class="label">384x384x384</text>
+<rect x="250" y="328" width="104" height="24" rx="3" fill="#d68659" stroke="#111827" stroke-width="0"><title>384x384x384 library_cublas_gemm 6.17 TFLOP/s; row min 2.05, row max 6.91</title></rect>
+<text x="262" y="345" class="num" fill="#111827">6.17</text>
+<rect x="362" y="328" width="104" height="24" rx="3" fill="#dee6ee" stroke="#111827" stroke-width="0"><title>384x384x384 v1 2.23 TFLOP/s; row min 2.05, row max 6.91</title></rect>
+<text x="374" y="345" class="num" fill="#111827">2.23</text>
+<rect x="474" y="328" width="104" height="24" rx="3" fill="#cd9b78" stroke="#111827" stroke-width="0"><title>384x384x384 v2 5.53 TFLOP/s; row min 2.05, row max 6.91</title></rect>
+<text x="486" y="345" class="num" fill="#111827">5.53</text>
+<rect x="586" y="328" width="104" height="24" rx="3" fill="#bfb9a3" stroke="#111827" stroke-width="0"><title>384x384x384 v3 4.61 TFLOP/s; row min 2.05, row max 6.91</title></rect>
+<text x="598" y="345" class="num" fill="#111827">4.61</text>
+<rect x="698" y="328" width="104" height="24" rx="3" fill="#cd9b78" stroke="#111827" stroke-width="0"><title>384x384x384 v4 5.53 TFLOP/s; row min 2.05, row max 6.91</title></rect>
+<text x="710" y="345" class="num" fill="#111827">5.53</text>
+<rect x="810" y="328" width="104" height="24" rx="3" fill="#c5ac90" stroke="#111827" stroke-width="0"><title>384x384x384 v5 5.02 TFLOP/s; row min 2.05, row max 6.91</title></rect>
+<text x="822" y="345" class="num" fill="#111827">5.02</text>
+<rect x="922" y="328" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>384x384x384 v6 6.91 TFLOP/s; row min 2.05, row max 6.91</title></rect>
+<text x="934" y="345" class="num" fill="#111827">6.91</text>
+<rect x="1034" y="328" width="104" height="24" rx="3" fill="#d8dfe2" stroke="#111827" stroke-width="0"><title>384x384x384 v7 2.63 TFLOP/s; row min 2.05, row max 6.91</title></rect>
+<text x="1046" y="345" class="num" fill="#111827">2.63</text>
+<rect x="1146" y="328" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>384x384x384 v8 2.05 TFLOP/s; row min 2.05, row max 6.91</title></rect>
+<text x="1158" y="345" class="num" fill="#111827">2.05</text>
+<rect x="1258" y="328" width="104" height="24" rx="3" fill="#d4dad9" stroke="#111827" stroke-width="0"><title>384x384x384 v9 2.91 TFLOP/s; row min 2.05, row max 6.91</title></rect>
+<text x="1270" y="345" class="num" fill="#111827">2.91</text>
+<text x="1378" y="347" class="small muted">best v6</text>
+<text x="30" y="381" class="label">512x512x256</text>
+<rect x="250" y="362" width="104" height="24" rx="3" fill="#e06e37" stroke="#111827" stroke-width="0"><title>512x512x256 library_cublas_gemm 7.27 TFLOP/s; row min 2.24, row max 7.28</title></rect>
+<text x="262" y="379" class="num" fill="#111827">7.27</text>
+<rect x="362" y="362" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>512x512x256 v1 2.24 TFLOP/s; row min 2.24, row max 7.28</title></rect>
+<text x="374" y="379" class="num" fill="#111827">2.24</text>
+<rect x="474" y="362" width="104" height="24" rx="3" fill="#ce9773" stroke="#111827" stroke-width="0"><title>512x512x256 v2 5.96 TFLOP/s; row min 2.24, row max 7.28</title></rect>
+<text x="486" y="379" class="num" fill="#111827">5.96</text>
+<rect x="586" y="362" width="104" height="24" rx="3" fill="#bfbfac" stroke="#111827" stroke-width="0"><title>512x512x256 v3 4.68 TFLOP/s; row min 2.24, row max 7.28</title></rect>
+<text x="598" y="379" class="num" fill="#111827">4.68</text>
+<rect x="698" y="362" width="104" height="24" rx="3" fill="#ce9773" stroke="#111827" stroke-width="0"><title>512x512x256 v4 5.96 TFLOP/s; row min 2.24, row max 7.28</title></rect>
+<text x="710" y="379" class="num" fill="#111827">5.96</text>
+<rect x="810" y="362" width="104" height="24" rx="3" fill="#c1b59d" stroke="#111827" stroke-width="0"><title>512x512x256 v5 5.04 TFLOP/s; row min 2.24, row max 7.28</title></rect>
+<text x="822" y="379" class="num" fill="#111827">5.04</text>
+<rect x="922" y="362" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>512x512x256 v6 7.28 TFLOP/s; row min 2.24, row max 7.28</title></rect>
+<text x="934" y="379" class="num" fill="#111827">7.28</text>
+<rect x="1034" y="362" width="104" height="24" rx="3" fill="#c3c4b5" stroke="#111827" stroke-width="0"><title>512x512x256 v7 4.37 TFLOP/s; row min 2.24, row max 7.28</title></rect>
+<text x="1046" y="379" class="num" fill="#111827">4.37</text>
+<rect x="1146" y="362" width="104" height="24" rx="3" fill="#d2d7d5" stroke="#111827" stroke-width="0"><title>512x512x256 v8 3.28 TFLOP/s; row min 2.24, row max 7.28</title></rect>
+<text x="1158" y="379" class="num" fill="#111827">3.28</text>
+<rect x="1258" y="362" width="104" height="24" rx="3" fill="#bfbfac" stroke="#111827" stroke-width="0"><title>512x512x256 v9 4.68 TFLOP/s; row min 2.24, row max 7.28</title></rect>
+<text x="1270" y="379" class="num" fill="#111827">4.68</text>
+<text x="1378" y="381" class="small muted">best v6</text>
+<rect x="20" y="393" width="1620" height="34" fill="#f8fafc"/>
+<text x="30" y="415" class="label">512x768x256</text>
+<rect x="250" y="396" width="104" height="24" rx="3" fill="#ced2cc" stroke="#111827" stroke-width="0"><title>512x768x256 library_cublas_gemm 4.63 TFLOP/s; row min 2.37, row max 10.92</title></rect>
+<text x="262" y="413" class="num" fill="#111827">4.63</text>
+<rect x="362" y="396" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>512x768x256 v1 2.37 TFLOP/s; row min 2.37, row max 10.92</title></rect>
+<text x="374" y="413" class="num" fill="#111827">2.37</text>
+<rect x="474" y="396" width="104" height="24" rx="3" fill="#d0936c" stroke="#111827" stroke-width="0"><title>512x768x256 v2 8.94 TFLOP/s; row min 2.37, row max 10.92</title></rect>
+<text x="486" y="413" class="num" fill="#111827">8.94</text>
+<rect x="586" y="396" width="104" height="24" rx="3" fill="#c1b69f" stroke="#111827" stroke-width="0"><title>512x768x256 v3 7.02 TFLOP/s; row min 2.37, row max 10.92</title></rect>
+<text x="598" y="413" class="num" fill="#111827">7.02</text>
+<rect x="698" y="396" width="104" height="24" rx="3" fill="#d0936c" stroke="#111827" stroke-width="0"><title>512x768x256 v4 8.94 TFLOP/s; row min 2.37, row max 10.92</title></rect>
+<text x="710" y="413" class="num" fill="#111827">8.94</text>
+<rect x="810" y="396" width="104" height="24" rx="3" fill="#c5ac91" stroke="#111827" stroke-width="0"><title>512x768x256 v5 7.56 TFLOP/s; row min 2.37, row max 10.92</title></rect>
+<text x="822" y="413" class="num" fill="#111827">7.56</text>
+<rect x="922" y="396" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>512x768x256 v6 10.92 TFLOP/s; row min 2.37, row max 10.92</title></rect>
+<text x="934" y="413" class="num" fill="#111827">10.92</text>
+<rect x="1034" y="396" width="104" height="24" rx="3" fill="#bebeab" stroke="#111827" stroke-width="0"><title>512x768x256 v7 6.55 TFLOP/s; row min 2.37, row max 10.92</title></rect>
+<text x="1046" y="413" class="num" fill="#111827">6.55</text>
+<rect x="1146" y="396" width="104" height="24" rx="3" fill="#ccd0c8" stroke="#111827" stroke-width="0"><title>512x768x256 v8 4.86 TFLOP/s; row min 2.37, row max 10.92</title></rect>
+<text x="1158" y="413" class="num" fill="#111827">4.86</text>
+<rect x="1258" y="396" width="104" height="24" rx="3" fill="#bfbfac" stroke="#111827" stroke-width="0"><title>512x768x256 v9 6.51 TFLOP/s; row min 2.37, row max 10.92</title></rect>
+<text x="1270" y="413" class="num" fill="#111827">6.51</text>
+<text x="1378" y="415" class="small muted">best v6</text>
+<text x="30" y="449" class="label">768x512x256</text>
+<rect x="250" y="430" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>768x512x256 library_cublas_gemm 12.28 TFLOP/s; row min 2.36, row max 12.28</title></rect>
+<text x="262" y="447" class="num" fill="#111827">12.28</text>
+<rect x="362" y="430" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>768x512x256 v1 2.36 TFLOP/s; row min 2.36, row max 12.28</title></rect>
+<text x="374" y="447" class="num" fill="#111827">2.36</text>
+<rect x="474" y="430" width="104" height="24" rx="3" fill="#c9a384" stroke="#111827" stroke-width="0"><title>768x512x256 v2 8.94 TFLOP/s; row min 2.36, row max 12.28</title></rect>
+<text x="486" y="447" class="num" fill="#111827">8.94</text>
+<rect x="586" y="430" width="104" height="24" rx="3" fill="#c0c0ae" stroke="#111827" stroke-width="0"><title>768x512x256 v3 7.01 TFLOP/s; row min 2.36, row max 12.28</title></rect>
+<text x="598" y="447" class="num" fill="#111827">7.01</text>
+<rect x="698" y="430" width="104" height="24" rx="3" fill="#c9a384" stroke="#111827" stroke-width="0"><title>768x512x256 v4 8.94 TFLOP/s; row min 2.36, row max 12.28</title></rect>
+<text x="710" y="447" class="num" fill="#111827">8.94</text>
+<rect x="810" y="430" width="104" height="24" rx="3" fill="#bfbaa4" stroke="#111827" stroke-width="0"><title>768x512x256 v5 7.56 TFLOP/s; row min 2.36, row max 12.28</title></rect>
+<text x="822" y="447" class="num" fill="#111827">7.56</text>
+<rect x="922" y="430" width="104" height="24" rx="3" fill="#d78456" stroke="#111827" stroke-width="0"><title>768x512x256 v6 10.91 TFLOP/s; row min 2.36, row max 12.28</title></rect>
+<text x="934" y="447" class="num" fill="#111827">10.91</text>
+<rect x="1034" y="430" width="104" height="24" rx="3" fill="#c3c4b5" stroke="#111827" stroke-width="0"><title>768x512x256 v7 6.55 TFLOP/s; row min 2.36, row max 12.28</title></rect>
+<text x="1046" y="447" class="num" fill="#111827">6.55</text>
+<rect x="1146" y="430" width="104" height="24" rx="3" fill="#ced3cd" stroke="#111827" stroke-width="0"><title>768x512x256 v8 4.91 TFLOP/s; row min 2.36, row max 12.28</title></rect>
+<text x="1158" y="447" class="num" fill="#111827">4.91</text>
+<rect x="1258" y="430" width="104" height="24" rx="3" fill="#c3c4b5" stroke="#111827" stroke-width="0"><title>768x512x256 v9 6.55 TFLOP/s; row min 2.36, row max 12.28</title></rect>
+<text x="1270" y="447" class="num" fill="#111827">6.55</text>
+<text x="1378" y="449" class="small muted">best cublas</text>
+<rect x="20" y="461" width="1620" height="34" fill="#f8fafc"/>
+<text x="30" y="483" class="label">512x896x256</text>
+<rect x="250" y="464" width="104" height="24" rx="3" fill="#c9cbc1" stroke="#111827" stroke-width="0"><title>512x896x256 library_cublas_gemm 4.56 TFLOP/s; row min 2.34, row max 8.82</title></rect>
+<text x="262" y="481" class="num" fill="#111827">4.56</text>
+<rect x="362" y="464" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>512x896x256 v1 2.34 TFLOP/s; row min 2.34, row max 8.82</title></rect>
+<text x="374" y="481" class="num" fill="#111827">2.34</text>
+<rect x="474" y="464" width="104" height="24" rx="3" fill="#cf9671" stroke="#111827" stroke-width="0"><title>512x896x256 v2 7.18 TFLOP/s; row min 2.34, row max 8.82</title></rect>
+<text x="486" y="481" class="num" fill="#111827">7.18</text>
+<rect x="586" y="464" width="104" height="24" rx="3" fill="#c1b59d" stroke="#111827" stroke-width="0"><title>512x896x256 v3 5.93 TFLOP/s; row min 2.34, row max 8.82</title></rect>
+<text x="598" y="481" class="num" fill="#111827">5.93</text>
+<rect x="698" y="464" width="104" height="24" rx="3" fill="#d48b61" stroke="#111827" stroke-width="0"><title>512x896x256 v4 7.62 TFLOP/s; row min 2.34, row max 8.82</title></rect>
+<text x="710" y="481" class="num" fill="#111827">7.62</text>
+<rect x="810" y="464" width="104" height="24" rx="3" fill="#c6aa8e" stroke="#111827" stroke-width="0"><title>512x896x256 v5 6.37 TFLOP/s; row min 2.34, row max 8.82</title></rect>
+<text x="822" y="481" class="num" fill="#111827">6.37</text>
+<rect x="922" y="464" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>512x896x256 v6 8.82 TFLOP/s; row min 2.34, row max 8.82</title></rect>
+<text x="934" y="481" class="num" fill="#111827">8.82</text>
+<rect x="1034" y="464" width="104" height="24" rx="3" fill="#d48b60" stroke="#111827" stroke-width="0"><title>512x896x256 v7 7.64 TFLOP/s; row min 2.34, row max 8.82</title></rect>
+<text x="1046" y="481" class="num" fill="#111827">7.64</text>
+<rect x="1146" y="464" width="104" height="24" rx="3" fill="#bebca7" stroke="#111827" stroke-width="0"><title>512x896x256 v8 5.64 TFLOP/s; row min 2.34, row max 8.82</title></rect>
+<text x="1158" y="481" class="num" fill="#111827">5.64</text>
+<rect x="1258" y="464" width="104" height="24" rx="3" fill="#c7c9be" stroke="#111827" stroke-width="0"><title>512x896x256 v9 4.70 TFLOP/s; row min 2.34, row max 8.82</title></rect>
+<text x="1270" y="481" class="num" fill="#111827">4.70</text>
+<text x="1378" y="483" class="small muted">best v6</text>
+<text x="30" y="517" class="label">896x512x256</text>
+<rect x="250" y="498" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>896x512x256 library_cublas_gemm 8.92 TFLOP/s; row min 2.34, row max 8.92</title></rect>
+<text x="262" y="515" class="num" fill="#111827">8.92</text>
+<rect x="362" y="498" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>896x512x256 v1 2.34 TFLOP/s; row min 2.34, row max 8.92</title></rect>
+<text x="374" y="515" class="num" fill="#111827">2.34</text>
+<rect x="474" y="498" width="104" height="24" rx="3" fill="#cf9671" stroke="#111827" stroke-width="0"><title>896x512x256 v2 7.25 TFLOP/s; row min 2.34, row max 8.92</title></rect>
+<text x="486" y="515" class="num" fill="#111827">7.25</text>
+<rect x="586" y="498" width="104" height="24" rx="3" fill="#c1b59d" stroke="#111827" stroke-width="0"><title>896x512x256 v3 5.98 TFLOP/s; row min 2.34, row max 8.92</title></rect>
+<text x="598" y="515" class="num" fill="#111827">5.98</text>
+<rect x="698" y="498" width="104" height="24" rx="3" fill="#d0946e" stroke="#111827" stroke-width="0"><title>896x512x256 v4 7.35 TFLOP/s; row min 2.34, row max 8.92</title></rect>
+<text x="710" y="515" class="num" fill="#111827">7.35</text>
+<rect x="810" y="498" width="104" height="24" rx="3" fill="#c5ac90" stroke="#111827" stroke-width="0"><title>896x512x256 v5 6.37 TFLOP/s; row min 2.34, row max 8.92</title></rect>
+<text x="822" y="515" class="num" fill="#111827">6.37</text>
+<rect x="922" y="498" width="104" height="24" rx="3" fill="#df703a" stroke="#111827" stroke-width="0"><title>896x512x256 v6 8.82 TFLOP/s; row min 2.34, row max 8.92</title></rect>
+<text x="934" y="515" class="num" fill="#111827">8.82</text>
+<rect x="1034" y="498" width="104" height="24" rx="3" fill="#d38d63" stroke="#111827" stroke-width="0"><title>896x512x256 v7 7.64 TFLOP/s; row min 2.34, row max 8.92</title></rect>
+<text x="1046" y="515" class="num" fill="#111827">7.64</text>
+<rect x="1146" y="498" width="104" height="24" rx="3" fill="#bfbba6" stroke="#111827" stroke-width="0"><title>896x512x256 v8 5.73 TFLOP/s; row min 2.34, row max 8.92</title></rect>
+<text x="1158" y="515" class="num" fill="#111827">5.73</text>
+<rect x="1258" y="498" width="104" height="24" rx="3" fill="#c7cabf" stroke="#111827" stroke-width="0"><title>896x512x256 v9 4.69 TFLOP/s; row min 2.34, row max 8.92</title></rect>
+<text x="1270" y="515" class="num" fill="#111827">4.69</text>
+<text x="1378" y="517" class="small muted">best cublas</text>
+<rect x="20" y="529" width="1620" height="34" fill="#f8fafc"/>
+<text x="30" y="551" class="label">512x512x512</text>
+<rect x="250" y="532" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>512x512x512 library_cublas_gemm 10.08 TFLOP/s; row min 2.31, row max 10.08</title></rect>
+<text x="262" y="549" class="num" fill="#111827">10.08</text>
+<rect x="362" y="532" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>512x512x512 v1 2.31 TFLOP/s; row min 2.31, row max 10.08</title></rect>
+<text x="374" y="549" class="num" fill="#111827">2.31</text>
+<rect x="474" y="532" width="104" height="24" rx="3" fill="#c1b69f" stroke="#111827" stroke-width="0"><title>512x512x512 v2 6.56 TFLOP/s; row min 2.31, row max 10.08</title></rect>
+<text x="486" y="549" class="num" fill="#111827">6.56</text>
+<rect x="586" y="532" width="104" height="24" rx="3" fill="#c7cabe" stroke="#111827" stroke-width="0"><title>512x512x512 v3 5.09 TFLOP/s; row min 2.31, row max 10.08</title></rect>
+<text x="598" y="549" class="num" fill="#111827">5.09</text>
+<rect x="698" y="532" width="104" height="24" rx="3" fill="#c3b198" stroke="#111827" stroke-width="0"><title>512x512x512 v4 6.78 TFLOP/s; row min 2.31, row max 10.08</title></rect>
+<text x="710" y="549" class="num" fill="#111827">6.78</text>
+<rect x="810" y="532" width="104" height="24" rx="3" fill="#c4c6b8" stroke="#111827" stroke-width="0"><title>512x512x512 v5 5.46 TFLOP/s; row min 2.31, row max 10.08</title></rect>
+<text x="822" y="549" class="num" fill="#111827">5.46</text>
+<rect x="922" y="532" width="104" height="24" rx="3" fill="#cf946e" stroke="#111827" stroke-width="0"><title>512x512x512 v6 8.19 TFLOP/s; row min 2.31, row max 10.08</title></rect>
+<text x="934" y="549" class="num" fill="#111827">8.19</text>
+<rect x="1034" y="532" width="104" height="24" rx="3" fill="#cbcfc6" stroke="#111827" stroke-width="0"><title>512x512x512 v7 4.68 TFLOP/s; row min 2.31, row max 10.08</title></rect>
+<text x="1046" y="549" class="num" fill="#111827">4.68</text>
+<rect x="1146" y="532" width="104" height="24" rx="3" fill="#d2d7d4" stroke="#111827" stroke-width="0"><title>512x512x512 v8 3.97 TFLOP/s; row min 2.31, row max 10.08</title></rect>
+<text x="1158" y="549" class="num" fill="#111827">3.97</text>
+<rect x="1258" y="532" width="104" height="24" rx="3" fill="#c2c3b3" stroke="#111827" stroke-width="0"><title>512x512x512 v9 5.70 TFLOP/s; row min 2.31, row max 10.08</title></rect>
+<text x="1270" y="549" class="num" fill="#111827">5.70</text>
+<text x="1378" y="551" class="small muted">best cublas</text>
+<text x="30" y="585" class="label">768x768x384</text>
+<rect x="250" y="566" width="104" height="24" rx="3" fill="#ccd0c9" stroke="#111827" stroke-width="0"><title>768x768x384 library_cublas_gemm 5.26 TFLOP/s; row min 2.43, row max 12.28</title></rect>
+<text x="262" y="583" class="num" fill="#111827">5.26</text>
+<rect x="362" y="566" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>768x768x384 v1 2.43 TFLOP/s; row min 2.43, row max 12.28</title></rect>
+<text x="374" y="583" class="num" fill="#111827">2.43</text>
+<rect x="474" y="566" width="104" height="24" rx="3" fill="#d1926b" stroke="#111827" stroke-width="0"><title>768x768x384 v2 10.05 TFLOP/s; row min 2.43, row max 12.28</title></rect>
+<text x="486" y="583" class="num" fill="#111827">10.05</text>
+<rect x="586" y="566" width="104" height="24" rx="3" fill="#c1b59d" stroke="#111827" stroke-width="0"><title>768x768x384 v3 7.90 TFLOP/s; row min 2.43, row max 12.28</title></rect>
+<text x="598" y="583" class="num" fill="#111827">7.90</text>
+<rect x="698" y="566" width="104" height="24" rx="3" fill="#d1926b" stroke="#111827" stroke-width="0"><title>768x768x384 v4 10.05 TFLOP/s; row min 2.43, row max 12.28</title></rect>
+<text x="710" y="583" class="num" fill="#111827">10.05</text>
+<rect x="810" y="566" width="104" height="24" rx="3" fill="#c6ab8f" stroke="#111827" stroke-width="0"><title>768x768x384 v5 8.51 TFLOP/s; row min 2.43, row max 12.28</title></rect>
+<text x="822" y="583" class="num" fill="#111827">8.51</text>
+<rect x="922" y="566" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>768x768x384 v6 12.28 TFLOP/s; row min 2.43, row max 12.28</title></rect>
+<text x="934" y="583" class="num" fill="#111827">12.28</text>
+<rect x="1034" y="566" width="104" height="24" rx="3" fill="#d1926a" stroke="#111827" stroke-width="0"><title>768x768x384 v7 10.06 TFLOP/s; row min 2.43, row max 12.28</title></rect>
+<text x="1046" y="583" class="num" fill="#111827">10.06</text>
+<rect x="1146" y="566" width="104" height="24" rx="3" fill="#bfb9a3" stroke="#111827" stroke-width="0"><title>768x768x384 v8 7.63 TFLOP/s; row min 2.43, row max 12.28</title></rect>
+<text x="1158" y="583" class="num" fill="#111827">7.63</text>
+<rect x="1258" y="566" width="104" height="24" rx="3" fill="#c3c4b5" stroke="#111827" stroke-width="0"><title>768x768x384 v9 6.62 TFLOP/s; row min 2.43, row max 12.28</title></rect>
+<text x="1270" y="583" class="num" fill="#111827">6.62</text>
+<text x="1378" y="585" class="small muted">best v6</text>
+<rect x="20" y="597" width="1620" height="34" fill="#f8fafc"/>
+<text x="30" y="619" class="label">640x640x640</text>
+<rect x="250" y="600" width="104" height="24" rx="3" fill="#c0c0ae" stroke="#111827" stroke-width="0"><title>640x640x640 library_cublas_gemm 5.45 TFLOP/s; row min 2.39, row max 8.92</title></rect>
+<text x="262" y="617" class="num" fill="#111827">5.45</text>
+<rect x="362" y="600" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>640x640x640 v1 2.39 TFLOP/s; row min 2.39, row max 8.92</title></rect>
+<text x="374" y="617" class="num" fill="#111827">2.39</text>
+<rect x="474" y="600" width="104" height="24" rx="3" fill="#cf9671" stroke="#111827" stroke-width="0"><title>640x640x640 v2 7.26 TFLOP/s; row min 2.39, row max 8.92</title></rect>
+<text x="486" y="617" class="num" fill="#111827">7.26</text>
+<rect x="586" y="600" width="104" height="24" rx="3" fill="#bebfab" stroke="#111827" stroke-width="0"><title>640x640x640 v3 5.57 TFLOP/s; row min 2.39, row max 8.92</title></rect>
+<text x="598" y="617" class="num" fill="#111827">5.57</text>
+<rect x="698" y="600" width="104" height="24" rx="3" fill="#cf956f" stroke="#111827" stroke-width="0"><title>640x640x640 v4 7.31 TFLOP/s; row min 2.39, row max 8.92</title></rect>
+<text x="710" y="617" class="num" fill="#111827">7.31</text>
+<rect x="810" y="600" width="104" height="24" rx="3" fill="#c2b39a" stroke="#111827" stroke-width="0"><title>640x640x640 v5 6.09 TFLOP/s; row min 2.39, row max 8.92</title></rect>
+<text x="822" y="617" class="num" fill="#111827">6.09</text>
+<rect x="922" y="600" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>640x640x640 v6 8.92 TFLOP/s; row min 2.39, row max 8.92</title></rect>
+<text x="934" y="617" class="num" fill="#111827">8.92</text>
+<rect x="1034" y="600" width="104" height="24" rx="3" fill="#cf956f" stroke="#111827" stroke-width="0"><title>640x640x640 v7 7.32 TFLOP/s; row min 2.39, row max 8.92</title></rect>
+<text x="1046" y="617" class="num" fill="#111827">7.32</text>
+<rect x="1146" y="600" width="104" height="24" rx="3" fill="#c4af95" stroke="#111827" stroke-width="0"><title>640x640x640 v8 6.24 TFLOP/s; row min 2.39, row max 8.92</title></rect>
+<text x="1158" y="617" class="num" fill="#111827">6.24</text>
+<rect x="1258" y="600" width="104" height="24" rx="3" fill="#c5c7b9" stroke="#111827" stroke-width="0"><title>640x640x640 v9 4.97 TFLOP/s; row min 2.39, row max 8.92</title></rect>
+<text x="1270" y="617" class="num" fill="#111827">4.97</text>
+<text x="1378" y="619" class="small muted">best v6</text>
+<text x="30" y="653" class="label">768x896x384</text>
+<rect x="250" y="634" width="104" height="24" rx="3" fill="#cbcec5" stroke="#111827" stroke-width="0"><title>768x896x384 library_cublas_gemm 5.33 TFLOP/s; row min 2.44, row max 11.73</title></rect>
+<text x="262" y="651" class="num" fill="#111827">5.33</text>
+<rect x="362" y="634" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>768x896x384 v1 2.44 TFLOP/s; row min 2.44, row max 11.73</title></rect>
+<text x="374" y="651" class="num" fill="#111827">2.44</text>
+<rect x="474" y="634" width="104" height="24" rx="3" fill="#cb9e7d" stroke="#111827" stroke-width="0"><title>768x896x384 v2 8.90 TFLOP/s; row min 2.44, row max 11.73</title></rect>
+<text x="486" y="651" class="num" fill="#111827">8.90</text>
+<rect x="586" y="634" width="104" height="24" rx="3" fill="#bebda8" stroke="#111827" stroke-width="0"><title>768x896x384 v3 7.13 TFLOP/s; row min 2.44, row max 11.73</title></rect>
+<text x="598" y="651" class="num" fill="#111827">7.13</text>
+<rect x="698" y="634" width="104" height="24" rx="3" fill="#cd9976" stroke="#111827" stroke-width="0"><title>768x896x384 v4 9.18 TFLOP/s; row min 2.44, row max 11.73</title></rect>
+<text x="710" y="651" class="num" fill="#111827">9.18</text>
+<rect x="810" y="634" width="104" height="24" rx="3" fill="#c1b59d" stroke="#111827" stroke-width="0"><title>768x896x384 v5 7.59 TFLOP/s; row min 2.44, row max 11.73</title></rect>
+<text x="822" y="651" class="num" fill="#111827">7.59</text>
+<rect x="922" y="634" width="104" height="24" rx="3" fill="#da7c4b" stroke="#111827" stroke-width="0"><title>768x896x384 v6 10.90 TFLOP/s; row min 2.44, row max 11.73</title></rect>
+<text x="934" y="651" class="num" fill="#111827">10.90</text>
+<rect x="1034" y="634" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>768x896x384 v7 11.73 TFLOP/s; row min 2.44, row max 11.73</title></rect>
+<text x="1046" y="651" class="num" fill="#111827">11.73</text>
+<rect x="1146" y="634" width="104" height="24" rx="3" fill="#cb9e7c" stroke="#111827" stroke-width="0"><title>768x896x384 v8 8.92 TFLOP/s; row min 2.44, row max 11.73</title></rect>
+<text x="1158" y="651" class="num" fill="#111827">8.92</text>
+<rect x="1258" y="634" width="104" height="24" rx="3" fill="#c2b39b" stroke="#111827" stroke-width="0"><title>768x896x384 v9 7.67 TFLOP/s; row min 2.44, row max 11.73</title></rect>
+<text x="1270" y="651" class="num" fill="#111827">7.67</text>
+<text x="1378" y="653" class="small muted">best v7</text>
+<rect x="20" y="665" width="1620" height="34" fill="#f8fafc"/>
+<text x="30" y="687" class="label">896x768x384</text>
+<rect x="250" y="668" width="104" height="24" rx="3" fill="#cbcec5" stroke="#111827" stroke-width="0"><title>896x768x384 library_cublas_gemm 5.34 TFLOP/s; row min 2.45, row max 11.73</title></rect>
+<text x="262" y="685" class="num" fill="#111827">5.34</text>
+<rect x="362" y="668" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>896x768x384 v1 2.45 TFLOP/s; row min 2.45, row max 11.73</title></rect>
+<text x="374" y="685" class="num" fill="#111827">2.45</text>
+<rect x="474" y="668" width="104" height="24" rx="3" fill="#cb9e7c" stroke="#111827" stroke-width="0"><title>896x768x384 v2 8.91 TFLOP/s; row min 2.45, row max 11.73</title></rect>
+<text x="486" y="685" class="num" fill="#111827">8.91</text>
+<rect x="586" y="668" width="104" height="24" rx="3" fill="#bebda9" stroke="#111827" stroke-width="0"><title>896x768x384 v3 7.12 TFLOP/s; row min 2.45, row max 11.73</title></rect>
+<text x="598" y="685" class="num" fill="#111827">7.12</text>
+<rect x="698" y="668" width="104" height="24" rx="3" fill="#cd9975" stroke="#111827" stroke-width="0"><title>896x768x384 v4 9.20 TFLOP/s; row min 2.45, row max 11.73</title></rect>
+<text x="710" y="685" class="num" fill="#111827">9.20</text>
+<rect x="810" y="668" width="104" height="24" rx="3" fill="#c1b59d" stroke="#111827" stroke-width="0"><title>896x768x384 v5 7.59 TFLOP/s; row min 2.45, row max 11.73</title></rect>
+<text x="822" y="685" class="num" fill="#111827">7.59</text>
+<rect x="922" y="668" width="104" height="24" rx="3" fill="#da7d4d" stroke="#111827" stroke-width="0"><title>896x768x384 v6 10.84 TFLOP/s; row min 2.45, row max 11.73</title></rect>
+<text x="934" y="685" class="num" fill="#111827">10.84</text>
+<rect x="1034" y="668" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>896x768x384 v7 11.73 TFLOP/s; row min 2.45, row max 11.73</title></rect>
+<text x="1046" y="685" class="num" fill="#111827">11.73</text>
+<rect x="1146" y="668" width="104" height="24" rx="3" fill="#c7a88a" stroke="#111827" stroke-width="0"><title>896x768x384 v8 8.35 TFLOP/s; row min 2.45, row max 11.73</title></rect>
+<text x="1158" y="685" class="num" fill="#111827">8.35</text>
+<rect x="1258" y="668" width="104" height="24" rx="3" fill="#c2b49c" stroke="#111827" stroke-width="0"><title>896x768x384 v9 7.64 TFLOP/s; row min 2.45, row max 11.73</title></rect>
+<text x="1270" y="685" class="num" fill="#111827">7.64</text>
+<text x="1378" y="687" class="small muted">best v7</text>
+<text x="30" y="721" class="label">512x896x768</text>
+<rect x="250" y="702" width="104" height="24" rx="3" fill="#c4c5b7" stroke="#111827" stroke-width="0"><title>512x896x768 library_cublas_gemm 5.64 TFLOP/s; row min 2.42, row max 10.23</title></rect>
+<text x="262" y="719" class="num" fill="#111827">5.64</text>
+<rect x="362" y="702" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>512x896x768 v1 2.42 TFLOP/s; row min 2.42, row max 10.23</title></rect>
+<text x="374" y="719" class="num" fill="#111827">2.42</text>
+<rect x="474" y="702" width="104" height="24" rx="3" fill="#ce9773" stroke="#111827" stroke-width="0"><title>512x896x768 v2 8.19 TFLOP/s; row min 2.42, row max 10.23</title></rect>
+<text x="486" y="719" class="num" fill="#111827">8.19</text>
+<rect x="586" y="702" width="104" height="24" rx="3" fill="#bebda8" stroke="#111827" stroke-width="0"><title>512x896x768 v3 6.37 TFLOP/s; row min 2.42, row max 10.23</title></rect>
+<text x="598" y="719" class="num" fill="#111827">6.37</text>
+<rect x="698" y="702" width="104" height="24" rx="3" fill="#cf9671" stroke="#111827" stroke-width="0"><title>512x896x768 v4 8.24 TFLOP/s; row min 2.42, row max 10.23</title></rect>
+<text x="710" y="719" class="num" fill="#111827">8.24</text>
+<rect x="810" y="702" width="104" height="24" rx="3" fill="#c2b299" stroke="#111827" stroke-width="0"><title>512x896x768 v5 6.88 TFLOP/s; row min 2.42, row max 10.23</title></rect>
+<text x="822" y="719" class="num" fill="#111827">6.88</text>
+<rect x="922" y="702" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>512x896x768 v6 10.23 TFLOP/s; row min 2.42, row max 10.23</title></rect>
+<text x="934" y="719" class="num" fill="#111827">10.23</text>
+<rect x="1034" y="702" width="104" height="24" rx="3" fill="#d0936d" stroke="#111827" stroke-width="0"><title>512x896x768 v7 8.39 TFLOP/s; row min 2.42, row max 10.23</title></rect>
+<text x="1046" y="719" class="num" fill="#111827">8.39</text>
+<rect x="1146" y="702" width="104" height="24" rx="3" fill="#c5ad92" stroke="#111827" stroke-width="0"><title>512x896x768 v8 7.14 TFLOP/s; row min 2.42, row max 10.23</title></rect>
+<text x="1158" y="719" class="num" fill="#111827">7.14</text>
+<rect x="1258" y="702" width="104" height="24" rx="3" fill="#c3c5b5" stroke="#111827" stroke-width="0"><title>512x896x768 v9 5.69 TFLOP/s; row min 2.42, row max 10.23</title></rect>
+<text x="1270" y="719" class="num" fill="#111827">5.69</text>
+<text x="1378" y="721" class="small muted">best v6</text>
+<rect x="20" y="733" width="1620" height="34" fill="#f8fafc"/>
+<text x="30" y="755" class="label">896x512x768</text>
+<rect x="250" y="736" width="104" height="24" rx="3" fill="#da7d4d" stroke="#111827" stroke-width="0"><title>896x512x768 library_cublas_gemm 9.39 TFLOP/s; row min 2.41, row max 10.13</title></rect>
+<text x="262" y="753" class="num" fill="#111827">9.39</text>
+<rect x="362" y="736" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>896x512x768 v1 2.41 TFLOP/s; row min 2.41, row max 10.13</title></rect>
+<text x="374" y="753" class="num" fill="#111827">2.41</text>
+<rect x="474" y="736" width="104" height="24" rx="3" fill="#cf9670" stroke="#111827" stroke-width="0"><title>896x512x768 v2 8.19 TFLOP/s; row min 2.41, row max 10.13</title></rect>
+<text x="486" y="753" class="num" fill="#111827">8.19</text>
+<rect x="586" y="736" width="104" height="24" rx="3" fill="#bebca8" stroke="#111827" stroke-width="0"><title>896x512x768 v3 6.33 TFLOP/s; row min 2.41, row max 10.13</title></rect>
+<text x="598" y="753" class="num" fill="#111827">6.33</text>
+<rect x="698" y="736" width="104" height="24" rx="3" fill="#cf9671" stroke="#111827" stroke-width="0"><title>896x512x768 v4 8.18 TFLOP/s; row min 2.41, row max 10.13</title></rect>
+<text x="710" y="753" class="num" fill="#111827">8.18</text>
+<rect x="810" y="736" width="104" height="24" rx="3" fill="#c3b197" stroke="#111827" stroke-width="0"><title>896x512x768 v5 6.88 TFLOP/s; row min 2.41, row max 10.13</title></rect>
+<text x="822" y="753" class="num" fill="#111827">6.88</text>
+<rect x="922" y="736" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>896x512x768 v6 10.13 TFLOP/s; row min 2.41, row max 10.13</title></rect>
+<text x="934" y="753" class="num" fill="#111827">10.13</text>
+<rect x="1034" y="736" width="104" height="24" rx="3" fill="#d0936c" stroke="#111827" stroke-width="0"><title>896x512x768 v7 8.33 TFLOP/s; row min 2.41, row max 10.13</title></rect>
+<text x="1046" y="753" class="num" fill="#111827">8.33</text>
+<rect x="1146" y="736" width="104" height="24" rx="3" fill="#c6a98c" stroke="#111827" stroke-width="0"><title>896x512x768 v8 7.26 TFLOP/s; row min 2.41, row max 10.13</title></rect>
+<text x="1158" y="753" class="num" fill="#111827">7.26</text>
+<rect x="1258" y="736" width="104" height="24" rx="3" fill="#c3c4b4" stroke="#111827" stroke-width="0"><title>896x512x768 v9 5.71 TFLOP/s; row min 2.41, row max 10.13</title></rect>
+<text x="1270" y="753" class="num" fill="#111827">5.71</text>
+<text x="1378" y="755" class="small muted">best v6</text>
+<text x="30" y="789" class="label">896x896x512</text>
+<rect x="250" y="770" width="104" height="24" rx="3" fill="#c8cbc0" stroke="#111827" stroke-width="0"><title>896x896x512 library_cublas_gemm 5.35 TFLOP/s; row min 2.45, row max 10.85</title></rect>
+<text x="262" y="787" class="num" fill="#111827">5.35</text>
+<rect x="362" y="770" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>896x896x512 v1 2.45 TFLOP/s; row min 2.45, row max 10.85</title></rect>
+<text x="374" y="787" class="num" fill="#111827">2.45</text>
+<rect x="474" y="770" width="104" height="24" rx="3" fill="#d0926b" stroke="#111827" stroke-width="0"><title>896x896x512 v2 8.92 TFLOP/s; row min 2.45, row max 10.85</title></rect>
+<text x="486" y="787" class="num" fill="#111827">8.92</text>
+<rect x="586" y="770" width="104" height="24" rx="3" fill="#c0b8a2" stroke="#111827" stroke-width="0"><title>896x896x512 v3 6.92 TFLOP/s; row min 2.45, row max 10.85</title></rect>
+<text x="598" y="787" class="num" fill="#111827">6.92</text>
+<rect x="698" y="770" width="104" height="24" rx="3" fill="#d0946e" stroke="#111827" stroke-width="0"><title>896x896x512 v4 8.82 TFLOP/s; row min 2.45, row max 10.85</title></rect>
+<text x="710" y="787" class="num" fill="#111827">8.82</text>
+<rect x="810" y="770" width="104" height="24" rx="3" fill="#c4af94" stroke="#111827" stroke-width="0"><title>896x896x512 v5 7.43 TFLOP/s; row min 2.45, row max 10.85</title></rect>
+<text x="822" y="787" class="num" fill="#111827">7.43</text>
+<rect x="922" y="770" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>896x896x512 v6 10.85 TFLOP/s; row min 2.45, row max 10.85</title></rect>
+<text x="934" y="787" class="num" fill="#111827">10.85</text>
+<rect x="1034" y="770" width="104" height="24" rx="3" fill="#c4af94" stroke="#111827" stroke-width="0"><title>896x896x512 v7 7.43 TFLOP/s; row min 2.45, row max 10.85</title></rect>
+<text x="1046" y="787" class="num" fill="#111827">7.43</text>
+<rect x="1146" y="770" width="104" height="24" rx="3" fill="#c5ac90" stroke="#111827" stroke-width="0"><title>896x896x512 v8 7.57 TFLOP/s; row min 2.45, row max 10.85</title></rect>
+<text x="1158" y="787" class="num" fill="#111827">7.57</text>
+<rect x="1258" y="770" width="104" height="24" rx="3" fill="#bebca7" stroke="#111827" stroke-width="0"><title>896x896x512 v9 6.73 TFLOP/s; row min 2.45, row max 10.85</title></rect>
+<text x="1270" y="787" class="num" fill="#111827">6.73</text>
+<text x="1378" y="789" class="small muted">best v6</text>
+<rect x="20" y="801" width="1620" height="34" fill="#f8fafc"/>
+<text x="30" y="823" class="label">768x768x768</text>
+<rect x="250" y="804" width="104" height="24" rx="3" fill="#ccd0c9" stroke="#111827" stroke-width="0"><title>768x768x768 library_cublas_gemm 5.61 TFLOP/s; row min 2.47, row max 13.34</title></rect>
+<text x="262" y="821" class="num" fill="#111827">5.61</text>
+<rect x="362" y="804" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>768x768x768 v1 2.47 TFLOP/s; row min 2.47, row max 13.34</title></rect>
+<text x="374" y="821" class="num" fill="#111827">2.47</text>
+<rect x="474" y="804" width="104" height="24" rx="3" fill="#ce9772" stroke="#111827" stroke-width="0"><title>768x768x768 v2 10.53 TFLOP/s; row min 2.47, row max 13.34</title></rect>
+<text x="486" y="821" class="num" fill="#111827">10.53</text>
+<rect x="586" y="804" width="104" height="24" rx="3" fill="#bfbba5" stroke="#111827" stroke-width="0"><title>768x768x768 v3 8.11 TFLOP/s; row min 2.47, row max 13.34</title></rect>
+<text x="598" y="821" class="num" fill="#111827">8.11</text>
+<rect x="698" y="804" width="104" height="24" rx="3" fill="#d0936d" stroke="#111827" stroke-width="0"><title>768x768x768 v4 10.78 TFLOP/s; row min 2.47, row max 13.34</title></rect>
+<text x="710" y="821" class="num" fill="#111827">10.78</text>
+<rect x="810" y="804" width="104" height="24" rx="3" fill="#c3b299" stroke="#111827" stroke-width="0"><title>768x768x768 v5 8.70 TFLOP/s; row min 2.47, row max 13.34</title></rect>
+<text x="822" y="821" class="num" fill="#111827">8.70</text>
+<rect x="922" y="804" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>768x768x768 v6 13.34 TFLOP/s; row min 2.47, row max 13.34</title></rect>
+<text x="934" y="821" class="num" fill="#111827">13.34</text>
+<rect x="1034" y="804" width="104" height="24" rx="3" fill="#d0936d" stroke="#111827" stroke-width="0"><title>768x768x768 v7 10.79 TFLOP/s; row min 2.47, row max 13.34</title></rect>
+<text x="1046" y="821" class="num" fill="#111827">10.79</text>
+<rect x="1146" y="804" width="104" height="24" rx="3" fill="#c5ad92" stroke="#111827" stroke-width="0"><title>768x768x768 v8 9.03 TFLOP/s; row min 2.47, row max 13.34</title></rect>
+<text x="1158" y="821" class="num" fill="#111827">9.03</text>
+<rect x="1258" y="804" width="104" height="24" rx="3" fill="#c1c2b1" stroke="#111827" stroke-width="0"><title>768x768x768 v9 7.36 TFLOP/s; row min 2.47, row max 13.34</title></rect>
+<text x="1270" y="821" class="num" fill="#111827">7.36</text>
+<text x="1378" y="823" class="small muted">best v6</text>
+<text x="30" y="857" class="label">896x896x896</text>
+<rect x="250" y="838" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>896x896x896 library_cublas_gemm 13.44 TFLOP/s; row min 2.47, row max 13.44</title></rect>
+<text x="262" y="855" class="num" fill="#111827">13.44</text>
+<rect x="362" y="838" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>896x896x896 v1 2.47 TFLOP/s; row min 2.47, row max 13.44</title></rect>
+<text x="374" y="855" class="num" fill="#111827">2.47</text>
+<rect x="474" y="838" width="104" height="24" rx="3" fill="#c5ad91" stroke="#111827" stroke-width="0"><title>896x896x896 v2 9.12 TFLOP/s; row min 2.47, row max 13.44</title></rect>
+<text x="486" y="855" class="num" fill="#111827">9.12</text>
+<rect x="586" y="838" width="104" height="24" rx="3" fill="#c3c5b6" stroke="#111827" stroke-width="0"><title>896x896x896 v3 7.03 TFLOP/s; row min 2.47, row max 13.44</title></rect>
+<text x="598" y="855" class="num" fill="#111827">7.03</text>
+<rect x="698" y="838" width="104" height="24" rx="3" fill="#c5ac90" stroke="#111827" stroke-width="0"><title>896x896x896 v4 9.15 TFLOP/s; row min 2.47, row max 13.44</title></rect>
+<text x="710" y="855" class="num" fill="#111827">9.15</text>
+<rect x="810" y="838" width="104" height="24" rx="3" fill="#c0c1b0" stroke="#111827" stroke-width="0"><title>896x896x896 v5 7.50 TFLOP/s; row min 2.47, row max 13.44</title></rect>
+<text x="822" y="855" class="num" fill="#111827">7.50</text>
+<rect x="922" y="838" width="104" height="24" rx="3" fill="#d28e66" stroke="#111827" stroke-width="0"><title>896x896x896 v6 11.18 TFLOP/s; row min 2.47, row max 13.44</title></rect>
+<text x="934" y="855" class="num" fill="#111827">11.18</text>
+<rect x="1034" y="838" width="104" height="24" rx="3" fill="#c0c1af" stroke="#111827" stroke-width="0"><title>896x896x896 v7 7.56 TFLOP/s; row min 2.47, row max 13.44</title></rect>
+<text x="1046" y="855" class="num" fill="#111827">7.56</text>
+<rect x="1146" y="838" width="104" height="24" rx="3" fill="#bebba6" stroke="#111827" stroke-width="0"><title>896x896x896 v8 8.11 TFLOP/s; row min 2.47, row max 13.44</title></rect>
+<text x="1158" y="855" class="num" fill="#111827">8.11</text>
+<rect x="1258" y="838" width="104" height="24" rx="3" fill="#c3c5b6" stroke="#111827" stroke-width="0"><title>896x896x896 v9 7.05 TFLOP/s; row min 2.47, row max 13.44</title></rect>
+<text x="1270" y="855" class="num" fill="#111827">7.05</text>
+<text x="1378" y="857" class="small muted">best cublas</text>
+<rect x="20" y="869" width="1620" height="34" fill="#f8fafc"/>
+<text x="30" y="891" class="label">1024x1024x1024</text>
+<rect x="250" y="872" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>1024x1024x1024 library_cublas_gemm 16.37 TFLOP/s; row min 2.49, row max 16.37</title></rect>
+<text x="262" y="889" class="num" fill="#111827">16.37</text>
+<rect x="362" y="872" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>1024x1024x1024 v1 2.49 TFLOP/s; row min 2.49, row max 16.37</title></rect>
+<text x="374" y="889" class="num" fill="#111827">2.49</text>
+<rect x="474" y="872" width="104" height="24" rx="3" fill="#c0b7a0" stroke="#111827" stroke-width="0"><title>1024x1024x1024 v2 9.99 TFLOP/s; row min 2.49, row max 16.37</title></rect>
+<text x="486" y="889" class="num" fill="#111827">9.99</text>
+<rect x="586" y="872" width="104" height="24" rx="3" fill="#c6c8bc" stroke="#111827" stroke-width="0"><title>1024x1024x1024 v3 7.71 TFLOP/s; row min 2.49, row max 16.37</title></rect>
+<text x="598" y="889" class="num" fill="#111827">7.71</text>
+<rect x="698" y="872" width="104" height="24" rx="3" fill="#c1b69f" stroke="#111827" stroke-width="0"><title>1024x1024x1024 v4 10.09 TFLOP/s; row min 2.49, row max 16.37</title></rect>
+<text x="710" y="889" class="num" fill="#111827">10.09</text>
+<rect x="810" y="872" width="104" height="24" rx="3" fill="#c3c5b5" stroke="#111827" stroke-width="0"><title>1024x1024x1024 v5 8.31 TFLOP/s; row min 2.49, row max 16.37</title></rect>
+<text x="822" y="889" class="num" fill="#111827">8.31</text>
+<rect x="922" y="872" width="104" height="24" rx="3" fill="#cc9c79" stroke="#111827" stroke-width="0"><title>1024x1024x1024 v6 12.35 TFLOP/s; row min 2.49, row max 16.37</title></rect>
+<text x="934" y="889" class="num" fill="#111827">12.35</text>
+<rect x="1034" y="872" width="104" height="24" rx="3" fill="#c0b8a1" stroke="#111827" stroke-width="0"><title>1024x1024x1024 v7 9.91 TFLOP/s; row min 2.49, row max 16.37</title></rect>
+<text x="1046" y="889" class="num" fill="#111827">9.91</text>
+<rect x="1146" y="872" width="104" height="24" rx="3" fill="#c1b59d" stroke="#111827" stroke-width="0"><title>1024x1024x1024 v8 10.17 TFLOP/s; row min 2.49, row max 16.37</title></rect>
+<text x="1158" y="889" class="num" fill="#111827">10.17</text>
+<rect x="1258" y="872" width="104" height="24" rx="3" fill="#bfc0ad" stroke="#111827" stroke-width="0"><title>1024x1024x1024 v9 9.08 TFLOP/s; row min 2.49, row max 16.37</title></rect>
+<text x="1270" y="889" class="num" fill="#111827">9.08</text>
+<text x="1378" y="891" class="small muted">best cublas</text>
+<text x="30" y="925" class="label">1152x1152x1152</text>
+<rect x="250" y="906" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>1152x1152x1152 library_cublas_gemm 16.40 TFLOP/s; row min 2.51, row max 16.40</title></rect>
+<text x="262" y="923" class="num" fill="#111827">16.40</text>
+<rect x="362" y="906" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>1152x1152x1152 v1 2.51 TFLOP/s; row min 2.51, row max 16.40</title></rect>
+<text x="374" y="923" class="num" fill="#111827">2.51</text>
+<rect x="474" y="906" width="104" height="24" rx="3" fill="#c5ac90" stroke="#111827" stroke-width="0"><title>1152x1152x1152 v2 10.98 TFLOP/s; row min 2.51, row max 16.40</title></rect>
+<text x="486" y="923" class="num" fill="#111827">10.98</text>
+<rect x="586" y="906" width="104" height="24" rx="3" fill="#c3c4b5" stroke="#111827" stroke-width="0"><title>1152x1152x1152 v3 8.40 TFLOP/s; row min 2.51, row max 16.40</title></rect>
+<text x="598" y="923" class="num" fill="#111827">8.40</text>
+<rect x="698" y="906" width="104" height="24" rx="3" fill="#c6ab8f" stroke="#111827" stroke-width="0"><title>1152x1152x1152 v4 11.06 TFLOP/s; row min 2.51, row max 16.40</title></rect>
+<text x="710" y="923" class="num" fill="#111827">11.06</text>
+<rect x="810" y="906" width="104" height="24" rx="3" fill="#bfc0ad" stroke="#111827" stroke-width="0"><title>1152x1152x1152 v5 9.14 TFLOP/s; row min 2.51, row max 16.40</title></rect>
+<text x="822" y="923" class="num" fill="#111827">9.14</text>
+<rect x="922" y="906" width="104" height="24" rx="3" fill="#d28e65" stroke="#111827" stroke-width="0"><title>1152x1152x1152 v6 13.57 TFLOP/s; row min 2.51, row max 16.40</title></rect>
+<text x="934" y="923" class="num" fill="#111827">13.57</text>
+<rect x="1034" y="906" width="104" height="24" rx="3" fill="#cd9a76" stroke="#111827" stroke-width="0"><title>1152x1152x1152 v7 12.55 TFLOP/s; row min 2.51, row max 16.40</title></rect>
+<text x="1046" y="923" class="num" fill="#111827">12.55</text>
+<rect x="1146" y="906" width="104" height="24" rx="3" fill="#d0946e" stroke="#111827" stroke-width="0"><title>1152x1152x1152 v8 13.03 TFLOP/s; row min 2.51, row max 16.40</title></rect>
+<text x="1158" y="923" class="num" fill="#111827">13.03</text>
+<rect x="1258" y="906" width="104" height="24" rx="3" fill="#c1c2b0" stroke="#111827" stroke-width="0"><title>1152x1152x1152 v9 8.82 TFLOP/s; row min 2.51, row max 16.40</title></rect>
+<text x="1270" y="923" class="num" fill="#111827">8.82</text>
+<text x="1378" y="925" class="small muted">best cublas</text>
+<rect x="20" y="937" width="1620" height="34" fill="#f8fafc"/>
+<text x="30" y="959" class="label">1536x1536x1536</text>
+<rect x="250" y="940" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>1536x1536x1536 library_cublas_gemm 19.23 TFLOP/s; row min 2.55, row max 19.23</title></rect>
+<text x="262" y="957" class="num" fill="#111827">19.23</text>
+<rect x="362" y="940" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>1536x1536x1536 v1 2.55 TFLOP/s; row min 2.55, row max 19.23</title></rect>
+<text x="374" y="957" class="num" fill="#111827">2.55</text>
+<rect x="474" y="940" width="104" height="24" rx="3" fill="#c1b69f" stroke="#111827" stroke-width="0"><title>1536x1536x1536 v2 11.65 TFLOP/s; row min 2.55, row max 19.23</title></rect>
+<text x="486" y="957" class="num" fill="#111827">11.65</text>
+<rect x="586" y="940" width="104" height="24" rx="3" fill="#c6c8bb" stroke="#111827" stroke-width="0"><title>1536x1536x1536 v3 8.90 TFLOP/s; row min 2.55, row max 19.23</title></rect>
+<text x="598" y="957" class="num" fill="#111827">8.90</text>
+<rect x="698" y="940" width="104" height="24" rx="3" fill="#c1b59e" stroke="#111827" stroke-width="0"><title>1536x1536x1536 v4 11.75 TFLOP/s; row min 2.55, row max 19.23</title></rect>
+<text x="710" y="957" class="num" fill="#111827">11.75</text>
+<rect x="810" y="940" width="104" height="24" rx="3" fill="#c3c4b4" stroke="#111827" stroke-width="0"><title>1536x1536x1536 v5 9.67 TFLOP/s; row min 2.55, row max 19.23</title></rect>
+<text x="822" y="957" class="num" fill="#111827">9.67</text>
+<rect x="922" y="940" width="104" height="24" rx="3" fill="#cc9c79" stroke="#111827" stroke-width="0"><title>1536x1536x1536 v6 14.38 TFLOP/s; row min 2.55, row max 19.23</title></rect>
+<text x="934" y="957" class="num" fill="#111827">14.38</text>
+<rect x="1034" y="940" width="104" height="24" rx="3" fill="#cf9671" stroke="#111827" stroke-width="0"><title>1536x1536x1536 v7 14.97 TFLOP/s; row min 2.55, row max 19.23</title></rect>
+<text x="1046" y="957" class="num" fill="#111827">14.97</text>
+<rect x="1146" y="940" width="104" height="24" rx="3" fill="#d0946e" stroke="#111827" stroke-width="0"><title>1536x1536x1536 v8 15.18 TFLOP/s; row min 2.55, row max 19.23</title></rect>
+<text x="1158" y="957" class="num" fill="#111827">15.18</text>
+<rect x="1258" y="940" width="104" height="24" rx="3" fill="#bfbfac" stroke="#111827" stroke-width="0"><title>1536x1536x1536 v9 10.58 TFLOP/s; row min 2.55, row max 19.23</title></rect>
+<text x="1270" y="957" class="num" fill="#111827">10.58</text>
+<text x="1378" y="959" class="small muted">best cublas</text>
+<text x="30" y="993" class="label">1536x2304x1536</text>
+<rect x="250" y="974" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>1536x2304x1536 library_cublas_gemm 19.19 TFLOP/s; row min 2.52, row max 19.19</title></rect>
+<text x="262" y="991" class="num" fill="#111827">19.19</text>
+<rect x="362" y="974" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>1536x2304x1536 v1 2.52 TFLOP/s; row min 2.52, row max 19.19</title></rect>
+<text x="374" y="991" class="num" fill="#111827">2.52</text>
+<rect x="474" y="974" width="104" height="24" rx="3" fill="#c1b59d" stroke="#111827" stroke-width="0"><title>1536x2304x1536 v2 11.74 TFLOP/s; row min 2.52, row max 19.19</title></rect>
+<text x="486" y="991" class="num" fill="#111827">11.74</text>
+<rect x="586" y="974" width="104" height="24" rx="3" fill="#c5c8ba" stroke="#111827" stroke-width="0"><title>1536x2304x1536 v3 8.96 TFLOP/s; row min 2.52, row max 19.19</title></rect>
+<text x="598" y="991" class="num" fill="#111827">8.96</text>
+<rect x="698" y="974" width="104" height="24" rx="3" fill="#c2b49c" stroke="#111827" stroke-width="0"><title>1536x2304x1536 v4 11.85 TFLOP/s; row min 2.52, row max 19.19</title></rect>
+<text x="710" y="991" class="num" fill="#111827">11.85</text>
+<rect x="810" y="974" width="104" height="24" rx="3" fill="#c2c4b4" stroke="#111827" stroke-width="0"><title>1536x2304x1536 v5 9.67 TFLOP/s; row min 2.52, row max 19.19</title></rect>
+<text x="822" y="991" class="num" fill="#111827">9.67</text>
+<rect x="922" y="974" width="104" height="24" rx="3" fill="#cc9b79" stroke="#111827" stroke-width="0"><title>1536x2304x1536 v6 14.40 TFLOP/s; row min 2.52, row max 19.19</title></rect>
+<text x="934" y="991" class="num" fill="#111827">14.40</text>
+<rect x="1034" y="974" width="104" height="24" rx="3" fill="#c8a586" stroke="#111827" stroke-width="0"><title>1536x2304x1536 v7 13.40 TFLOP/s; row min 2.52, row max 19.19</title></rect>
+<text x="1046" y="991" class="num" fill="#111827">13.40</text>
+<rect x="1146" y="974" width="104" height="24" rx="3" fill="#cd9a77" stroke="#111827" stroke-width="0"><title>1536x2304x1536 v8 14.51 TFLOP/s; row min 2.52, row max 19.19</title></rect>
+<text x="1158" y="991" class="num" fill="#111827">14.51</text>
+<rect x="1258" y="974" width="104" height="24" rx="3" fill="#bebeaa" stroke="#111827" stroke-width="0"><title>1536x2304x1536 v9 10.77 TFLOP/s; row min 2.52, row max 19.19</title></rect>
+<text x="1270" y="991" class="num" fill="#111827">10.77</text>
+<text x="1378" y="993" class="small muted">best cublas</text>
+<rect x="20" y="1005" width="1620" height="34" fill="#f8fafc"/>
+<text x="30" y="1027" class="label">2048x2048x2048</text>
+<rect x="250" y="1008" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>2048x2048x2048 library_cublas_gemm 21.41 TFLOP/s; row min 2.54, row max 21.41</title></rect>
+<text x="262" y="1025" class="num" fill="#111827">21.41</text>
+<rect x="362" y="1008" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>2048x2048x2048 v1 2.54 TFLOP/s; row min 2.54, row max 21.41</title></rect>
+<text x="374" y="1025" class="num" fill="#111827">2.54</text>
+<rect x="474" y="1008" width="104" height="24" rx="3" fill="#bfc0ad" stroke="#111827" stroke-width="0"><title>2048x2048x2048 v2 11.50 TFLOP/s; row min 2.54, row max 21.41</title></rect>
+<text x="486" y="1025" class="num" fill="#111827">11.50</text>
+<rect x="586" y="1008" width="104" height="24" rx="3" fill="#c9ccc3" stroke="#111827" stroke-width="0"><title>2048x2048x2048 v3 8.76 TFLOP/s; row min 2.54, row max 21.41</title></rect>
+<text x="598" y="1025" class="num" fill="#111827">8.76</text>
+<rect x="698" y="1008" width="104" height="24" rx="3" fill="#bfbfad" stroke="#111827" stroke-width="0"><title>2048x2048x2048 v4 11.59 TFLOP/s; row min 2.54, row max 21.41</title></rect>
+<text x="710" y="1025" class="num" fill="#111827">11.59</text>
+<rect x="810" y="1008" width="104" height="24" rx="3" fill="#c6c9bd" stroke="#111827" stroke-width="0"><title>2048x2048x2048 v5 9.55 TFLOP/s; row min 2.54, row max 21.41</title></rect>
+<text x="822" y="1025" class="num" fill="#111827">9.55</text>
+<rect x="922" y="1008" width="104" height="24" rx="3" fill="#c6ab8f" stroke="#111827" stroke-width="0"><title>2048x2048x2048 v6 14.16 TFLOP/s; row min 2.54, row max 21.41</title></rect>
+<text x="934" y="1025" class="num" fill="#111827">14.16</text>
+<rect x="1034" y="1008" width="104" height="24" rx="3" fill="#c3b197" stroke="#111827" stroke-width="0"><title>2048x2048x2048 v7 13.48 TFLOP/s; row min 2.54, row max 21.41</title></rect>
+<text x="1046" y="1025" class="num" fill="#111827">13.48</text>
+<rect x="1146" y="1008" width="104" height="24" rx="3" fill="#c8a688" stroke="#111827" stroke-width="0"><title>2048x2048x2048 v8 14.73 TFLOP/s; row min 2.54, row max 21.41</title></rect>
+<text x="1158" y="1025" class="num" fill="#111827">14.73</text>
+<rect x="1258" y="1008" width="104" height="24" rx="3" fill="#c2c4b4" stroke="#111827" stroke-width="0"><title>2048x2048x2048 v9 10.67 TFLOP/s; row min 2.54, row max 21.41</title></rect>
+<text x="1270" y="1025" class="num" fill="#111827">10.67</text>
+<text x="1378" y="1027" class="small muted">best cublas</text>
+<text x="30" y="1061" class="label">2304x1536x3072</text>
+<rect x="250" y="1042" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>2304x1536x3072 library_cublas_gemm 20.54 TFLOP/s; row min 2.52, row max 20.54</title></rect>
+<text x="262" y="1059" class="num" fill="#111827">20.54</text>
+<rect x="362" y="1042" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>2304x1536x3072 v1 2.52 TFLOP/s; row min 2.52, row max 20.54</title></rect>
+<text x="374" y="1059" class="num" fill="#111827">2.52</text>
+<rect x="474" y="1042" width="104" height="24" rx="3" fill="#bebeaa" stroke="#111827" stroke-width="0"><title>2304x1536x3072 v2 11.53 TFLOP/s; row min 2.52, row max 20.54</title></rect>
+<text x="486" y="1059" class="num" fill="#111827">11.53</text>
+<rect x="586" y="1042" width="104" height="24" rx="3" fill="#c8cbc1" stroke="#111827" stroke-width="0"><title>2304x1536x3072 v3 8.72 TFLOP/s; row min 2.52, row max 20.54</title></rect>
+<text x="598" y="1059" class="num" fill="#111827">8.72</text>
+<rect x="698" y="1042" width="104" height="24" rx="3" fill="#bebda9" stroke="#111827" stroke-width="0"><title>2304x1536x3072 v4 11.61 TFLOP/s; row min 2.52, row max 20.54</title></rect>
+<text x="710" y="1059" class="num" fill="#111827">11.61</text>
+<rect x="810" y="1042" width="104" height="24" rx="3" fill="#c4c6b8" stroke="#111827" stroke-width="0"><title>2304x1536x3072 v5 9.74 TFLOP/s; row min 2.52, row max 20.54</title></rect>
+<text x="822" y="1059" class="num" fill="#111827">9.74</text>
+<rect x="922" y="1042" width="104" height="24" rx="3" fill="#c9a282" stroke="#111827" stroke-width="0"><title>2304x1536x3072 v6 14.59 TFLOP/s; row min 2.52, row max 20.54</title></rect>
+<text x="934" y="1059" class="num" fill="#111827">14.59</text>
+<rect x="1034" y="1042" width="104" height="24" rx="3" fill="#c3b096" stroke="#111827" stroke-width="0"><title>2304x1536x3072 v7 13.02 TFLOP/s; row min 2.52, row max 20.54</title></rect>
+<text x="1046" y="1059" class="num" fill="#111827">13.02</text>
+<rect x="1146" y="1042" width="104" height="24" rx="3" fill="#caa181" stroke="#111827" stroke-width="0"><title>2304x1536x3072 v8 14.72 TFLOP/s; row min 2.52, row max 20.54</title></rect>
+<text x="1158" y="1059" class="num" fill="#111827">14.72</text>
+<rect x="1258" y="1042" width="104" height="24" rx="3" fill="#c0c1af" stroke="#111827" stroke-width="0"><title>2304x1536x3072 v9 10.86 TFLOP/s; row min 2.52, row max 20.54</title></rect>
+<text x="1270" y="1059" class="num" fill="#111827">10.86</text>
+<text x="1378" y="1061" class="small muted">best cublas</text>
+<rect x="20" y="1073" width="1620" height="34" fill="#f8fafc"/>
+<text x="30" y="1095" class="label">3072x2304x1536</text>
+<rect x="250" y="1076" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>3072x2304x1536 library_cublas_gemm 20.18 TFLOP/s; row min 2.53, row max 20.18</title></rect>
+<text x="262" y="1093" class="num" fill="#111827">20.18</text>
+<rect x="362" y="1076" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>3072x2304x1536 v1 2.53 TFLOP/s; row min 2.53, row max 20.18</title></rect>
+<text x="374" y="1093" class="num" fill="#111827">2.53</text>
+<rect x="474" y="1076" width="104" height="24" rx="3" fill="#bfbaa4" stroke="#111827" stroke-width="0"><title>3072x2304x1536 v2 11.74 TFLOP/s; row min 2.53, row max 20.18</title></rect>
+<text x="486" y="1093" class="num" fill="#111827">11.74</text>
+<rect x="586" y="1076" width="104" height="24" rx="3" fill="#c7cabe" stroke="#111827" stroke-width="0"><title>3072x2304x1536 v3 8.91 TFLOP/s; row min 2.53, row max 20.18</title></rect>
+<text x="598" y="1093" class="num" fill="#111827">8.91</text>
+<rect x="698" y="1076" width="104" height="24" rx="3" fill="#bfb9a4" stroke="#111827" stroke-width="0"><title>3072x2304x1536 v4 11.80 TFLOP/s; row min 2.53, row max 20.18</title></rect>
+<text x="710" y="1093" class="num" fill="#111827">11.80</text>
+<rect x="810" y="1076" width="104" height="24" rx="3" fill="#c4c5b7" stroke="#111827" stroke-width="0"><title>3072x2304x1536 v5 9.80 TFLOP/s; row min 2.53, row max 20.18</title></rect>
+<text x="822" y="1093" class="num" fill="#111827">9.80</text>
+<rect x="922" y="1076" width="104" height="24" rx="3" fill="#caa080" stroke="#111827" stroke-width="0"><title>3072x2304x1536 v6 14.57 TFLOP/s; row min 2.53, row max 20.18</title></rect>
+<text x="934" y="1093" class="num" fill="#111827">14.57</text>
+<rect x="1034" y="1076" width="104" height="24" rx="3" fill="#caa181" stroke="#111827" stroke-width="0"><title>3072x2304x1536 v7 14.47 TFLOP/s; row min 2.53, row max 20.18</title></rect>
+<text x="1046" y="1093" class="num" fill="#111827">14.47</text>
+<rect x="1146" y="1076" width="104" height="24" rx="3" fill="#d1926b" stroke="#111827" stroke-width="0"><title>3072x2304x1536 v8 16.17 TFLOP/s; row min 2.53, row max 20.18</title></rect>
+<text x="1158" y="1093" class="num" fill="#111827">16.17</text>
+<rect x="1258" y="1076" width="104" height="24" rx="3" fill="#c0c0ae" stroke="#111827" stroke-width="0"><title>3072x2304x1536 v9 10.81 TFLOP/s; row min 2.53, row max 20.18</title></rect>
+<text x="1270" y="1093" class="num" fill="#111827">10.81</text>
+<text x="1378" y="1095" class="small muted">best cublas</text>
+<text x="30" y="1129" class="label">2304x2304x2304</text>
+<rect x="250" y="1110" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>2304x2304x2304 library_cublas_gemm 19.78 TFLOP/s; row min 2.54, row max 19.78</title></rect>
+<text x="262" y="1127" class="num" fill="#111827">19.78</text>
+<rect x="362" y="1110" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>2304x2304x2304 v1 2.54 TFLOP/s; row min 2.54, row max 19.78</title></rect>
+<text x="374" y="1127" class="num" fill="#111827">2.54</text>
+<rect x="474" y="1110" width="104" height="24" rx="3" fill="#c0b8a2" stroke="#111827" stroke-width="0"><title>2304x2304x2304 v2 11.74 TFLOP/s; row min 2.54, row max 19.78</title></rect>
+<text x="486" y="1127" class="num" fill="#111827">11.74</text>
+<rect x="586" y="1110" width="104" height="24" rx="3" fill="#c7c9bd" stroke="#111827" stroke-width="0"><title>2304x2304x2304 v3 8.87 TFLOP/s; row min 2.54, row max 19.78</title></rect>
+<text x="598" y="1127" class="num" fill="#111827">8.87</text>
+<rect x="698" y="1110" width="104" height="24" rx="3" fill="#c0b7a1" stroke="#111827" stroke-width="0"><title>2304x2304x2304 v4 11.83 TFLOP/s; row min 2.54, row max 19.78</title></rect>
+<text x="710" y="1127" class="num" fill="#111827">11.83</text>
+<rect x="810" y="1110" width="104" height="24" rx="3" fill="#c3c4b5" stroke="#111827" stroke-width="0"><title>2304x2304x2304 v5 9.82 TFLOP/s; row min 2.54, row max 19.78</title></rect>
+<text x="822" y="1127" class="num" fill="#111827">9.82</text>
+<rect x="922" y="1110" width="104" height="24" rx="3" fill="#cb9e7c" stroke="#111827" stroke-width="0"><title>2304x2304x2304 v6 14.58 TFLOP/s; row min 2.54, row max 19.78</title></rect>
+<text x="934" y="1127" class="num" fill="#111827">14.58</text>
+<rect x="1034" y="1110" width="104" height="24" rx="3" fill="#c9a282" stroke="#111827" stroke-width="0"><title>2304x2304x2304 v7 14.08 TFLOP/s; row min 2.54, row max 19.78</title></rect>
+<text x="1046" y="1127" class="num" fill="#111827">14.08</text>
+<rect x="1146" y="1110" width="104" height="24" rx="3" fill="#d1916a" stroke="#111827" stroke-width="0"><title>2304x2304x2304 v8 15.91 TFLOP/s; row min 2.54, row max 19.78</title></rect>
+<text x="1158" y="1127" class="num" fill="#111827">15.91</text>
+<rect x="1258" y="1110" width="104" height="24" rx="3" fill="#c0c0ae" stroke="#111827" stroke-width="0"><title>2304x2304x2304 v9 10.65 TFLOP/s; row min 2.54, row max 19.78</title></rect>
+<text x="1270" y="1127" class="num" fill="#111827">10.65</text>
+<text x="1378" y="1129" class="small muted">best cublas</text>
+<rect x="20" y="1141" width="1620" height="34" fill="#f8fafc"/>
+<text x="30" y="1163" class="label">3072x3072x3072</text>
+<rect x="250" y="1144" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>3072x3072x3072 library_cublas_gemm 21.00 TFLOP/s; row min 2.68, row max 21.00</title></rect>
+<text x="262" y="1161" class="num" fill="#111827">21.00</text>
+<rect x="362" y="1144" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>3072x3072x3072 v1 2.68 TFLOP/s; row min 2.68, row max 21.00</title></rect>
+<text x="374" y="1161" class="num" fill="#111827">2.68</text>
+<rect x="474" y="1144" width="104" height="24" rx="3" fill="#bebeab" stroke="#111827" stroke-width="0"><title>3072x3072x3072 v2 11.70 TFLOP/s; row min 2.68, row max 21.00</title></rect>
+<text x="486" y="1161" class="num" fill="#111827">11.70</text>
+<rect x="586" y="1144" width="104" height="24" rx="3" fill="#c9ccc2" stroke="#111827" stroke-width="0"><title>3072x3072x3072 v3 8.82 TFLOP/s; row min 2.68, row max 21.00</title></rect>
+<text x="598" y="1161" class="num" fill="#111827">8.82</text>
+<rect x="698" y="1144" width="104" height="24" rx="3" fill="#bebeaa" stroke="#111827" stroke-width="0"><title>3072x3072x3072 v4 11.77 TFLOP/s; row min 2.68, row max 21.00</title></rect>
+<text x="710" y="1161" class="num" fill="#111827">11.77</text>
+<rect x="810" y="1144" width="104" height="24" rx="3" fill="#c5c7b9" stroke="#111827" stroke-width="0"><title>3072x3072x3072 v5 9.88 TFLOP/s; row min 2.68, row max 21.00</title></rect>
+<text x="822" y="1161" class="num" fill="#111827">9.88</text>
+<rect x="922" y="1144" width="104" height="24" rx="3" fill="#c8a486" stroke="#111827" stroke-width="0"><title>3072x3072x3072 v6 14.70 TFLOP/s; row min 2.68, row max 21.00</title></rect>
+<text x="934" y="1161" class="num" fill="#111827">14.70</text>
+<rect x="1034" y="1144" width="104" height="24" rx="3" fill="#c7a789" stroke="#111827" stroke-width="0"><title>3072x3072x3072 v7 14.43 TFLOP/s; row min 2.68, row max 21.00</title></rect>
+<text x="1046" y="1161" class="num" fill="#111827">14.43</text>
+<rect x="1146" y="1144" width="104" height="24" rx="3" fill="#d1916a" stroke="#111827" stroke-width="0"><title>3072x3072x3072 v8 16.89 TFLOP/s; row min 2.68, row max 21.00</title></rect>
+<text x="1158" y="1161" class="num" fill="#111827">16.89</text>
+<rect x="1258" y="1144" width="104" height="24" rx="3" fill="#c1c2b0" stroke="#111827" stroke-width="0"><title>3072x3072x3072 v9 10.98 TFLOP/s; row min 2.68, row max 21.00</title></rect>
+<text x="1270" y="1161" class="num" fill="#111827">10.98</text>
+<text x="1378" y="1163" class="small muted">best cublas</text>
+<text x="30" y="1197" class="label">4608x3456x2304</text>
+<rect x="250" y="1178" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>4608x3456x2304 library_cublas_gemm 18.13 TFLOP/s; row min 2.57, row max 18.13</title></rect>
+<text x="262" y="1195" class="num" fill="#111827">18.13</text>
+<rect x="362" y="1178" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>4608x3456x2304 v1 2.57 TFLOP/s; row min 2.57, row max 18.13</title></rect>
+<text x="374" y="1195" class="num" fill="#111827">2.57</text>
+<rect x="474" y="1178" width="104" height="24" rx="3" fill="#c4ae93" stroke="#111827" stroke-width="0"><title>4608x3456x2304 v2 11.90 TFLOP/s; row min 2.57, row max 18.13</title></rect>
+<text x="486" y="1195" class="num" fill="#111827">11.90</text>
+<rect x="586" y="1178" width="104" height="24" rx="3" fill="#c4c5b6" stroke="#111827" stroke-width="0"><title>4608x3456x2304 v3 9.00 TFLOP/s; row min 2.57, row max 18.13</title></rect>
+<text x="598" y="1195" class="num" fill="#111827">9.00</text>
+<rect x="698" y="1178" width="104" height="24" rx="3" fill="#c5ad91" stroke="#111827" stroke-width="0"><title>4608x3456x2304 v4 11.98 TFLOP/s; row min 2.57, row max 18.13</title></rect>
+<text x="710" y="1195" class="num" fill="#111827">11.98</text>
+<rect x="810" y="1178" width="104" height="24" rx="3" fill="#c0c0ae" stroke="#111827" stroke-width="0"><title>4608x3456x2304 v5 9.88 TFLOP/s; row min 2.57, row max 18.13</title></rect>
+<text x="822" y="1195" class="num" fill="#111827">9.88</text>
+<rect x="922" y="1178" width="104" height="24" rx="3" fill="#d19169" stroke="#111827" stroke-width="0"><title>4608x3456x2304 v6 14.69 TFLOP/s; row min 2.57, row max 18.13</title></rect>
+<text x="934" y="1195" class="num" fill="#111827">14.69</text>
+<rect x="1034" y="1178" width="104" height="24" rx="3" fill="#d0936c" stroke="#111827" stroke-width="0"><title>4608x3456x2304 v7 14.53 TFLOP/s; row min 2.57, row max 18.13</title></rect>
+<text x="1046" y="1195" class="num" fill="#111827">14.53</text>
+<rect x="1146" y="1178" width="104" height="24" rx="3" fill="#d97e4e" stroke="#111827" stroke-width="0"><title>4608x3456x2304 v8 16.54 TFLOP/s; row min 2.57, row max 18.13</title></rect>
+<text x="1158" y="1195" class="num" fill="#111827">16.54</text>
+<rect x="1258" y="1178" width="104" height="24" rx="3" fill="#c0b7a0" stroke="#111827" stroke-width="0"><title>4608x3456x2304 v9 11.01 TFLOP/s; row min 2.57, row max 18.13</title></rect>
+<text x="1270" y="1195" class="num" fill="#111827">11.01</text>
+<text x="1378" y="1197" class="small muted">best cublas</text>
+<rect x="20" y="1209" width="1620" height="34" fill="#f8fafc"/>
+<text x="30" y="1231" class="label">3840x3840x3840</text>
+<rect x="250" y="1212" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>3840x3840x3840 library_cublas_gemm 20.70 TFLOP/s; row min 2.43, row max 20.70</title></rect>
+<text x="262" y="1229" class="num" fill="#111827">20.70</text>
+<rect x="362" y="1212" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>3840x3840x3840 v1 2.43 TFLOP/s; row min 2.43, row max 20.70</title></rect>
+<text x="374" y="1229" class="num" fill="#111827">2.43</text>
+<rect x="474" y="1212" width="104" height="24" rx="3" fill="#bfbba6" stroke="#111827" stroke-width="0"><title>3840x3840x3840 v2 11.85 TFLOP/s; row min 2.43, row max 20.70</title></rect>
+<text x="486" y="1229" class="num" fill="#111827">11.85</text>
+<rect x="586" y="1212" width="104" height="24" rx="3" fill="#c7c9be" stroke="#111827" stroke-width="0"><title>3840x3840x3840 v3 9.09 TFLOP/s; row min 2.43, row max 20.70</title></rect>
+<text x="598" y="1229" class="num" fill="#111827">9.09</text>
+<rect x="698" y="1212" width="104" height="24" rx="3" fill="#bfbba6" stroke="#111827" stroke-width="0"><title>3840x3840x3840 v4 11.84 TFLOP/s; row min 2.43, row max 20.70</title></rect>
+<text x="710" y="1229" class="num" fill="#111827">11.84</text>
+<rect x="810" y="1212" width="104" height="24" rx="3" fill="#c4c5b7" stroke="#111827" stroke-width="0"><title>3840x3840x3840 v5 9.93 TFLOP/s; row min 2.43, row max 20.70</title></rect>
+<text x="822" y="1229" class="num" fill="#111827">9.93</text>
+<rect x="922" y="1212" width="104" height="24" rx="3" fill="#caa180" stroke="#111827" stroke-width="0"><title>3840x3840x3840 v6 14.84 TFLOP/s; row min 2.43, row max 20.70</title></rect>
+<text x="934" y="1229" class="num" fill="#111827">14.84</text>
+<rect x="1034" y="1212" width="104" height="24" rx="3" fill="#c7a78a" stroke="#111827" stroke-width="0"><title>3840x3840x3840 v7 14.10 TFLOP/s; row min 2.43, row max 20.70</title></rect>
+<text x="1046" y="1229" class="num" fill="#111827">14.10</text>
+<rect x="1146" y="1212" width="104" height="24" rx="3" fill="#d28f67" stroke="#111827" stroke-width="0"><title>3840x3840x3840 v8 16.88 TFLOP/s; row min 2.43, row max 20.70</title></rect>
+<text x="1158" y="1229" class="num" fill="#111827">16.88</text>
+<rect x="1258" y="1212" width="104" height="24" rx="3" fill="#c1c1b0" stroke="#111827" stroke-width="0"><title>3840x3840x3840 v9 10.74 TFLOP/s; row min 2.43, row max 20.70</title></rect>
+<text x="1270" y="1229" class="num" fill="#111827">10.74</text>
+<text x="1378" y="1231" class="small muted">best cublas</text>
+<text x="30" y="1265" class="label">4096x4096x4096</text>
+<rect x="250" y="1246" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>4096x4096x4096 library_cublas_gemm 21.72 TFLOP/s; row min 2.53, row max 21.72</title></rect>
+<text x="262" y="1263" class="num" fill="#111827">21.72</text>
+<rect x="362" y="1246" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>4096x4096x4096 v1 2.53 TFLOP/s; row min 2.53, row max 21.72</title></rect>
+<text x="374" y="1263" class="num" fill="#111827">2.53</text>
+<rect x="474" y="1246" width="104" height="24" rx="3" fill="#bfbfac" stroke="#111827" stroke-width="0"><title>4096x4096x4096 v2 11.74 TFLOP/s; row min 2.53, row max 21.72</title></rect>
+<text x="486" y="1263" class="num" fill="#111827">11.74</text>
+<rect x="586" y="1246" width="104" height="24" rx="3" fill="#c9cbc1" stroke="#111827" stroke-width="0"><title>4096x4096x4096 v3 9.11 TFLOP/s; row min 2.53, row max 21.72</title></rect>
+<text x="598" y="1263" class="num" fill="#111827">9.11</text>
+<rect x="698" y="1246" width="104" height="24" rx="3" fill="#bfbfac" stroke="#111827" stroke-width="0"><title>4096x4096x4096 v4 11.80 TFLOP/s; row min 2.53, row max 21.72</title></rect>
+<text x="710" y="1263" class="num" fill="#111827">11.80</text>
+<rect x="810" y="1246" width="104" height="24" rx="3" fill="#c6c8bb" stroke="#111827" stroke-width="0"><title>4096x4096x4096 v5 9.85 TFLOP/s; row min 2.53, row max 21.72</title></rect>
+<text x="822" y="1263" class="num" fill="#111827">9.85</text>
+<rect x="922" y="1246" width="104" height="24" rx="3" fill="#c8a688" stroke="#111827" stroke-width="0"><title>4096x4096x4096 v6 14.94 TFLOP/s; row min 2.53, row max 21.72</title></rect>
+<text x="934" y="1263" class="num" fill="#111827">14.94</text>
+<rect x="1034" y="1246" width="104" height="24" rx="3" fill="#c5ad92" stroke="#111827" stroke-width="0"><title>4096x4096x4096 v7 14.08 TFLOP/s; row min 2.53, row max 21.72</title></rect>
+<text x="1046" y="1263" class="num" fill="#111827">14.08</text>
+<rect x="1146" y="1246" width="104" height="24" rx="3" fill="#cf9670" stroke="#111827" stroke-width="0"><title>4096x4096x4096 v8 16.92 TFLOP/s; row min 2.53, row max 21.72</title></rect>
+<text x="1158" y="1263" class="num" fill="#111827">16.92</text>
+<rect x="1258" y="1246" width="104" height="24" rx="3" fill="#c1c2b1" stroke="#111827" stroke-width="0"><title>4096x4096x4096 v9 11.22 TFLOP/s; row min 2.53, row max 21.72</title></rect>
+<text x="1270" y="1263" class="num" fill="#111827">11.22</text>
+<text x="1378" y="1265" class="small muted">best cublas</text>
+<rect x="20" y="1277" width="1620" height="34" fill="#f8fafc"/>
+<text x="30" y="1299" class="label">7680x6144x3840</text>
+<rect x="250" y="1280" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>7680x6144x3840 library_cublas_gemm 21.41 TFLOP/s; row min 2.55, row max 21.41</title></rect>
+<text x="262" y="1297" class="num" fill="#111827">21.41</text>
+<rect x="362" y="1280" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>7680x6144x3840 v1 2.55 TFLOP/s; row min 2.55, row max 21.41</title></rect>
+<text x="374" y="1297" class="num" fill="#111827">2.55</text>
+<rect x="474" y="1280" width="104" height="24" rx="3" fill="#bebfab" stroke="#111827" stroke-width="0"><title>7680x6144x3840 v2 11.75 TFLOP/s; row min 2.55, row max 21.41</title></rect>
+<text x="486" y="1297" class="num" fill="#111827">11.75</text>
+<rect x="586" y="1280" width="104" height="24" rx="3" fill="#c8cbc0" stroke="#111827" stroke-width="0"><title>7680x6144x3840 v3 9.11 TFLOP/s; row min 2.55, row max 21.41</title></rect>
+<text x="598" y="1297" class="num" fill="#111827">9.11</text>
+<rect x="698" y="1280" width="104" height="24" rx="3" fill="#bebeab" stroke="#111827" stroke-width="0"><title>7680x6144x3840 v4 11.82 TFLOP/s; row min 2.55, row max 21.41</title></rect>
+<text x="710" y="1297" class="num" fill="#111827">11.82</text>
+<rect x="810" y="1280" width="104" height="24" rx="3" fill="#c5c7b9" stroke="#111827" stroke-width="0"><title>7680x6144x3840 v5 9.97 TFLOP/s; row min 2.55, row max 21.41</title></rect>
+<text x="822" y="1297" class="num" fill="#111827">9.97</text>
+<rect x="922" y="1280" width="104" height="24" rx="3" fill="#c8a586" stroke="#111827" stroke-width="0"><title>7680x6144x3840 v6 14.90 TFLOP/s; row min 2.55, row max 21.41</title></rect>
+<text x="934" y="1297" class="num" fill="#111827">14.90</text>
+<rect x="1034" y="1280" width="104" height="24" rx="3" fill="#c6aa8d" stroke="#111827" stroke-width="0"><title>7680x6144x3840 v7 14.28 TFLOP/s; row min 2.55, row max 21.41</title></rect>
+<text x="1046" y="1297" class="num" fill="#111827">14.28</text>
+<rect x="1146" y="1280" width="104" height="24" rx="3" fill="#d19169" stroke="#111827" stroke-width="0"><title>7680x6144x3840 v8 17.26 TFLOP/s; row min 2.55, row max 21.41</title></rect>
+<text x="1158" y="1297" class="num" fill="#111827">17.26</text>
+<rect x="1258" y="1280" width="104" height="24" rx="3" fill="#c2c3b2" stroke="#111827" stroke-width="0"><title>7680x6144x3840 v9 10.87 TFLOP/s; row min 2.55, row max 21.41</title></rect>
+<text x="1270" y="1297" class="num" fill="#111827">10.87</text>
+<text x="1378" y="1299" class="small muted">best cublas</text>
+<text x="30" y="1333" class="label">8192x8192x8192</text>
+<rect x="250" y="1314" width="104" height="24" rx="3" fill="#e16e37" stroke="#111827" stroke-width="2"><title>8192x8192x8192 library_cublas_gemm 22.69 TFLOP/s; row min 2.62, row max 22.69</title></rect>
+<text x="262" y="1331" class="num" fill="#111827">22.69</text>
+<rect x="362" y="1314" width="104" height="24" rx="3" fill="#e1eaf4" stroke="#111827" stroke-width="0"><title>8192x8192x8192 v1 2.62 TFLOP/s; row min 2.62, row max 22.69</title></rect>
+<text x="374" y="1331" class="num" fill="#111827">2.62</text>
+<rect x="474" y="1314" width="104" height="24" rx="3" fill="#c0c0ae" stroke="#111827" stroke-width="0"><title>8192x8192x8192 v2 12.00 TFLOP/s; row min 2.62, row max 22.69</title></rect>
+<text x="486" y="1331" class="num" fill="#111827">12.00</text>
+<rect x="586" y="1314" width="104" height="24" rx="3" fill="#c9ccc1" stroke="#111827" stroke-width="0"><title>8192x8192x8192 v3 9.45 TFLOP/s; row min 2.62, row max 22.69</title></rect>
+<text x="598" y="1331" class="num" fill="#111827">9.45</text>
+<rect x="698" y="1314" width="104" height="24" rx="3" fill="#c0c1af" stroke="#111827" stroke-width="0"><title>8192x8192x8192 v4 11.94 TFLOP/s; row min 2.62, row max 22.69</title></rect>
+<text x="710" y="1331" class="num" fill="#111827">11.94</text>
+<rect x="810" y="1314" width="104" height="24" rx="3" fill="#c6c8bb" stroke="#111827" stroke-width="0"><title>8192x8192x8192 v5 10.22 TFLOP/s; row min 2.62, row max 22.69</title></rect>
+<text x="822" y="1331" class="num" fill="#111827">10.22</text>
+<rect x="922" y="1314" width="104" height="24" rx="3" fill="#c5ac91" stroke="#111827" stroke-width="0"><title>8192x8192x8192 v6 14.80 TFLOP/s; row min 2.62, row max 22.69</title></rect>
+<text x="934" y="1331" class="num" fill="#111827">14.80</text>
+<rect x="1034" y="1314" width="104" height="24" rx="3" fill="#c4af94" stroke="#111827" stroke-width="0"><title>8192x8192x8192 v7 14.51 TFLOP/s; row min 2.62, row max 22.69</title></rect>
+<text x="1046" y="1331" class="num" fill="#111827">14.51</text>
+<rect x="1146" y="1314" width="104" height="24" rx="3" fill="#cf9670" stroke="#111827" stroke-width="0"><title>8192x8192x8192 v8 17.67 TFLOP/s; row min 2.62, row max 22.69</title></rect>
+<text x="1158" y="1331" class="num" fill="#111827">17.67</text>
+<rect x="1258" y="1314" width="104" height="24" rx="3" fill="#c1c2b1" stroke="#111827" stroke-width="0"><title>8192x8192x8192 v9 11.68 TFLOP/s; row min 2.62, row max 22.69</title></rect>
+<text x="1270" y="1331" class="num" fill="#111827">11.68</text>
+<text x="1378" y="1333" class="small muted">best cublas</text>
+</svg>

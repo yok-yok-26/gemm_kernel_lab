@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="700" viewBox="0 0 1280 700">
+<style>
+text { font-family: Arial, Helvetica, sans-serif; fill: #17202a; }
+.title { font-size: 24px; font-weight: 700; }
+.subtitle { font-size: 13px; fill: #566573; }
+.axis { font-size: 12px; fill: #34495e; }
+.small { font-size: 11px; fill: #566573; }
+.celltext { font-size: 12px; font-weight: 700; fill: #111827; }
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="40" y="43" class="title">Best user WMMA vs cuBLAS half across sizes</text>
+<text x="40" y="66" class="subtitle">Best user is selected among v14..v19 for each size. Bars show mean TFLOP/s.</text>
+<line x1="100" y1="590.0" x2="1220" y2="590.0" stroke="#e5e7eb"/>
+<text x="90" y="594.0" text-anchor="end" class="axis">0.0</text>
+<line x1="100" y1="465.0" x2="1220" y2="465.0" stroke="#e5e7eb"/>
+<text x="90" y="469.0" text-anchor="end" class="axis">15.2</text>
+<line x1="100" y1="340.0" x2="1220" y2="340.0" stroke="#e5e7eb"/>
+<text x="90" y="344.0" text-anchor="end" class="axis">30.5</text>
+<line x1="100" y1="215.0" x2="1220" y2="215.0" stroke="#e5e7eb"/>
+<text x="90" y="219.0" text-anchor="end" class="axis">45.7</text>
+<line x1="100" y1="90.0" x2="1220" y2="90.0" stroke="#e5e7eb"/>
+<text x="90" y="94.0" text-anchor="end" class="axis">61.0</text>
+<rect x="133.6" y="523.4" width="56.0" height="66.6" fill="#4c78a8" rx="3"><title>cuBLAS half 256^3: 8.13 TFLOP/s, 0.00413 ms</title></rect>
+<text x="161.6" y="516.4" text-anchor="middle" class="small">8.1</text>
+<rect x="196.3" y="545.2" width="56.0" height="44.8" fill="#2ca25f" rx="3"><title>v18 256^3: 5.46 TFLOP/s, 0.00615 ms</title></rect>
+<text x="224.3" y="538.2" text-anchor="middle" class="small">5.5</text>
+<text x="193.3" y="618" text-anchor="middle" class="axis">256^3</text>
+<text x="193.3" y="638" text-anchor="middle" class="small">best v18</text>
+<rect x="320.3" y="455.7" width="56.0" height="134.3" fill="#4c78a8" rx="3"><title>cuBLAS half 512^3: 16.38 TFLOP/s, 0.01639 ms</title></rect>
+<text x="348.3" y="448.7" text-anchor="middle" class="small">16.4</text>
+<rect x="383.0" y="410.9" width="56.0" height="179.1" fill="#2ca25f" rx="3"><title>v16 512^3: 21.84 TFLOP/s, 0.01229 ms</title></rect>
+<text x="411.0" y="403.9" text-anchor="middle" class="small">21.8</text>
+<text x="380.0" y="618" text-anchor="middle" class="axis">512^3</text>
+<text x="380.0" y="638" text-anchor="middle" class="small">best v16</text>
+<rect x="506.9" y="293.8" width="56.0" height="296.2" fill="#4c78a8" rx="3"><title>cuBLAS half 1024^3: 36.12 TFLOP/s, 0.05945 ms</title></rect>
+<text x="534.9" y="286.8" text-anchor="middle" class="small">36.1</text>
+<rect x="569.7" y="231.9" width="56.0" height="358.1" fill="#2ca25f" rx="3"><title>v18 1024^3: 43.68 TFLOP/s, 0.04916 ms</title></rect>
+<text x="597.7" y="224.9" text-anchor="middle" class="small">43.7</text>
+<text x="566.7" y="618" text-anchor="middle" class="axis">1024^3</text>
+<text x="566.7" y="638" text-anchor="middle" class="small">best v18</text>
+<rect x="693.6" y="160.4" width="56.0" height="429.6" fill="#4c78a8" rx="3"><title>cuBLAS half 2048^3: 52.39 TFLOP/s, 0.32790 ms</title></rect>
+<text x="721.6" y="153.4" text-anchor="middle" class="small">52.4</text>
+<rect x="756.3" y="148.4" width="56.0" height="441.6" fill="#2ca25f" rx="3"><title>v18 2048^3: 53.86 TFLOP/s, 0.31901 ms</title></rect>
+<text x="784.3" y="141.4" text-anchor="middle" class="small">53.9</text>
+<text x="753.3" y="618" text-anchor="middle" class="axis">2048^3</text>
+<text x="753.3" y="638" text-anchor="middle" class="small">best v18</text>
+<rect x="880.3" y="103.7" width="56.0" height="486.3" fill="#4c78a8" rx="3"><title>cuBLAS half 4096^3: 59.31 TFLOP/s, 2.31736 ms</title></rect>
+<text x="908.3" y="96.7" text-anchor="middle" class="small">59.3</text>
+<rect x="943.0" y="127.4" width="56.0" height="462.6" fill="#2ca25f" rx="3"><title>v18 4096^3: 56.42 TFLOP/s, 2.43594 ms</title></rect>
+<text x="971.0" y="120.4" text-anchor="middle" class="small">56.4</text>
+<text x="940.0" y="618" text-anchor="middle" class="axis">4096^3</text>
+<text x="940.0" y="638" text-anchor="middle" class="small">best v18</text>
+<rect x="1066.9" y="90.0" width="56.0" height="500.0" fill="#4c78a8" rx="3"><title>cuBLAS half 8192^3: 60.98 TFLOP/s, 18.02960 ms</title></rect>
+<text x="1094.9" y="83.0" text-anchor="middle" class="small">61.0</text>
+<rect x="1129.7" y="271.6" width="56.0" height="318.4" fill="#2ca25f" rx="3"><title>v19 8192^3: 38.83 TFLOP/s, 28.31510 ms</title></rect>
+<text x="1157.7" y="264.6" text-anchor="middle" class="small">38.8</text>
+<text x="1126.7" y="618" text-anchor="middle" class="axis">8192^3</text>
+<text x="1126.7" y="638" text-anchor="middle" class="small">best v19</text>
+<rect x="930" y="36" width="18" height="12" fill="#4c78a8"/><text x="955" y="47" class="axis">cuBLAS half</text>
+<rect x="1060" y="36" width="18" height="12" fill="#2ca25f"/><text x="1085" y="47" class="axis">best user</text>
+</svg>

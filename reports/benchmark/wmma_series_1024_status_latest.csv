@@ -1,0 +1,8 @@
+mode,status,note
+library_cublas_gemm,PASS,
+library_cublas_gemm_half,PASS,
+v10,PASS,
+v11,PASS,
+v12,PASS,
+v13,PASS,
+v14,PASS,

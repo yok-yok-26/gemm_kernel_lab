@@ -1,0 +1,402 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1720" height="2530" viewBox="0 0 1720 2530">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<style>text{font-family:Menlo,Consolas,monospace}.title{font:700 24px Menlo,Consolas,monospace}.small{font-size:12px}.label{font-size:13px}.num{font-size:12px}.axis{stroke:#d8dee9;stroke-width:1}.base{fill:#2d5b9f}.user{fill:#d34b4b}.muted{fill:#667085}</style>
+<text x="30" y="38" class="title">All configs: best user / cuBLAS ratio</text>
+<text x="30" y="64" class="small muted">Sorted by ratio. Green bars exceed cuBLAS.</text>
+<line x1="260.0" y1="76" x2="260.0" y2="2488" class="axis"/>
+<text x="250.0" y="86" class="small muted">0%</text>
+<line x1="484.1" y1="76" x2="484.1" y2="2488" class="axis"/>
+<text x="474.1" y="86" class="small muted">50%</text>
+<line x1="708.2" y1="76" x2="708.2" y2="2488" class="axis"/>
+<text x="698.2" y="86" class="small muted">100%</text>
+<line x1="932.3" y1="76" x2="932.3" y2="2488" class="axis"/>
+<text x="922.3" y="86" class="small muted">150%</text>
+<line x1="1156.4" y1="76" x2="1156.4" y2="2488" class="axis"/>
+<text x="1146.4" y="86" class="small muted">200%</text>
+<line x1="1380.5" y1="76" x2="1380.5" y2="2488" class="axis"/>
+<text x="1370.5" y="86" class="small muted">250%</text>
+<line x1="708.2" y1="76" x2="708.2" y2="2488" stroke="#111827" stroke-width="2" stroke-dasharray="5 5"/>
+<rect x="20" y="75" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="94" class="label">768x768x768</text>
+<text x="166" y="94" class="small muted">v6</text>
+<rect x="260" y="80" width="1066.7" height="16" rx="2" fill="#2f9e63"><title>768x768x768 238.0%</title></rect>
+<text x="1398" y="94" class="num">238.0%  5.61->13.34 TF</text>
+<text x="30" y="122" class="label">512x768x256</text>
+<text x="166" y="122" class="small muted">v6</text>
+<rect x="260" y="108" width="1055.7" height="16" rx="2" fill="#2f9e63"><title>512x768x256 235.5%</title></rect>
+<text x="1398" y="122" class="num">235.5%  4.63->10.92 TF</text>
+<rect x="20" y="131" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="150" class="label">768x768x384</text>
+<text x="166" y="150" class="small muted">v6</text>
+<rect x="260" y="136" width="1046.3" height="16" rx="2" fill="#2f9e63"><title>768x768x384 233.5%</title></rect>
+<text x="1398" y="150" class="num">233.5%  5.26->12.28 TF</text>
+<text x="30" y="178" class="label">384x960x768</text>
+<text x="166" y="178" class="small muted">v6</text>
+<rect x="260" y="164" width="991.9" height="16" rx="2" fill="#2f9e63"><title>384x960x768 221.3%</title></rect>
+<text x="1398" y="178" class="num">221.3%  5.42->11.99 TF</text>
+<rect x="20" y="187" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="206" class="label">960x768x768</text>
+<text x="166" y="206" class="small muted">v6</text>
+<rect x="260" y="192" width="987.3" height="16" rx="2" fill="#2f9e63"><title>960x768x768 220.3%</title></rect>
+<text x="1398" y="206" class="num">220.3%  5.70->12.56 TF</text>
+<text x="30" y="234" class="label">768x896x384</text>
+<text x="166" y="234" class="small muted">v7</text>
+<rect x="260" y="220" width="986.5" height="16" rx="2" fill="#2f9e63"><title>768x896x384 220.1%</title></rect>
+<text x="1398" y="234" class="num">220.1%  5.33->11.73 TF</text>
+<rect x="20" y="243" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="262" class="label">960x960x512</text>
+<text x="166" y="262" class="small muted">v6</text>
+<rect x="260" y="248" width="985.6" height="16" rx="2" fill="#2f9e63"><title>960x960x512 219.9%</title></rect>
+<text x="1398" y="262" class="num">219.9%  5.55->12.21 TF</text>
+<text x="30" y="290" class="label">896x768x384</text>
+<text x="166" y="290" class="small muted">v7</text>
+<rect x="260" y="276" width="983.7" height="16" rx="2" fill="#2f9e63"><title>896x768x384 219.5%</title></rect>
+<text x="1398" y="290" class="num">219.5%  5.34->11.73 TF</text>
+<rect x="20" y="299" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="318" class="label">256x768x256</text>
+<text x="166" y="318" class="small muted">v6</text>
+<rect x="260" y="304" width="968.0" height="16" rx="2" fill="#2f9e63"><title>256x768x256 216.0%</title></rect>
+<text x="1398" y="318" class="num">216.0%  3.79->8.18 TF</text>
+<text x="30" y="346" class="label">768x960x384</text>
+<text x="166" y="346" class="small muted">v6</text>
+<rect x="260" y="332" width="963.3" height="16" rx="2" fill="#2f9e63"><title>768x960x384 214.9%</title></rect>
+<text x="1398" y="346" class="num">214.9%  5.36->11.52 TF</text>
+<rect x="20" y="355" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="374" class="label">960x768x384</text>
+<text x="166" y="374" class="small muted">v6</text>
+<rect x="260" y="360" width="962.9" height="16" rx="2" fill="#2f9e63"><title>960x768x384 214.8%</title></rect>
+<text x="1398" y="374" class="num">214.8%  5.37->11.54 TF</text>
+<text x="30" y="402" class="label">960x896x512</text>
+<text x="166" y="402" class="small muted">v6</text>
+<rect x="260" y="388" width="960.0" height="16" rx="2" fill="#2f9e63"><title>960x896x512 214.2%</title></rect>
+<text x="1398" y="402" class="num">214.2%  5.41->11.58 TF</text>
+<rect x="20" y="411" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="430" class="label">896x960x512</text>
+<text x="166" y="430" class="small muted">v6</text>
+<rect x="260" y="416" width="951.5" height="16" rx="2" fill="#2f9e63"><title>896x960x512 212.3%</title></rect>
+<text x="1398" y="430" class="num">212.3%  5.45->11.56 TF</text>
+<text x="30" y="458" class="label">896x896x512</text>
+<text x="166" y="458" class="small muted">v6</text>
+<rect x="260" y="444" width="908.3" height="16" rx="2" fill="#2f9e63"><title>896x896x512 202.7%</title></rect>
+<text x="1398" y="458" class="num">202.7%  5.35->10.85 TF</text>
+<rect x="20" y="467" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="486" class="label">512x896x256</text>
+<text x="166" y="486" class="small muted">v6</text>
+<rect x="260" y="472" width="867.3" height="16" rx="2" fill="#2f9e63"><title>512x896x256 193.5%</title></rect>
+<text x="1398" y="486" class="num">193.5%  4.56->8.82 TF</text>
+<text x="30" y="514" class="label">512x960x256</text>
+<text x="166" y="514" class="small muted">v6</text>
+<rect x="260" y="500" width="862.1" height="16" rx="2" fill="#2f9e63"><title>512x960x256 192.3%</title></rect>
+<text x="1398" y="514" class="num">192.3%  4.91->9.45 TF</text>
+<rect x="20" y="523" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="542" class="label">512x896x768</text>
+<text x="166" y="542" class="small muted">v6</text>
+<rect x="260" y="528" width="813.3" height="16" rx="2" fill="#2f9e63"><title>512x896x768 181.5%</title></rect>
+<text x="1398" y="542" class="num">181.5%  5.64->10.23 TF</text>
+<text x="30" y="570" class="label">640x640x640</text>
+<text x="166" y="570" class="small muted">v6</text>
+<rect x="260" y="556" width="733.9" height="16" rx="2" fill="#2f9e63"><title>640x640x640 163.7%</title></rect>
+<text x="1398" y="570" class="num">163.7%  5.45->8.92 TF</text>
+<rect x="20" y="579" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="598" class="label">960x384x768</text>
+<text x="166" y="598" class="small muted">v6</text>
+<rect x="260" y="584" width="630.5" height="16" rx="2" fill="#2f9e63"><title>960x384x768 140.7%</title></rect>
+<text x="1398" y="598" class="num">140.7%  8.54->12.01 TF</text>
+<text x="30" y="626" class="label">768x256x256</text>
+<text x="166" y="626" class="small muted">v6</text>
+<rect x="260" y="612" width="596.7" height="16" rx="2" fill="#2f9e63"><title>768x256x256 133.1%</title></rect>
+<text x="1398" y="626" class="num">133.1%  6.15->8.19 TF</text>
+<rect x="20" y="635" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="654" class="label">320x320x320</text>
+<text x="166" y="654" class="small muted">v6</text>
+<rect x="260" y="640" width="576.1" height="16" rx="2" fill="#2f9e63"><title>320x320x320 128.5%</title></rect>
+<text x="1398" y="654" class="num">128.5%  3.55->4.57 TF</text>
+<text x="30" y="682" class="label">256x512x256</text>
+<text x="166" y="682" class="small muted">v6</text>
+<rect x="260" y="668" width="523.4" height="16" rx="2" fill="#2f9e63"><title>256x512x256 116.8%</title></rect>
+<text x="1398" y="682" class="num">116.8%  4.67->5.46 TF</text>
+<rect x="20" y="691" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="710" class="label">512x256x256</text>
+<text x="166" y="710" class="small muted">v6</text>
+<rect x="260" y="696" width="523.0" height="16" rx="2" fill="#2f9e63"><title>512x256x256 116.7%</title></rect>
+<text x="1398" y="710" class="num">116.7%  4.68->5.46 TF</text>
+<text x="30" y="738" class="label">384x384x384</text>
+<text x="166" y="738" class="small muted">v6</text>
+<rect x="260" y="724" width="501.9" height="16" rx="2" fill="#2f9e63"><title>384x384x384 112.0%</title></rect>
+<text x="1398" y="738" class="num">112.0%  6.17->6.91 TF</text>
+<rect x="20" y="747" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="766" class="label">128x128x128</text>
+<text x="166" y="766" class="small muted">v1</text>
+<rect x="260" y="752" width="497.2" height="16" rx="2" fill="#2f9e63"><title>128x128x128 110.9%</title></rect>
+<text x="1398" y="766" class="num">110.9%  0.62->0.68 TF</text>
+<text x="30" y="794" class="label">896x512x768</text>
+<text x="166" y="794" class="small muted">v6</text>
+<rect x="260" y="780" width="483.7" height="16" rx="2" fill="#2f9e63"><title>896x512x768 107.9%</title></rect>
+<text x="1398" y="794" class="num">107.9%  9.39->10.13 TF</text>
+<rect x="20" y="803" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="822" class="label">512x512x256</text>
+<text x="166" y="822" class="small muted">v6</text>
+<rect x="260" y="808" width="448.4" height="16" rx="2" fill="#2f9e63"><title>512x512x256 100.0%</title></rect>
+<text x="1398" y="822" class="num">100.0%  7.27->7.28 TF</text>
+<text x="30" y="850" class="label">960x512x256</text>
+<text x="166" y="850" class="small muted">v6</text>
+<rect x="260" y="836" width="444.2" height="16" rx="2" fill="#e09b2d"><title>960x512x256 99.1%</title></rect>
+<text x="1398" y="850" class="num">99.1%  9.54->9.45 TF</text>
+<rect x="20" y="859" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="878" class="label">896x512x256</text>
+<text x="166" y="878" class="small muted">v6</text>
+<rect x="260" y="864" width="443.0" height="16" rx="2" fill="#e09b2d"><title>896x512x256 98.8%</title></rect>
+<text x="1398" y="878" class="num">98.8%  8.92->8.82 TF</text>
+<text x="30" y="906" class="label">6144x3456x3072</text>
+<text x="166" y="906" class="small muted">v8</text>
+<rect x="260" y="892" width="432.9" height="16" rx="2" fill="#e09b2d"><title>6144x3456x3072 96.6%</title></rect>
+<text x="1398" y="906" class="num">96.6%  17.85->17.24 TF</text>
+<rect x="20" y="915" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="934" class="label">5376x3456x3072</text>
+<text x="166" y="934" class="small muted">v8</text>
+<rect x="260" y="920" width="429.5" height="16" rx="2" fill="#e09b2d"><title>5376x3456x3072 95.8%</title></rect>
+<text x="1398" y="934" class="num">95.8%  17.69->16.95 TF</text>
+<text x="30" y="962" class="label">6144x3456x1536</text>
+<text x="166" y="962" class="small muted">v8</text>
+<rect x="260" y="948" width="420.2" height="16" rx="2" fill="#e09b2d"><title>6144x3456x1536 93.8%</title></rect>
+<text x="1398" y="962" class="num">93.8%  17.74->16.63 TF</text>
+<rect x="20" y="971" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="990" class="label">6144x3456x2304</text>
+<text x="166" y="990" class="small muted">v8</text>
+<rect x="260" y="976" width="419.2" height="16" rx="2" fill="#e09b2d"><title>6144x3456x2304 93.5%</title></rect>
+<text x="1398" y="990" class="num">93.5%  18.22->17.04 TF</text>
+<text x="30" y="1018" class="label">5376x3456x1536</text>
+<text x="166" y="1018" class="small muted">v8</text>
+<rect x="260" y="1004" width="418.4" height="16" rx="2" fill="#e09b2d"><title>5376x3456x1536 93.4%</title></rect>
+<text x="1398" y="1018" class="num">93.4%  17.56->16.39 TF</text>
+<rect x="20" y="1027" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="1046" class="label">5376x3456x2304</text>
+<text x="166" y="1046" class="small muted">v8</text>
+<rect x="260" y="1032" width="417.7" height="16" rx="2" fill="#e09b2d"><title>5376x3456x2304 93.2%</title></rect>
+<text x="1398" y="1046" class="num">93.2%  18.09->16.86 TF</text>
+<text x="30" y="1074" class="label">3456x4608x1536</text>
+<text x="166" y="1074" class="small muted">v8</text>
+<rect x="260" y="1060" width="412.4" height="16" rx="2" fill="#e09b2d"><title>3456x4608x1536 92.0%</title></rect>
+<text x="1398" y="1074" class="num">92.0%  17.61->16.21 TF</text>
+<rect x="20" y="1083" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="1102" class="label">4608x3456x1536</text>
+<text x="166" y="1102" class="small muted">v8</text>
+<rect x="260" y="1088" width="411.7" height="16" rx="2" fill="#e09b2d"><title>4608x3456x1536 91.9%</title></rect>
+<text x="1398" y="1102" class="num">91.9%  17.60->16.17 TF</text>
+<text x="30" y="1130" class="label">4608x3456x2304</text>
+<text x="166" y="1130" class="small muted">v8</text>
+<rect x="260" y="1116" width="408.9" height="16" rx="2" fill="#e09b2d"><title>4608x3456x2304 91.2%</title></rect>
+<text x="1398" y="1130" class="num">91.2%  18.13->16.54 TF</text>
+<rect x="20" y="1139" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="1158" class="label">768x512x256</text>
+<text x="166" y="1158" class="small muted">v6</text>
+<rect x="260" y="1144" width="398.1" height="16" rx="2" fill="#e09b2d"><title>768x512x256 88.8%</title></rect>
+<text x="1398" y="1158" class="num">88.8%  12.28->10.91 TF</text>
+<text x="30" y="1186" class="label">960x960x960</text>
+<text x="166" y="1186" class="small muted">v6</text>
+<rect x="260" y="1172" width="385.6" height="16" rx="2" fill="#e09b2d"><title>960x960x960 86.0%</title></rect>
+<text x="1398" y="1186" class="num">86.0%  14.89->12.81 TF</text>
+<rect x="20" y="1195" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="1214" class="label">448x448x448</text>
+<text x="166" y="1214" class="small muted">v6</text>
+<rect x="260" y="1200" width="384.3" height="16" rx="2" fill="#e09b2d"><title>448x448x448 85.7%</title></rect>
+<text x="1398" y="1214" class="num">85.7%  7.31->6.27 TF</text>
+<text x="30" y="1242" class="label">1280x1280x1280</text>
+<text x="166" y="1242" class="small muted">v6</text>
+<rect x="260" y="1228" width="379.5" height="16" rx="2" fill="#e09b2d"><title>1280x1280x1280 84.7%</title></rect>
+<text x="1398" y="1242" class="num">84.7%  15.56->13.18 TF</text>
+<rect x="20" y="1251" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="1270" class="label">256x256x256</text>
+<text x="166" y="1270" class="small muted">v6</text>
+<rect x="260" y="1256" width="373.9" height="16" rx="2" fill="#e09b2d"><title>256x256x256 83.4%</title></rect>
+<text x="1398" y="1270" class="num">83.4%  3.27->2.73 TF</text>
+<text x="30" y="1298" class="label">896x896x896</text>
+<text x="166" y="1298" class="small muted">v6</text>
+<rect x="260" y="1284" width="372.9" height="16" rx="2" fill="#e09b2d"><title>896x896x896 83.2%</title></rect>
+<text x="1398" y="1298" class="num">83.2%  13.44->11.18 TF</text>
+<rect x="20" y="1307" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="1326" class="label">4608x6912x1536</text>
+<text x="166" y="1326" class="small muted">v8</text>
+<rect x="260" y="1312" width="372.7" height="16" rx="2" fill="#e09b2d"><title>4608x6912x1536 83.2%</title></rect>
+<text x="1398" y="1326" class="num">83.2%  20.06->16.68 TF</text>
+<text x="30" y="1354" class="label">1152x1152x1152</text>
+<text x="166" y="1354" class="small muted">v6</text>
+<rect x="260" y="1340" width="370.7" height="16" rx="2" fill="#e09b2d"><title>1152x1152x1152 82.7%</title></rect>
+<text x="1398" y="1354" class="num">82.7%  16.40->13.57 TF</text>
+<rect x="20" y="1363" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="1382" class="label">4608x4608x1536</text>
+<text x="166" y="1382" class="small muted">v8</text>
+<rect x="260" y="1368" width="370.0" height="16" rx="2" fill="#e09b2d"><title>4608x4608x1536 82.6%</title></rect>
+<text x="1398" y="1382" class="num">82.6%  20.16->16.65 TF</text>
+<text x="30" y="1410" class="label">5376x5376x1536</text>
+<text x="166" y="1410" class="small muted">v8</text>
+<rect x="260" y="1396" width="369.9" height="16" rx="2" fill="#e09b2d"><title>5376x5376x1536 82.5%</title></rect>
+<text x="1398" y="1410" class="num">82.5%  20.23->16.69 TF</text>
+<rect x="20" y="1419" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="1438" class="label">4608x3456x3072</text>
+<text x="166" y="1438" class="small muted">v8</text>
+<rect x="260" y="1424" width="367.9" height="16" rx="2" fill="#e09b2d"><title>4608x3456x3072 82.1%</title></rect>
+<text x="1398" y="1438" class="num">82.1%  20.31->16.67 TF</text>
+<text x="30" y="1466" class="label">5376x5376x3072</text>
+<text x="166" y="1466" class="small muted">v8</text>
+<rect x="260" y="1452" width="367.5" height="16" rx="2" fill="#e09b2d"><title>5376x5376x3072 82.0%</title></rect>
+<text x="1398" y="1466" class="num">82.0%  20.92->17.16 TF</text>
+<rect x="20" y="1475" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="1494" class="label">3456x6144x3072</text>
+<text x="166" y="1494" class="small muted">v8</text>
+<rect x="260" y="1480" width="366.8" height="16" rx="2" fill="#e09b2d"><title>3456x6144x3072 81.8%</title></rect>
+<text x="1398" y="1494" class="num">81.8%  20.99->17.18 TF</text>
+<text x="30" y="1522" class="label">3456x6144x1536</text>
+<text x="166" y="1522" class="small muted">v8</text>
+<rect x="260" y="1508" width="366.2" height="16" rx="2" fill="#e09b2d"><title>3456x6144x1536 81.7%</title></rect>
+<text x="1398" y="1522" class="num">81.7%  20.24->16.53 TF</text>
+<rect x="20" y="1531" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="1550" class="label">3840x3840x3840</text>
+<text x="166" y="1550" class="small muted">v8</text>
+<rect x="260" y="1536" width="365.6" height="16" rx="2" fill="#e09b2d"><title>3840x3840x3840 81.6%</title></rect>
+<text x="1398" y="1550" class="num">81.6%  20.70->16.88 TF</text>
+<text x="30" y="1578" class="label">6912x4608x3072</text>
+<text x="166" y="1578" class="small muted">v8</text>
+<rect x="260" y="1564" width="365.4" height="16" rx="2" fill="#e09b2d"><title>6912x4608x3072 81.5%</title></rect>
+<text x="1398" y="1578" class="num">81.5%  20.85->17.00 TF</text>
+<rect x="20" y="1587" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="1606" class="label">5376x5376x2304</text>
+<text x="166" y="1606" class="small muted">v8</text>
+<rect x="260" y="1592" width="365.0" height="16" rx="2" fill="#e09b2d"><title>5376x5376x2304 81.4%</title></rect>
+<text x="1398" y="1606" class="num">81.4%  20.96->17.07 TF</text>
+<text x="30" y="1634" class="label">6912x4608x2304</text>
+<text x="166" y="1634" class="small muted">v8</text>
+<rect x="260" y="1620" width="364.8" height="16" rx="2" fill="#e09b2d"><title>6912x4608x2304 81.4%</title></rect>
+<text x="1398" y="1634" class="num">81.4%  20.90->17.01 TF</text>
+<rect x="20" y="1643" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="1662" class="label">512x512x512</text>
+<text x="166" y="1662" class="small muted">v6</text>
+<rect x="260" y="1648" width="364.1" height="16" rx="2" fill="#e09b2d"><title>512x512x512 81.2%</title></rect>
+<text x="1398" y="1662" class="num">81.2%  10.08->8.19 TF</text>
+<text x="30" y="1690" class="label">3456x4608x2304</text>
+<text x="166" y="1690" class="small muted">v8</text>
+<rect x="260" y="1676" width="363.0" height="16" rx="2" fill="#e09b2d"><title>3456x4608x2304 81.0%</title></rect>
+<text x="1398" y="1690" class="num">81.0%  20.35->16.48 TF</text>
+<rect x="20" y="1699" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="1718" class="label">3456x4608x3072</text>
+<text x="166" y="1718" class="small muted">v8</text>
+<rect x="260" y="1704" width="362.7" height="16" rx="2" fill="#e09b2d"><title>3456x4608x3072 80.9%</title></rect>
+<text x="1398" y="1718" class="num">80.9%  20.46->16.56 TF</text>
+<text x="30" y="1746" class="label">3456x6144x2304</text>
+<text x="166" y="1746" class="small muted">v8</text>
+<rect x="260" y="1732" width="362.1" height="16" rx="2" fill="#e09b2d"><title>3456x6144x2304 80.8%</title></rect>
+<text x="1398" y="1746" class="num">80.8%  21.03->16.99 TF</text>
+<rect x="20" y="1755" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="1774" class="label">4608x6912x2304</text>
+<text x="166" y="1774" class="small muted">v8</text>
+<rect x="260" y="1760" width="361.6" height="16" rx="2" fill="#e09b2d"><title>4608x6912x2304 80.7%</title></rect>
+<text x="1398" y="1774" class="num">80.7%  20.82->16.80 TF</text>
+<text x="30" y="1802" class="label">7680x6144x3840</text>
+<text x="166" y="1802" class="small muted">v8</text>
+<rect x="260" y="1788" width="361.2" height="16" rx="2" fill="#e09b2d"><title>7680x6144x3840 80.6%</title></rect>
+<text x="1398" y="1802" class="num">80.6%  21.41->17.26 TF</text>
+<rect x="20" y="1811" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="1830" class="label">6912x4608x1536</text>
+<text x="166" y="1830" class="small muted">v8</text>
+<rect x="260" y="1816" width="360.7" height="16" rx="2" fill="#e09b2d"><title>6912x4608x1536 80.5%</title></rect>
+<text x="1398" y="1830" class="num">80.5%  20.75->16.70 TF</text>
+<text x="30" y="1858" class="label">3072x3072x3072</text>
+<text x="166" y="1858" class="small muted">v8</text>
+<rect x="260" y="1844" width="360.6" height="16" rx="2" fill="#e09b2d"><title>3072x3072x3072 80.5%</title></rect>
+<text x="1398" y="1858" class="num">80.5%  21.00->16.89 TF</text>
+<rect x="20" y="1867" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="1886" class="label">2304x2304x2304</text>
+<text x="166" y="1886" class="small muted">v8</text>
+<rect x="260" y="1872" width="360.4" height="16" rx="2" fill="#e09b2d"><title>2304x2304x2304 80.4%</title></rect>
+<text x="1398" y="1886" class="num">80.4%  19.78->15.91 TF</text>
+<text x="30" y="1914" class="label">6144x4608x3072</text>
+<text x="166" y="1914" class="small muted">v8</text>
+<rect x="260" y="1900" width="359.2" height="16" rx="2" fill="#e09b2d"><title>6144x4608x3072 80.1%</title></rect>
+<text x="1398" y="1914" class="num">80.1%  21.48->17.22 TF</text>
+<rect x="20" y="1923" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="1942" class="label">192x192x192</text>
+<text x="166" y="1942" class="small muted">v1</text>
+<rect x="260" y="1928" width="359.1" height="16" rx="2" fill="#e09b2d"><title>192x192x192 80.1%</title></rect>
+<text x="1398" y="1942" class="num">80.1%  1.72->1.38 TF</text>
+<text x="30" y="1970" class="label">3072x2304x1536</text>
+<text x="166" y="1970" class="small muted">v8</text>
+<rect x="260" y="1956" width="359.1" height="16" rx="2" fill="#e09b2d"><title>3072x2304x1536 80.1%</title></rect>
+<text x="1398" y="1970" class="num">80.1%  20.18->16.17 TF</text>
+<rect x="20" y="1979" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="1998" class="label">4608x6144x3072</text>
+<text x="166" y="1998" class="small muted">v8</text>
+<rect x="260" y="1984" width="357.5" height="16" rx="2" fill="#cf4f4f"><title>4608x6144x3072 79.8%</title></rect>
+<text x="1398" y="1998" class="num">79.8%  21.56->17.19 TF</text>
+<text x="30" y="2026" class="label">1536x1536x1536</text>
+<text x="166" y="2026" class="small muted">v8</text>
+<rect x="260" y="2012" width="353.9" height="16" rx="2" fill="#cf4f4f"><title>1536x1536x1536 79.0%</title></rect>
+<text x="1398" y="2026" class="num">79.0%  19.23->15.18 TF</text>
+<rect x="20" y="2035" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="2054" class="label">6144x4608x2304</text>
+<text x="166" y="2054" class="small muted">v8</text>
+<rect x="260" y="2040" width="352.9" height="16" rx="2" fill="#cf4f4f"><title>6144x4608x2304 78.7%</title></rect>
+<text x="1398" y="2054" class="num">78.7%  21.73->17.11 TF</text>
+<text x="30" y="2082" class="label">4608x6144x2304</text>
+<text x="166" y="2082" class="small muted">v8</text>
+<rect x="260" y="2068" width="351.1" height="16" rx="2" fill="#cf4f4f"><title>4608x6144x2304 78.3%</title></rect>
+<text x="1398" y="2082" class="num">78.3%  21.72->17.02 TF</text>
+<rect x="20" y="2091" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="2110" class="label">6144x4608x1536</text>
+<text x="166" y="2110" class="small muted">v8</text>
+<rect x="260" y="2096" width="350.8" height="16" rx="2" fill="#cf4f4f"><title>6144x4608x1536 78.3%</title></rect>
+<text x="1398" y="2110" class="num">78.3%  21.36->16.72 TF</text>
+<text x="30" y="2138" class="label">4096x4096x4096</text>
+<text x="166" y="2138" class="small muted">v8</text>
+<rect x="260" y="2124" width="349.0" height="16" rx="2" fill="#cf4f4f"><title>4096x4096x4096 77.9%</title></rect>
+<text x="1398" y="2138" class="num">77.9%  21.72->16.92 TF</text>
+<rect x="20" y="2147" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="2166" class="label">8192x8192x8192</text>
+<text x="166" y="2166" class="small muted">v8</text>
+<rect x="260" y="2152" width="349.0" height="16" rx="2" fill="#cf4f4f"><title>8192x8192x8192 77.9%</title></rect>
+<text x="1398" y="2166" class="num">77.9%  22.69->17.67 TF</text>
+<text x="30" y="2194" class="label">4608x6144x1536</text>
+<text x="166" y="2194" class="small muted">v8</text>
+<rect x="260" y="2180" width="348.1" height="16" rx="2" fill="#cf4f4f"><title>4608x6144x1536 77.7%</title></rect>
+<text x="1398" y="2194" class="num">77.7%  21.26->16.51 TF</text>
+<rect x="20" y="2203" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="2222" class="label">1792x1792x1792</text>
+<text x="166" y="2222" class="small muted">v6</text>
+<rect x="260" y="2208" width="346.1" height="16" rx="2" fill="#cf4f4f"><title>1792x1792x1792 77.2%</title></rect>
+<text x="1398" y="2222" class="num">77.2%  18.10->13.97 TF</text>
+<text x="30" y="2250" class="label">1536x2304x1536</text>
+<text x="166" y="2250" class="small muted">v8</text>
+<rect x="260" y="2236" width="338.8" height="16" rx="2" fill="#cf4f4f"><title>1536x2304x1536 75.6%</title></rect>
+<text x="1398" y="2250" class="num">75.6%  19.19->14.51 TF</text>
+<rect x="20" y="2259" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="2278" class="label">1024x1024x1024</text>
+<text x="166" y="2278" class="small muted">v6</text>
+<rect x="260" y="2264" width="338.3" height="16" rx="2" fill="#cf4f4f"><title>1024x1024x1024 75.5%</title></rect>
+<text x="1398" y="2278" class="num">75.5%  16.37->12.35 TF</text>
+<text x="30" y="2306" class="label">2304x1536x3072</text>
+<text x="166" y="2306" class="small muted">v8</text>
+<rect x="260" y="2292" width="321.2" height="16" rx="2" fill="#cf4f4f"><title>2304x1536x3072 71.7%</title></rect>
+<text x="1398" y="2306" class="num">71.7%  20.54->14.72 TF</text>
+<rect x="20" y="2315" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="2334" class="label">2048x1024x1024</text>
+<text x="166" y="2334" class="small muted">v6</text>
+<rect x="260" y="2320" width="312.5" height="16" rx="2" fill="#cf4f4f"><title>2048x1024x1024 69.7%</title></rect>
+<text x="1398" y="2334" class="num">69.7%  19.79->13.80 TF</text>
+<text x="30" y="2362" class="label">2048x2048x1024</text>
+<text x="166" y="2362" class="small muted">v6</text>
+<rect x="260" y="2348" width="312.4" height="16" rx="2" fill="#cf4f4f"><title>2048x2048x1024 69.7%</title></rect>
+<text x="1398" y="2362" class="num">69.7%  20.07->13.99 TF</text>
+<rect x="20" y="2371" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="2390" class="label">1024x2048x1024</text>
+<text x="166" y="2390" class="small muted">v6</text>
+<rect x="260" y="2376" width="311.9" height="16" rx="2" fill="#cf4f4f"><title>1024x2048x1024 69.6%</title></rect>
+<text x="1398" y="2390" class="num">69.6%  19.79->13.77 TF</text>
+<text x="30" y="2418" class="label">2048x2048x2048</text>
+<text x="166" y="2418" class="small muted">v8</text>
+<rect x="260" y="2404" width="308.3" height="16" rx="2" fill="#cf4f4f"><title>2048x2048x2048 68.8%</title></rect>
+<text x="1398" y="2418" class="num">68.8%  21.41->14.73 TF</text>
+<rect x="20" y="2427" width="1680" height="28" fill="#f8fafc"/>
+<text x="30" y="2446" class="label">1024x2048x2048</text>
+<text x="166" y="2446" class="small muted">v6</text>
+<rect x="260" y="2432" width="294.7" height="16" rx="2" fill="#cf4f4f"><title>1024x2048x2048 65.8%</title></rect>
+<text x="1398" y="2446" class="num">65.8%  21.26->13.98 TF</text>
+</svg>

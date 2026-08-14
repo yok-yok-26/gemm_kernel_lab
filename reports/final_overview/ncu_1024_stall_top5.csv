@@ -1,0 +1,11 @@
+mode,top1_reason,top1_pct,top2_reason,top2_pct,top3_reason,top3_pct,top4_reason,top4_pct,top5_reason,top5_pct
+library_cublas_gemm,not_selected,30.77,selected,28.15,mio_throttle,12.05,mio_throttle_pipe_mio,12.05,barrier,10.7
+v1,mio_throttle,47.36,mio_throttle_pipe_mio,47.36,long_scoreboard,16.93,long_scoreboard_pipe_l1tex,16.93,barrier,11.41
+v2,mio_throttle,20.6,mio_throttle_pipe_mio,20.6,not_selected,19.83,short_scoreboard,13.07,long_scoreboard,11.98
+v3,mio_throttle,42.97,mio_throttle_pipe_mio,42.97,not_selected,18.0,barrier,9.7,long_scoreboard,9.13
+v4,mio_throttle,21.57,mio_throttle_pipe_mio,21.57,not_selected,18.99,short_scoreboard,14.08,long_scoreboard,11.67
+v5,mio_throttle,38.03,mio_throttle_pipe_mio,38.03,not_selected,20.57,short_scoreboard,10.22,barrier,9.91
+v6,not_selected,26.5,mio_throttle,17.3,mio_throttle_pipe_mio,17.3,short_scoreboard,16.61,selected,12.3
+v7,mio_throttle,46.4,mio_throttle_pipe_mio,46.4,not_selected,21.03,barrier,9.43,selected,7.33
+v8,not_selected,24.74,selected,19.86,short_scoreboard,13.19,dispatch_stall,13.18,mio_throttle,8.11
+v9,short_scoreboard,30.45,mio_throttle,25.52,mio_throttle_pipe_mio,25.52,selected,12.6,not_selected,9.35

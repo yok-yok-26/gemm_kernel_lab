@@ -1,0 +1,2 @@
+mode,m,n,k,warmup,iters,ms,tflops,logical_gbs
+v19,1024,1024,1024,10,100,0.0512182,41.9281,245.672

@@ -1,0 +1,2 @@
+mode,m,n,k,warmup,iters,ms,tflops,logical_gbs,status,note
+v10,130,128,128,10,50,nan,nan,nan,SKIP,v10 WMMA learning kernel requires M/N/K multiples of 16

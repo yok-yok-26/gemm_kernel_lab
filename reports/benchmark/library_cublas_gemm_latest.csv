@@ -1,0 +1,2 @@
+mode,m,n,k,warmup,iters,ms,tflops,logical_gbs
+library_cublas_gemm,1024,1024,1024,2,5,0.133107,16.1335,94.5322

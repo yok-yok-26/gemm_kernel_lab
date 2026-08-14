@@ -1,0 +1,874 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="6244" viewBox="0 0 1920 6244">
+<style>
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#172033}
+.title{font-size:26px;font-weight:700}.subtitle{font-size:14px;fill:#5b6472}
+.metric{font-size:17px;font-weight:700}.small{font-size:12px;fill:#606b78}
+.mode{font-size:13px}.raw{font-size:12px;fill:#334155}.head{font-size:12px;fill:#64748b;font-weight:600}
+.algo{font-size:13px;font-weight:700}.note{font-size:12px;fill:#455366}
+.grid{stroke:#e6ebf2;stroke-width:1}.barbg{fill:#edf1f7}.divider{stroke:#d8dee8;stroke-width:1}
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="44" y="42" class="title">NCU metrics grouped by metric, 1024^3</text>
+<text x="44" y="70" class="subtitle">Each metric is one block. Algorithms are horizontal bars inside the block; color changes by metric and shade changes by algorithm.</text>
+<text x="44" y="102" class="head">Algorithm optimization ideas</text>
+<rect x="44.0" y="113" width="899.0" height="25" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="56.0" y="130" class="algo">library_cublas_gemm<title>cuBLAS generic GEMM baseline.</title></text>
+<text x="206.0" y="130" class="note">cuBLAS generic GEMM baseline.<title>cuBLAS generic GEMM baseline.</title></text>
+<rect x="44.0" y="145" width="899.0" height="25" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="56.0" y="162" class="algo">v1<title>Basic shared-memory tiling baseline.</title></text>
+<text x="206.0" y="162" class="note">Basic shared-memory tiling baseline.<title>Basic shared-memory tiling baseline.</title></text>
+<rect x="44.0" y="177" width="899.0" height="25" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="56.0" y="194" class="algo">v2<title>4x4 micro-tile to increase compute reuse per shared/global load.</title></text>
+<text x="206.0" y="194" class="note">4x4 micro-tile to increase compute reuse per shared/global load.<title>4x4 micro-tile to increase compute reuse per shared/global load.</title></text>
+<rect x="44.0" y="209" width="899.0" height="25" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="56.0" y="226" class="algo">v3<title>Shared B layout experiment to study bank mapping and MIO pressure.</title></text>
+<text x="206.0" y="226" class="note">Shared B layout experiment to study bank mapping and MIO pressure.<title>Shared B layout experiment to study bank mapping and MIO pressure.</title></text>
+<rect x="44.0" y="241" width="899.0" height="25" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="56.0" y="258" class="algo">v4<title>Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></text>
+<text x="206.0" y="258" class="note">Adjusted shared layout/padding relative to v3 to reduce MIO pressure.<title>Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></text>
+<rect x="977.0" y="113" width="899.0" height="25" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="989.0" y="130" class="algo">v5<title>Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></text>
+<text x="1139.0" y="130" class="note">Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.<title>Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></text>
+<rect x="977.0" y="145" width="899.0" height="25" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="989.0" y="162" class="algo">v6<title>Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></text>
+<text x="1139.0" y="162" class="note">Explicit cp.async double buffering with dynamic shared memory, TILE=4.<title>Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></text>
+<rect x="977.0" y="177" width="899.0" height="25" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="989.0" y="194" class="algo">v7<title>cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></text>
+<text x="1139.0" y="194" class="note">cp.async variant with vectorized/float4 C stores and larger shared footprint.<title>cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></text>
+<rect x="977.0" y="209" width="899.0" height="25" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="989.0" y="226" class="algo">v8<title>cp.async double buffering with TILE=8 for higher per-thread compute density.</title></text>
+<text x="1139.0" y="226" class="note">cp.async double buffering with TILE=8 for higher per-thread compute density.<title>cp.async double buffering with TILE=8 for higher per-thread compute density.</title></text>
+<rect x="977.0" y="241" width="899.0" height="25" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="989.0" y="258" class="algo">v9<title>Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></text>
+<text x="1139.0" y="258" class="note">Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.<title>Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></text>
+<text x="380" y="322" class="head">Bar length scaled within current metric</text>
+<text x="1532" y="322" class="head">Raw value</text>
+<line x1="44" y1="322" x2="1876" y2="322" class="divider"/>
+<text x="64" y="343" class="metric">1. Duration</text>
+<line x1="657.5" y1="356" x2="657.5" y2="626" class="grid"/>
+<line x1="935.0" y1="356" x2="935.0" y2="626" class="grid"/>
+<line x1="1212.5" y1="356" x2="1212.5" y2="626" class="grid"/>
+<line x1="1490.0" y1="356" x2="1490.0" y2="626" class="grid"/>
+<text x="86" y="383" class="mode">library_cublas_gemm<title>cuBLAS generic GEMM baseline.</title></text>
+<rect x="380" y="370" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="370" width="173.8" height="17" fill="#85aedc" rx="4"><title>Duration | library_cublas_gemm\nRaw value: 149.38\nAlgorithm note: cuBLAS generic GEMM baseline.</title></rect>
+<text x="1532" y="383" class="raw">149.38</text>
+<text x="86" y="409" class="mode">v1<title>Basic shared-memory tiling baseline.</title></text>
+<rect x="380" y="396" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="396" width="1110.0" height="17" fill="#7ca8da" rx="4"><title>Duration | v1\nRaw value: 954.14\nAlgorithm note: Basic shared-memory tiling baseline.</title></rect>
+<text x="1532" y="409" class="raw">954.14</text>
+<text x="86" y="435" class="mode">v2<title>4x4 micro-tile to increase compute reuse per shared/global load.</title></text>
+<rect x="380" y="422" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="422" width="286.4" height="17" fill="#74a3d8" rx="4"><title>Duration | v2\nRaw value: 246.18\nAlgorithm note: 4x4 micro-tile to increase compute reuse per shared/global load.</title></rect>
+<text x="1532" y="435" class="raw">246.18</text>
+<text x="86" y="461" class="mode">v3<title>Shared B layout experiment to study bank mapping and MIO pressure.</title></text>
+<rect x="380" y="448" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="448" width="366.5" height="17" fill="#6c9dd5" rx="4"><title>Duration | v3\nRaw value: 315.01\nAlgorithm note: Shared B layout experiment to study bank mapping and MIO pressure.</title></rect>
+<text x="1532" y="461" class="raw">315.01</text>
+<text x="86" y="487" class="mode">v4<title>Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></text>
+<rect x="380" y="474" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="474" width="284.1" height="17" fill="#6398d3" rx="4"><title>Duration | v4\nRaw value: 244.19\nAlgorithm note: Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></rect>
+<text x="1532" y="487" class="raw">244.19</text>
+<text x="86" y="513" class="mode">v5<title>Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></text>
+<rect x="380" y="500" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="500" width="334.6" height="17" fill="#5b92d0" rx="4"><title>Duration | v5\nRaw value: 287.58\nAlgorithm note: Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></rect>
+<text x="1532" y="513" class="raw">287.58</text>
+<text x="86" y="539" class="mode">v6<title>Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></text>
+<rect x="380" y="526" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="526" width="227.8" height="17" fill="#528dce" rx="4"><title>Duration | v6\nRaw value: 195.78\nAlgorithm note: Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></rect>
+<text x="1532" y="539" class="raw">195.78</text>
+<text x="86" y="565" class="mode">v7<title>cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></text>
+<rect x="380" y="552" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="552" width="294.2" height="17" fill="#4a87cc" rx="4"><title>Duration | v7\nRaw value: 252.90\nAlgorithm note: cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></rect>
+<text x="1532" y="565" class="raw">252.90</text>
+<text x="86" y="591" class="mode">v8<title>cp.async double buffering with TILE=8 for higher per-thread compute density.</title></text>
+<rect x="380" y="578" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="578" width="271.3" height="17" fill="#4281c9" rx="4"><title>Duration | v8\nRaw value: 233.18\nAlgorithm note: cp.async double buffering with TILE=8 for higher per-thread compute density.</title></rect>
+<text x="1532" y="591" class="raw">233.18</text>
+<text x="86" y="617" class="mode">v9<title>Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></text>
+<rect x="380" y="604" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="604" width="306.1" height="17" fill="#397cc7" rx="4"><title>Duration | v9\nRaw value: 263.10\nAlgorithm note: Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></rect>
+<text x="1532" y="617" class="raw">263.10</text>
+<line x1="44" y1="648" x2="1876" y2="648" class="divider"/>
+<text x="64" y="669" class="metric">2. Compute (SM) Throughput</text>
+<line x1="657.5" y1="682" x2="657.5" y2="952" class="grid"/>
+<line x1="935.0" y1="682" x2="935.0" y2="952" class="grid"/>
+<line x1="1212.5" y1="682" x2="1212.5" y2="952" class="grid"/>
+<line x1="1490.0" y1="682" x2="1490.0" y2="952" class="grid"/>
+<text x="86" y="709" class="mode">library_cublas_gemm<title>cuBLAS generic GEMM baseline.</title></text>
+<rect x="380" y="696" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="696" width="773.9" height="17" fill="#e49393" rx="4"><title>Compute (SM) Throughput | library_cublas_gemm\nRaw value: 66.23\nAlgorithm note: cuBLAS generic GEMM baseline.</title></rect>
+<text x="1532" y="709" class="raw">66.23</text>
+<text x="86" y="735" class="mode">v1<title>Basic shared-memory tiling baseline.</title></text>
+<rect x="380" y="722" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="722" width="1110.0" height="17" fill="#e38c8c" rx="4"><title>Compute (SM) Throughput | v1\nRaw value: 94.99\nAlgorithm note: Basic shared-memory tiling baseline.</title></rect>
+<text x="1532" y="735" class="raw">94.99</text>
+<text x="86" y="761" class="mode">v2<title>4x4 micro-tile to increase compute reuse per shared/global load.</title></text>
+<rect x="380" y="748" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="748" width="623.1" height="17" fill="#e18484" rx="4"><title>Compute (SM) Throughput | v2\nRaw value: 53.32\nAlgorithm note: 4x4 micro-tile to increase compute reuse per shared/global load.</title></rect>
+<text x="1532" y="761" class="raw">53.32</text>
+<text x="86" y="787" class="mode">v3<title>Shared B layout experiment to study bank mapping and MIO pressure.</title></text>
+<rect x="380" y="774" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="774" width="902.8" height="17" fill="#df7d7d" rx="4"><title>Compute (SM) Throughput | v3\nRaw value: 77.26\nAlgorithm note: Shared B layout experiment to study bank mapping and MIO pressure.</title></rect>
+<text x="1532" y="787" class="raw">77.26</text>
+<text x="86" y="813" class="mode">v4<title>Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></text>
+<rect x="380" y="800" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="800" width="626.5" height="17" fill="#dd7676" rx="4"><title>Compute (SM) Throughput | v4\nRaw value: 53.61\nAlgorithm note: Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></rect>
+<text x="1532" y="813" class="raw">53.61</text>
+<text x="86" y="839" class="mode">v5<title>Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></text>
+<rect x="380" y="826" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="826" width="684.9" height="17" fill="#db6e6e" rx="4"><title>Compute (SM) Throughput | v5\nRaw value: 58.61\nAlgorithm note: Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></rect>
+<text x="1532" y="839" class="raw">58.61</text>
+<text x="86" y="865" class="mode">v6<title>Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></text>
+<rect x="380" y="852" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="852" width="661.6" height="17" fill="#da6767" rx="4"><title>Compute (SM) Throughput | v6\nRaw value: 56.62\nAlgorithm note: Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></rect>
+<text x="1532" y="865" class="raw">56.62</text>
+<text x="86" y="891" class="mode">v7<title>cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></text>
+<rect x="380" y="878" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="878" width="453.0" height="17" fill="#d85f5f" rx="4"><title>Compute (SM) Throughput | v7\nRaw value: 38.77\nAlgorithm note: cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></rect>
+<text x="1532" y="891" class="raw">38.77</text>
+<text x="86" y="917" class="mode">v8<title>cp.async double buffering with TILE=8 for higher per-thread compute density.</title></text>
+<rect x="380" y="904" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="904" width="443.7" height="17" fill="#d65858" rx="4"><title>Compute (SM) Throughput | v8\nRaw value: 37.97\nAlgorithm note: cp.async double buffering with TILE=8 for higher per-thread compute density.</title></rect>
+<text x="1532" y="917" class="raw">37.97</text>
+<text x="86" y="943" class="mode">v9<title>Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></text>
+<rect x="380" y="930" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="930" width="439.7" height="17" fill="#d45151" rx="4"><title>Compute (SM) Throughput | v9\nRaw value: 37.63\nAlgorithm note: Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></rect>
+<text x="1532" y="943" class="raw">37.63</text>
+<line x1="44" y1="974" x2="1876" y2="974" class="divider"/>
+<text x="64" y="995" class="metric">3. Memory Throughput</text>
+<line x1="657.5" y1="1008" x2="657.5" y2="1278" class="grid"/>
+<line x1="935.0" y1="1008" x2="935.0" y2="1278" class="grid"/>
+<line x1="1212.5" y1="1008" x2="1212.5" y2="1278" class="grid"/>
+<line x1="1490.0" y1="1008" x2="1490.0" y2="1278" class="grid"/>
+<text x="86" y="1035" class="mode">library_cublas_gemm<title>cuBLAS generic GEMM baseline.</title></text>
+<rect x="380" y="1022" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1022" width="662.6" height="17" fill="#97c2a0" rx="4"><title>Memory Throughput | library_cublas_gemm\nRaw value: 56.70\nAlgorithm note: cuBLAS generic GEMM baseline.</title></rect>
+<text x="1532" y="1035" class="raw">56.70</text>
+<text x="86" y="1061" class="mode">v1<title>Basic shared-memory tiling baseline.</title></text>
+<rect x="380" y="1048" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1048" width="1110.0" height="17" fill="#90bd99" rx="4"><title>Memory Throughput | v1\nRaw value: 94.99\nAlgorithm note: Basic shared-memory tiling baseline.</title></rect>
+<text x="1532" y="1061" class="raw">94.99</text>
+<text x="86" y="1087" class="mode">v2<title>4x4 micro-tile to increase compute reuse per shared/global load.</title></text>
+<rect x="380" y="1074" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1074" width="847.0" height="17" fill="#88b993" rx="4"><title>Memory Throughput | v2\nRaw value: 72.48\nAlgorithm note: 4x4 micro-tile to increase compute reuse per shared/global load.</title></rect>
+<text x="1532" y="1087" class="raw">72.48</text>
+<text x="86" y="1113" class="mode">v3<title>Shared B layout experiment to study bank mapping and MIO pressure.</title></text>
+<rect x="380" y="1100" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1100" width="902.8" height="17" fill="#81b58c" rx="4"><title>Memory Throughput | v3\nRaw value: 77.26\nAlgorithm note: Shared B layout experiment to study bank mapping and MIO pressure.</title></rect>
+<text x="1532" y="1113" class="raw">77.26</text>
+<text x="86" y="1139" class="mode">v4<title>Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></text>
+<rect x="380" y="1126" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1126" width="851.5" height="17" fill="#7ab186" rx="4"><title>Memory Throughput | v4\nRaw value: 72.87\nAlgorithm note: Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></rect>
+<text x="1532" y="1139" class="raw">72.87</text>
+<text x="86" y="1165" class="mode">v5<title>Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></text>
+<rect x="380" y="1152" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1152" width="747.3" height="17" fill="#73ad7f" rx="4"><title>Memory Throughput | v5\nRaw value: 63.95\nAlgorithm note: Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></rect>
+<text x="1532" y="1165" class="raw">63.95</text>
+<text x="86" y="1191" class="mode">v6<title>Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></text>
+<rect x="380" y="1178" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1178" width="850.7" height="17" fill="#6ca879" rx="4"><title>Memory Throughput | v6\nRaw value: 72.80\nAlgorithm note: Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></rect>
+<text x="1532" y="1191" class="raw">72.80</text>
+<text x="86" y="1217" class="mode">v7<title>cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></text>
+<rect x="380" y="1204" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1204" width="572.7" height="17" fill="#65a472" rx="4"><title>Memory Throughput | v7\nRaw value: 49.01\nAlgorithm note: cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></rect>
+<text x="1532" y="1217" class="raw">49.01</text>
+<text x="86" y="1243" class="mode">v8<title>cp.async double buffering with TILE=8 for higher per-thread compute density.</title></text>
+<rect x="380" y="1230" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1230" width="576.8" height="17" fill="#5da06c" rx="4"><title>Memory Throughput | v8\nRaw value: 49.36\nAlgorithm note: cp.async double buffering with TILE=8 for higher per-thread compute density.</title></rect>
+<text x="1532" y="1243" class="raw">49.36</text>
+<text x="86" y="1269" class="mode">v9<title>Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></text>
+<rect x="380" y="1256" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1256" width="872.7" height="17" fill="#569c65" rx="4"><title>Memory Throughput | v9\nRaw value: 74.68\nAlgorithm note: Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></rect>
+<text x="1532" y="1269" class="raw">74.68</text>
+<line x1="44" y1="1300" x2="1876" y2="1300" class="divider"/>
+<text x="64" y="1321" class="metric">4. DRAM Throughput</text>
+<line x1="657.5" y1="1334" x2="657.5" y2="1604" class="grid"/>
+<line x1="935.0" y1="1334" x2="935.0" y2="1604" class="grid"/>
+<line x1="1212.5" y1="1334" x2="1212.5" y2="1604" class="grid"/>
+<line x1="1490.0" y1="1334" x2="1490.0" y2="1604" class="grid"/>
+<text x="86" y="1361" class="mode">library_cublas_gemm<title>cuBLAS generic GEMM baseline.</title></text>
+<rect x="380" y="1348" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1348" width="1110.0" height="17" fill="#f3c285" rx="4"><title>DRAM Throughput | library_cublas_gemm\nRaw value: 8.53\nAlgorithm note: cuBLAS generic GEMM baseline.</title></rect>
+<text x="1532" y="1361" class="raw">8.53</text>
+<text x="86" y="1387" class="mode">v1<title>Basic shared-memory tiling baseline.</title></text>
+<rect x="380" y="1374" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1374" width="173.1" height="17" fill="#f2bd7c" rx="4"><title>DRAM Throughput | v1\nRaw value: 1.33\nAlgorithm note: Basic shared-memory tiling baseline.</title></rect>
+<text x="1532" y="1387" class="raw">1.33</text>
+<text x="86" y="1413" class="mode">v2<title>4x4 micro-tile to increase compute reuse per shared/global load.</title></text>
+<rect x="380" y="1400" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1400" width="671.5" height="17" fill="#f1b974" rx="4"><title>DRAM Throughput | v2\nRaw value: 5.16\nAlgorithm note: 4x4 micro-tile to increase compute reuse per shared/global load.</title></rect>
+<text x="1532" y="1413" class="raw">5.16</text>
+<text x="86" y="1439" class="mode">v3<title>Shared B layout experiment to study bank mapping and MIO pressure.</title></text>
+<rect x="380" y="1426" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1426" width="524.4" height="17" fill="#f1b56c" rx="4"><title>DRAM Throughput | v3\nRaw value: 4.03\nAlgorithm note: Shared B layout experiment to study bank mapping and MIO pressure.</title></rect>
+<text x="1532" y="1439" class="raw">4.03</text>
+<text x="86" y="1465" class="mode">v4<title>Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></text>
+<rect x="380" y="1452" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1452" width="676.7" height="17" fill="#f0b163" rx="4"><title>DRAM Throughput | v4\nRaw value: 5.2\nAlgorithm note: Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></rect>
+<text x="1532" y="1465" class="raw">5.2</text>
+<text x="86" y="1491" class="mode">v5<title>Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></text>
+<rect x="380" y="1478" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1478" width="575.2" height="17" fill="#efad5b" rx="4"><title>DRAM Throughput | v5\nRaw value: 4.42\nAlgorithm note: Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></rect>
+<text x="1532" y="1491" class="raw">4.42</text>
+<text x="86" y="1517" class="mode">v6<title>Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></text>
+<rect x="380" y="1504" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1504" width="844.5" height="17" fill="#eea852" rx="4"><title>DRAM Throughput | v6\nRaw value: 6.49\nAlgorithm note: Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></rect>
+<text x="1532" y="1517" class="raw">6.49</text>
+<text x="86" y="1543" class="mode">v7<title>cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></text>
+<rect x="380" y="1530" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1530" width="653.2" height="17" fill="#eda44a" rx="4"><title>DRAM Throughput | v7\nRaw value: 5.02\nAlgorithm note: cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></rect>
+<text x="1532" y="1543" class="raw">5.02</text>
+<text x="86" y="1569" class="mode">v8<title>cp.async double buffering with TILE=8 for higher per-thread compute density.</title></text>
+<rect x="380" y="1556" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1556" width="710.5" height="17" fill="#eda042" rx="4"><title>DRAM Throughput | v8\nRaw value: 5.46\nAlgorithm note: cp.async double buffering with TILE=8 for higher per-thread compute density.</title></rect>
+<text x="1532" y="1569" class="raw">5.46</text>
+<text x="86" y="1595" class="mode">v9<title>Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></text>
+<rect x="380" y="1582" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1582" width="628.5" height="17" fill="#ec9c39" rx="4"><title>DRAM Throughput | v9\nRaw value: 4.83\nAlgorithm note: Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></rect>
+<text x="1532" y="1595" class="raw">4.83</text>
+<line x1="44" y1="1626" x2="1876" y2="1626" class="divider"/>
+<text x="64" y="1647" class="metric">5. L1/TEX Throughput</text>
+<line x1="657.5" y1="1660" x2="657.5" y2="1930" class="grid"/>
+<line x1="935.0" y1="1660" x2="935.0" y2="1930" class="grid"/>
+<line x1="1212.5" y1="1660" x2="1212.5" y2="1930" class="grid"/>
+<line x1="1490.0" y1="1660" x2="1490.0" y2="1930" class="grid"/>
+<text x="86" y="1687" class="mode">library_cublas_gemm<title>cuBLAS generic GEMM baseline.</title></text>
+<rect x="380" y="1674" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1674" width="747.1" height="17" fill="#b8a1d3" rx="4"><title>L1/TEX Throughput | library_cublas_gemm\nRaw value: 64.41\nAlgorithm note: cuBLAS generic GEMM baseline.</title></rect>
+<text x="1532" y="1687" class="raw">64.41</text>
+<text x="86" y="1713" class="mode">v1<title>Basic shared-memory tiling baseline.</title></text>
+<rect x="380" y="1700" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1700" width="1110.0" height="17" fill="#b39ad0" rx="4"><title>L1/TEX Throughput | v1\nRaw value: 95.70\nAlgorithm note: Basic shared-memory tiling baseline.</title></rect>
+<text x="1532" y="1713" class="raw">95.70</text>
+<text x="86" y="1739" class="mode">v2<title>4x4 micro-tile to increase compute reuse per shared/global load.</title></text>
+<rect x="380" y="1726" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1726" width="946.2" height="17" fill="#af94cd" rx="4"><title>L1/TEX Throughput | v2\nRaw value: 81.58\nAlgorithm note: 4x4 micro-tile to increase compute reuse per shared/global load.</title></rect>
+<text x="1532" y="1739" class="raw">81.58</text>
+<text x="86" y="1765" class="mode">v3<title>Shared B layout experiment to study bank mapping and MIO pressure.</title></text>
+<rect x="380" y="1752" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1752" width="1001.0" height="17" fill="#aa8dca" rx="4"><title>L1/TEX Throughput | v3\nRaw value: 86.30\nAlgorithm note: Shared B layout experiment to study bank mapping and MIO pressure.</title></rect>
+<text x="1532" y="1765" class="raw">86.30</text>
+<text x="86" y="1791" class="mode">v4<title>Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></text>
+<rect x="380" y="1778" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1778" width="952.3" height="17" fill="#a587c7" rx="4"><title>L1/TEX Throughput | v4\nRaw value: 82.10\nAlgorithm note: Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></rect>
+<text x="1532" y="1791" class="raw">82.10</text>
+<text x="86" y="1817" class="mode">v5<title>Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></text>
+<rect x="380" y="1804" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1804" width="835.2" height="17" fill="#a080c4" rx="4"><title>L1/TEX Throughput | v5\nRaw value: 72.01\nAlgorithm note: Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></rect>
+<text x="1532" y="1817" class="raw">72.01</text>
+<text x="86" y="1843" class="mode">v6<title>Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></text>
+<rect x="380" y="1830" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1830" width="953.3" height="17" fill="#9b7ac1" rx="4"><title>L1/TEX Throughput | v6\nRaw value: 82.19\nAlgorithm note: Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></rect>
+<text x="1532" y="1843" class="raw">82.19</text>
+<text x="86" y="1869" class="mode">v7<title>cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></text>
+<rect x="380" y="1856" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1856" width="857.4" height="17" fill="#9673be" rx="4"><title>L1/TEX Throughput | v7\nRaw value: 73.92\nAlgorithm note: cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></rect>
+<text x="1532" y="1869" class="raw">73.92</text>
+<text x="86" y="1895" class="mode">v8<title>cp.async double buffering with TILE=8 for higher per-thread compute density.</title></text>
+<rect x="380" y="1882" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1882" width="814.8" height="17" fill="#926dbb" rx="4"><title>L1/TEX Throughput | v8\nRaw value: 70.25\nAlgorithm note: cp.async double buffering with TILE=8 for higher per-thread compute density.</title></rect>
+<text x="1532" y="1895" class="raw">70.25</text>
+<text x="86" y="1921" class="mode">v9<title>Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></text>
+<rect x="380" y="1908" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="1908" width="996.4" height="17" fill="#8d66b8" rx="4"><title>L1/TEX Throughput | v9\nRaw value: 85.91\nAlgorithm note: Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></rect>
+<text x="1532" y="1921" class="raw">85.91</text>
+<line x1="44" y1="1952" x2="1876" y2="1952" class="divider"/>
+<text x="64" y="1973" class="metric">6. L2 Throughput</text>
+<line x1="657.5" y1="1986" x2="657.5" y2="2256" class="grid"/>
+<line x1="935.0" y1="1986" x2="935.0" y2="2256" class="grid"/>
+<line x1="1212.5" y1="1986" x2="1212.5" y2="2256" class="grid"/>
+<line x1="1490.0" y1="1986" x2="1490.0" y2="2256" class="grid"/>
+<text x="86" y="2013" class="mode">library_cublas_gemm<title>cuBLAS generic GEMM baseline.</title></text>
+<rect x="380" y="2000" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2000" width="1110.0" height="17" fill="#93c5cd" rx="4"><title>L2 Throughput | library_cublas_gemm\nRaw value: 25.68\nAlgorithm note: cuBLAS generic GEMM baseline.</title></rect>
+<text x="1532" y="2013" class="raw">25.68</text>
+<text x="86" y="2039" class="mode">v1<title>Basic shared-memory tiling baseline.</title></text>
+<rect x="380" y="2026" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2026" width="749.5" height="17" fill="#8cc1ca" rx="4"><title>L2 Throughput | v1\nRaw value: 17.34\nAlgorithm note: Basic shared-memory tiling baseline.</title></rect>
+<text x="1532" y="2039" class="raw">17.34</text>
+<text x="86" y="2065" class="mode">v2<title>4x4 micro-tile to increase compute reuse per shared/global load.</title></text>
+<rect x="380" y="2052" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2052" width="781.9" height="17" fill="#84bdc6" rx="4"><title>L2 Throughput | v2\nRaw value: 18.09\nAlgorithm note: 4x4 micro-tile to increase compute reuse per shared/global load.</title></rect>
+<text x="1532" y="2065" class="raw">18.09</text>
+<text x="86" y="2091" class="mode">v3<title>Shared B layout experiment to study bank mapping and MIO pressure.</title></text>
+<rect x="380" y="2078" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2078" width="623.3" height="17" fill="#7db9c3" rx="4"><title>L2 Throughput | v3\nRaw value: 14.42\nAlgorithm note: Shared B layout experiment to study bank mapping and MIO pressure.</title></rect>
+<text x="1532" y="2091" class="raw">14.42</text>
+<text x="86" y="2117" class="mode">v4<title>Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></text>
+<rect x="380" y="2104" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2104" width="789.7" height="17" fill="#76b5c0" rx="4"><title>L2 Throughput | v4\nRaw value: 18.27\nAlgorithm note: Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></rect>
+<text x="1532" y="2117" class="raw">18.27</text>
+<text x="86" y="2143" class="mode">v5<title>Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></text>
+<rect x="380" y="2130" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2130" width="693.8" height="17" fill="#6eb1bc" rx="4"><title>L2 Throughput | v5\nRaw value: 16.05\nAlgorithm note: Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></rect>
+<text x="1532" y="2143" class="raw">16.05</text>
+<text x="86" y="2169" class="mode">v6<title>Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></text>
+<rect x="380" y="2156" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2156" width="1009.7" height="17" fill="#67adb9" rx="4"><title>L2 Throughput | v6\nRaw value: 23.36\nAlgorithm note: Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></rect>
+<text x="1532" y="2169" class="raw">23.36</text>
+<text x="86" y="2195" class="mode">v7<title>cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></text>
+<rect x="380" y="2182" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2182" width="390.7" height="17" fill="#5fa9b5" rx="4"><title>L2 Throughput | v7\nRaw value: 9.04\nAlgorithm note: cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></rect>
+<text x="1532" y="2195" class="raw">9.04</text>
+<text x="86" y="2221" class="mode">v8<title>cp.async double buffering with TILE=8 for higher per-thread compute density.</title></text>
+<rect x="380" y="2208" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2208" width="641.9" height="17" fill="#58a5b2" rx="4"><title>L2 Throughput | v8\nRaw value: 14.85\nAlgorithm note: cp.async double buffering with TILE=8 for higher per-thread compute density.</title></rect>
+<text x="1532" y="2221" class="raw">14.85</text>
+<text x="86" y="2247" class="mode">v9<title>Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></text>
+<rect x="380" y="2234" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2234" width="689.4" height="17" fill="#51a1af" rx="4"><title>L2 Throughput | v9\nRaw value: 15.95\nAlgorithm note: Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></rect>
+<text x="1532" y="2247" class="raw">15.95</text>
+<line x1="44" y1="2278" x2="1876" y2="2278" class="divider"/>
+<text x="64" y="2299" class="metric">7. Issue Slots Busy</text>
+<line x1="657.5" y1="2312" x2="657.5" y2="2582" class="grid"/>
+<line x1="935.0" y1="2312" x2="935.0" y2="2582" class="grid"/>
+<line x1="1212.5" y1="2312" x2="1212.5" y2="2582" class="grid"/>
+<line x1="1490.0" y1="2312" x2="1490.0" y2="2582" class="grid"/>
+<text x="86" y="2339" class="mode">library_cublas_gemm<title>cuBLAS generic GEMM baseline.</title></text>
+<rect x="380" y="2326" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2326" width="1110.0" height="17" fill="#cda296" rx="4"><title>Issue Slots Busy | library_cublas_gemm\nRaw value: 75.23\nAlgorithm note: cuBLAS generic GEMM baseline.</title></rect>
+<text x="1532" y="2339" class="raw">75.23</text>
+<text x="86" y="2365" class="mode">v1<title>Basic shared-memory tiling baseline.</title></text>
+<rect x="380" y="2352" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2352" width="504.8" height="17" fill="#ca9b8f" rx="4"><title>Issue Slots Busy | v1\nRaw value: 34.21\nAlgorithm note: Basic shared-memory tiling baseline.</title></rect>
+<text x="1532" y="2365" class="raw">34.21</text>
+<text x="86" y="2391" class="mode">v2<title>4x4 micro-tile to increase compute reuse per shared/global load.</title></text>
+<rect x="380" y="2378" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2378" width="742.5" height="17" fill="#c69588" rx="4"><title>Issue Slots Busy | v2\nRaw value: 50.32\nAlgorithm note: 4x4 micro-tile to increase compute reuse per shared/global load.</title></rect>
+<text x="1532" y="2391" class="raw">50.32</text>
+<text x="86" y="2417" class="mode">v3<title>Shared B layout experiment to study bank mapping and MIO pressure.</title></text>
+<rect x="380" y="2404" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2404" width="641.4" height="17" fill="#c38f81" rx="4"><title>Issue Slots Busy | v3\nRaw value: 43.47\nAlgorithm note: Shared B layout experiment to study bank mapping and MIO pressure.</title></rect>
+<text x="1532" y="2417" class="raw">43.47</text>
+<text x="86" y="2443" class="mode">v4<title>Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></text>
+<rect x="380" y="2430" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2430" width="745.1" height="17" fill="#c08879" rx="4"><title>Issue Slots Busy | v4\nRaw value: 50.50\nAlgorithm note: Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></rect>
+<text x="1532" y="2443" class="raw">50.50</text>
+<text x="86" y="2469" class="mode">v5<title>Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></text>
+<rect x="380" y="2456" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2456" width="704.8" height="17" fill="#bc8272" rx="4"><title>Issue Slots Busy | v5\nRaw value: 47.77\nAlgorithm note: Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></rect>
+<text x="1532" y="2469" class="raw">47.77</text>
+<text x="86" y="2495" class="mode">v6<title>Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></text>
+<rect x="380" y="2482" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2482" width="943.1" height="17" fill="#b97b6b" rx="4"><title>Issue Slots Busy | v6\nRaw value: 63.92\nAlgorithm note: Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></rect>
+<text x="1532" y="2495" class="raw">63.92</text>
+<text x="86" y="2521" class="mode">v7<title>cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></text>
+<rect x="380" y="2508" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2508" width="862.9" height="17" fill="#b57564" rx="4"><title>Issue Slots Busy | v7\nRaw value: 58.48\nAlgorithm note: cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></rect>
+<text x="1532" y="2521" class="raw">58.48</text>
+<text x="86" y="2547" class="mode">v8<title>cp.async double buffering with TILE=8 for higher per-thread compute density.</title></text>
+<rect x="380" y="2534" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2534" width="797.2" height="17" fill="#b26f5d" rx="4"><title>Issue Slots Busy | v8\nRaw value: 54.03\nAlgorithm note: cp.async double buffering with TILE=8 for higher per-thread compute density.</title></rect>
+<text x="1532" y="2547" class="raw">54.03</text>
+<text x="86" y="2573" class="mode">v9<title>Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></text>
+<rect x="380" y="2560" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2560" width="638.7" height="17" fill="#af6855" rx="4"><title>Issue Slots Busy | v9\nRaw value: 43.29\nAlgorithm note: Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></rect>
+<text x="1532" y="2573" class="raw">43.29</text>
+<line x1="44" y1="2604" x2="1876" y2="2604" class="divider"/>
+<text x="64" y="2625" class="metric">8. SM Busy</text>
+<line x1="657.5" y1="2638" x2="657.5" y2="2908" class="grid"/>
+<line x1="935.0" y1="2638" x2="935.0" y2="2908" class="grid"/>
+<line x1="1212.5" y1="2638" x2="1212.5" y2="2908" class="grid"/>
+<line x1="1490.0" y1="2638" x2="1490.0" y2="2908" class="grid"/>
+<text x="86" y="2665" class="mode">library_cublas_gemm<title>cuBLAS generic GEMM baseline.</title></text>
+<rect x="380" y="2652" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2652" width="1110.0" height="17" fill="#a2b3e2" rx="4"><title>SM Busy | library_cublas_gemm\nRaw value: 75.23\nAlgorithm note: cuBLAS generic GEMM baseline.</title></rect>
+<text x="1532" y="2665" class="raw">75.23</text>
+<text x="86" y="2691" class="mode">v1<title>Basic shared-memory tiling baseline.</title></text>
+<rect x="380" y="2678" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2678" width="530.9" height="17" fill="#9baee0" rx="4"><title>SM Busy | v1\nRaw value: 35.98\nAlgorithm note: Basic shared-memory tiling baseline.</title></rect>
+<text x="1532" y="2691" class="raw">35.98</text>
+<text x="86" y="2717" class="mode">v2<title>4x4 micro-tile to increase compute reuse per shared/global load.</title></text>
+<rect x="380" y="2704" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2704" width="742.5" height="17" fill="#95a9de" rx="4"><title>SM Busy | v2\nRaw value: 50.32\nAlgorithm note: 4x4 micro-tile to increase compute reuse per shared/global load.</title></rect>
+<text x="1532" y="2717" class="raw">50.32</text>
+<text x="86" y="2743" class="mode">v3<title>Shared B layout experiment to study bank mapping and MIO pressure.</title></text>
+<rect x="380" y="2730" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2730" width="641.4" height="17" fill="#8fa4dc" rx="4"><title>SM Busy | v3\nRaw value: 43.47\nAlgorithm note: Shared B layout experiment to study bank mapping and MIO pressure.</title></rect>
+<text x="1532" y="2743" class="raw">43.47</text>
+<text x="86" y="2769" class="mode">v4<title>Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></text>
+<rect x="380" y="2756" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2756" width="745.1" height="17" fill="#889eda" rx="4"><title>SM Busy | v4\nRaw value: 50.50\nAlgorithm note: Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></rect>
+<text x="1532" y="2769" class="raw">50.50</text>
+<text x="86" y="2795" class="mode">v5<title>Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></text>
+<rect x="380" y="2782" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2782" width="704.8" height="17" fill="#8299d8" rx="4"><title>SM Busy | v5\nRaw value: 47.77\nAlgorithm note: Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></rect>
+<text x="1532" y="2795" class="raw">47.77</text>
+<text x="86" y="2821" class="mode">v6<title>Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></text>
+<rect x="380" y="2808" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2808" width="943.1" height="17" fill="#7b94d6" rx="4"><title>SM Busy | v6\nRaw value: 63.92\nAlgorithm note: Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></rect>
+<text x="1532" y="2821" class="raw">63.92</text>
+<text x="86" y="2847" class="mode">v7<title>cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></text>
+<rect x="380" y="2834" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2834" width="862.9" height="17" fill="#758fd4" rx="4"><title>SM Busy | v7\nRaw value: 58.48\nAlgorithm note: cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></rect>
+<text x="1532" y="2847" class="raw">58.48</text>
+<text x="86" y="2873" class="mode">v8<title>cp.async double buffering with TILE=8 for higher per-thread compute density.</title></text>
+<rect x="380" y="2860" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2860" width="797.2" height="17" fill="#6f8ad2" rx="4"><title>SM Busy | v8\nRaw value: 54.03\nAlgorithm note: cp.async double buffering with TILE=8 for higher per-thread compute density.</title></rect>
+<text x="1532" y="2873" class="raw">54.03</text>
+<text x="86" y="2899" class="mode">v9<title>Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></text>
+<rect x="380" y="2886" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2886" width="638.7" height="17" fill="#6884d0" rx="4"><title>SM Busy | v9\nRaw value: 43.29\nAlgorithm note: Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></rect>
+<text x="1532" y="2899" class="raw">43.29</text>
+<line x1="44" y1="2930" x2="1876" y2="2930" class="divider"/>
+<text x="64" y="2951" class="metric">9. Achieved Occupancy</text>
+<line x1="657.5" y1="2964" x2="657.5" y2="3234" class="grid"/>
+<line x1="935.0" y1="2964" x2="935.0" y2="3234" class="grid"/>
+<line x1="1212.5" y1="2964" x2="1212.5" y2="3234" class="grid"/>
+<line x1="1490.0" y1="2964" x2="1490.0" y2="3234" class="grid"/>
+<text x="86" y="2991" class="mode">library_cublas_gemm<title>cuBLAS generic GEMM baseline.</title></text>
+<rect x="380" y="2978" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="2978" width="254.5" height="17" fill="#d99fbf" rx="4"><title>Achieved Occupancy | library_cublas_gemm\nRaw value: 22.28\nAlgorithm note: cuBLAS generic GEMM baseline.</title></rect>
+<text x="1532" y="2991" class="raw">22.28</text>
+<text x="86" y="3017" class="mode">v1<title>Basic shared-memory tiling baseline.</title></text>
+<rect x="380" y="3004" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3004" width="1110.0" height="17" fill="#d698ba" rx="4"><title>Achieved Occupancy | v1\nRaw value: 97.16\nAlgorithm note: Basic shared-memory tiling baseline.</title></rect>
+<text x="1532" y="3017" class="raw">97.16</text>
+<text x="86" y="3043" class="mode">v2<title>4x4 micro-tile to increase compute reuse per shared/global load.</title></text>
+<rect x="380" y="3030" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3030" width="493.4" height="17" fill="#d492b6" rx="4"><title>Achieved Occupancy | v2\nRaw value: 43.19\nAlgorithm note: 4x4 micro-tile to increase compute reuse per shared/global load.</title></rect>
+<text x="1532" y="3043" class="raw">43.19</text>
+<text x="86" y="3069" class="mode">v3<title>Shared B layout experiment to study bank mapping and MIO pressure.</title></text>
+<rect x="380" y="3056" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3056" width="572.1" height="17" fill="#d18bb2" rx="4"><title>Achieved Occupancy | v3\nRaw value: 50.08\nAlgorithm note: Shared B layout experiment to study bank mapping and MIO pressure.</title></rect>
+<text x="1532" y="3069" class="raw">50.08</text>
+<text x="86" y="3095" class="mode">v4<title>Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></text>
+<rect x="380" y="3082" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3082" width="491.8" height="17" fill="#ce84ad" rx="4"><title>Achieved Occupancy | v4\nRaw value: 43.05\nAlgorithm note: Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></rect>
+<text x="1532" y="3095" class="raw">43.05</text>
+<text x="86" y="3121" class="mode">v5<title>Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></text>
+<rect x="380" y="3108" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3108" width="484.9" height="17" fill="#cc7ea9" rx="4"><title>Achieved Occupancy | v5\nRaw value: 42.44\nAlgorithm note: Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></rect>
+<text x="1532" y="3121" class="raw">42.44</text>
+<text x="86" y="3147" class="mode">v6<title>Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></text>
+<rect x="380" y="3134" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3134" width="494.6" height="17" fill="#c977a4" rx="4"><title>Achieved Occupancy | v6\nRaw value: 43.29\nAlgorithm note: Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></rect>
+<text x="1532" y="3147" class="raw">43.29</text>
+<text x="86" y="3173" class="mode">v7<title>cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></text>
+<rect x="380" y="3160" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3160" width="759.2" height="17" fill="#c771a0" rx="4"><title>Achieved Occupancy | v7\nRaw value: 66.45\nAlgorithm note: cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></rect>
+<text x="1532" y="3173" class="raw">66.45</text>
+<text x="86" y="3199" class="mode">v8<title>cp.async double buffering with TILE=8 for higher per-thread compute density.</title></text>
+<rect x="380" y="3186" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3186" width="258.2" height="17" fill="#c46a9c" rx="4"><title>Achieved Occupancy | v8\nRaw value: 22.60\nAlgorithm note: cp.async double buffering with TILE=8 for higher per-thread compute density.</title></rect>
+<text x="1532" y="3199" class="raw">22.60</text>
+<text x="86" y="3225" class="mode">v9<title>Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></text>
+<rect x="380" y="3212" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3212" width="326.3" height="17" fill="#c16397" rx="4"><title>Achieved Occupancy | v9\nRaw value: 28.56\nAlgorithm note: Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></rect>
+<text x="1532" y="3225" class="raw">28.56</text>
+<line x1="44" y1="3256" x2="1876" y2="3256" class="divider"/>
+<text x="64" y="3277" class="metric">10. Theoretical Occupancy</text>
+<line x1="657.5" y1="3290" x2="657.5" y2="3560" class="grid"/>
+<line x1="935.0" y1="3290" x2="935.0" y2="3560" class="grid"/>
+<line x1="1212.5" y1="3290" x2="1212.5" y2="3560" class="grid"/>
+<line x1="1490.0" y1="3290" x2="1490.0" y2="3560" class="grid"/>
+<text x="86" y="3317" class="mode">library_cublas_gemm<title>cuBLAS generic GEMM baseline.</title></text>
+<rect x="380" y="3304" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3304" width="277.5" height="17" fill="#b0bc8b" rx="4"><title>Theoretical Occupancy | library_cublas_gemm\nRaw value: 25.00\nAlgorithm note: cuBLAS generic GEMM baseline.</title></rect>
+<text x="1532" y="3317" class="raw">25.00</text>
+<text x="86" y="3343" class="mode">v1<title>Basic shared-memory tiling baseline.</title></text>
+<rect x="380" y="3330" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3330" width="1110.0" height="17" fill="#abb783" rx="4"><title>Theoretical Occupancy | v1\nRaw value: 100.00\nAlgorithm note: Basic shared-memory tiling baseline.</title></rect>
+<text x="1532" y="3343" class="raw">100.00</text>
+<text x="86" y="3369" class="mode">v2<title>4x4 micro-tile to increase compute reuse per shared/global load.</title></text>
+<rect x="380" y="3356" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3356" width="555.0" height="17" fill="#a5b37b" rx="4"><title>Theoretical Occupancy | v2\nRaw value: 50.00\nAlgorithm note: 4x4 micro-tile to increase compute reuse per shared/global load.</title></rect>
+<text x="1532" y="3369" class="raw">50.00</text>
+<text x="86" y="3395" class="mode">v3<title>Shared B layout experiment to study bank mapping and MIO pressure.</title></text>
+<rect x="380" y="3382" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3382" width="740.0" height="17" fill="#a0ae73" rx="4"><title>Theoretical Occupancy | v3\nRaw value: 66.67\nAlgorithm note: Shared B layout experiment to study bank mapping and MIO pressure.</title></rect>
+<text x="1532" y="3395" class="raw">66.67</text>
+<text x="86" y="3421" class="mode">v4<title>Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></text>
+<rect x="380" y="3408" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3408" width="555.0" height="17" fill="#9ba96b" rx="4"><title>Theoretical Occupancy | v4\nRaw value: 50.00\nAlgorithm note: Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></rect>
+<text x="1532" y="3421" class="raw">50.00</text>
+<text x="86" y="3447" class="mode">v5<title>Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></text>
+<rect x="380" y="3434" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3434" width="555.0" height="17" fill="#95a563" rx="4"><title>Theoretical Occupancy | v5\nRaw value: 50.00\nAlgorithm note: Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></rect>
+<text x="1532" y="3447" class="raw">50.00</text>
+<text x="86" y="3473" class="mode">v6<title>Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></text>
+<rect x="380" y="3460" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3460" width="555.0" height="17" fill="#90a05b" rx="4"><title>Theoretical Occupancy | v6\nRaw value: 50.00\nAlgorithm note: Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></rect>
+<text x="1532" y="3473" class="raw">50.00</text>
+<text x="86" y="3499" class="mode">v7<title>cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></text>
+<rect x="380" y="3486" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3486" width="740.0" height="17" fill="#8a9c53" rx="4"><title>Theoretical Occupancy | v7\nRaw value: 66.67\nAlgorithm note: cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></rect>
+<text x="1532" y="3499" class="raw">66.67</text>
+<text x="86" y="3525" class="mode">v8<title>cp.async double buffering with TILE=8 for higher per-thread compute density.</title></text>
+<rect x="380" y="3512" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3512" width="370.0" height="17" fill="#85974b" rx="4"><title>Theoretical Occupancy | v8\nRaw value: 33.33\nAlgorithm note: cp.async double buffering with TILE=8 for higher per-thread compute density.</title></rect>
+<text x="1532" y="3525" class="raw">33.33</text>
+<text x="86" y="3551" class="mode">v9<title>Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></text>
+<rect x="380" y="3538" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3538" width="370.0" height="17" fill="#809243" rx="4"><title>Theoretical Occupancy | v9\nRaw value: 33.33\nAlgorithm note: Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></rect>
+<text x="1532" y="3551" class="raw">33.33</text>
+<line x1="44" y1="3582" x2="1876" y2="3582" class="divider"/>
+<text x="64" y="3603" class="metric">11. Eligible Warps Per Scheduler</text>
+<line x1="657.5" y1="3616" x2="657.5" y2="3886" class="grid"/>
+<line x1="935.0" y1="3616" x2="935.0" y2="3886" class="grid"/>
+<line x1="1212.5" y1="3616" x2="1212.5" y2="3886" class="grid"/>
+<line x1="1490.0" y1="3616" x2="1490.0" y2="3886" class="grid"/>
+<text x="86" y="3643" class="mode">library_cublas_gemm<title>cuBLAS generic GEMM baseline.</title></text>
+<rect x="380" y="3630" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3630" width="776.0" height="17" fill="#9ca8b0" rx="4"><title>Eligible Warps Per Scheduler | library_cublas_gemm\nRaw value: 1.58\nAlgorithm note: cuBLAS generic GEMM baseline.</title></rect>
+<text x="1532" y="3643" class="raw">1.58</text>
+<text x="86" y="3669" class="mode">v1<title>Basic shared-memory tiling baseline.</title></text>
+<rect x="380" y="3656" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3656" width="687.6" height="17" fill="#95a2ab" rx="4"><title>Eligible Warps Per Scheduler | v1\nRaw value: 1.4\nAlgorithm note: Basic shared-memory tiling baseline.</title></rect>
+<text x="1532" y="3669" class="raw">1.4</text>
+<text x="86" y="3695" class="mode">v2<title>4x4 micro-tile to increase compute reuse per shared/global load.</title></text>
+<rect x="380" y="3682" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3682" width="741.6" height="17" fill="#8e9ca5" rx="4"><title>Eligible Warps Per Scheduler | v2\nRaw value: 1.51\nAlgorithm note: 4x4 micro-tile to increase compute reuse per shared/global load.</title></rect>
+<text x="1532" y="3695" class="raw">1.51</text>
+<text x="86" y="3721" class="mode">v3<title>Shared B layout experiment to study bank mapping and MIO pressure.</title></text>
+<rect x="380" y="3708" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3708" width="741.6" height="17" fill="#8896a0" rx="4"><title>Eligible Warps Per Scheduler | v3\nRaw value: 1.51\nAlgorithm note: Shared B layout experiment to study bank mapping and MIO pressure.</title></rect>
+<text x="1532" y="3721" class="raw">1.51</text>
+<text x="86" y="3747" class="mode">v4<title>Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></text>
+<rect x="380" y="3734" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3734" width="731.8" height="17" fill="#81909b" rx="4"><title>Eligible Warps Per Scheduler | v4\nRaw value: 1.49\nAlgorithm note: Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></rect>
+<text x="1532" y="3747" class="raw">1.49</text>
+<text x="86" y="3773" class="mode">v5<title>Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></text>
+<rect x="380" y="3760" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3760" width="746.5" height="17" fill="#7a8a95" rx="4"><title>Eligible Warps Per Scheduler | v5\nRaw value: 1.52\nAlgorithm note: Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></rect>
+<text x="1532" y="3773" class="raw">1.52</text>
+<text x="86" y="3799" class="mode">v6<title>Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></text>
+<rect x="380" y="3786" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3786" width="992.1" height="17" fill="#738490" rx="4"><title>Eligible Warps Per Scheduler | v6\nRaw value: 2.02\nAlgorithm note: Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></rect>
+<text x="1532" y="3799" class="raw">2.02</text>
+<text x="86" y="3825" class="mode">v7<title>cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></text>
+<rect x="380" y="3812" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3812" width="1110.0" height="17" fill="#6c7e8a" rx="4"><title>Eligible Warps Per Scheduler | v7\nRaw value: 2.26\nAlgorithm note: cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></rect>
+<text x="1532" y="3825" class="raw">2.26</text>
+<text x="86" y="3851" class="mode">v8<title>cp.async double buffering with TILE=8 for higher per-thread compute density.</title></text>
+<rect x="380" y="3838" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3838" width="599.2" height="17" fill="#667885" rx="4"><title>Eligible Warps Per Scheduler | v8\nRaw value: 1.22\nAlgorithm note: cp.async double buffering with TILE=8 for higher per-thread compute density.</title></rect>
+<text x="1532" y="3851" class="raw">1.22</text>
+<text x="86" y="3877" class="mode">v9<title>Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></text>
+<rect x="380" y="3864" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3864" width="373.3" height="17" fill="#5f7280" rx="4"><title>Eligible Warps Per Scheduler | v9\nRaw value: 0.76\nAlgorithm note: Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></rect>
+<text x="1532" y="3877" class="raw">0.76</text>
+<line x1="44" y1="3908" x2="1876" y2="3908" class="divider"/>
+<text x="64" y="3929" class="metric">12. Active Warps Per Scheduler</text>
+<line x1="657.5" y1="3942" x2="657.5" y2="4212" class="grid"/>
+<line x1="935.0" y1="3942" x2="935.0" y2="4212" class="grid"/>
+<line x1="1212.5" y1="3942" x2="1212.5" y2="4212" class="grid"/>
+<line x1="1490.0" y1="3942" x2="1490.0" y2="4212" class="grid"/>
+<text x="86" y="3969" class="mode">library_cublas_gemm<title>cuBLAS generic GEMM baseline.</title></text>
+<rect x="380" y="3956" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3956" width="254.2" height="17" fill="#e7b08d" rx="4"><title>Active Warps Per Scheduler | library_cublas_gemm\nRaw value: 2.67\nAlgorithm note: cuBLAS generic GEMM baseline.</title></rect>
+<text x="1532" y="3969" class="raw">2.67</text>
+<text x="86" y="3995" class="mode">v1<title>Basic shared-memory tiling baseline.</title></text>
+<rect x="380" y="3982" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="3982" width="1110.0" height="17" fill="#e6ab86" rx="4"><title>Active Warps Per Scheduler | v1\nRaw value: 11.66\nAlgorithm note: Basic shared-memory tiling baseline.</title></rect>
+<text x="1532" y="3995" class="raw">11.66</text>
+<text x="86" y="4021" class="mode">v2<title>4x4 micro-tile to increase compute reuse per shared/global load.</title></text>
+<rect x="380" y="4008" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4008" width="491.2" height="17" fill="#e4a57e" rx="4"><title>Active Warps Per Scheduler | v2\nRaw value: 5.16\nAlgorithm note: 4x4 micro-tile to increase compute reuse per shared/global load.</title></rect>
+<text x="1532" y="4021" class="raw">5.16</text>
+<text x="86" y="4047" class="mode">v3<title>Shared B layout experiment to study bank mapping and MIO pressure.</title></text>
+<rect x="380" y="4034" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4034" width="574.0" height="17" fill="#e3a076" rx="4"><title>Active Warps Per Scheduler | v3\nRaw value: 6.03\nAlgorithm note: Shared B layout experiment to study bank mapping and MIO pressure.</title></rect>
+<text x="1532" y="4047" class="raw">6.03</text>
+<text x="86" y="4073" class="mode">v4<title>Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></text>
+<rect x="380" y="4060" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4060" width="492.2" height="17" fill="#e19b6e" rx="4"><title>Active Warps Per Scheduler | v4\nRaw value: 5.17\nAlgorithm note: Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></rect>
+<text x="1532" y="4073" class="raw">5.17</text>
+<text x="86" y="4099" class="mode">v5<title>Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></text>
+<rect x="380" y="4086" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4086" width="484.6" height="17" fill="#df9566" rx="4"><title>Active Warps Per Scheduler | v5\nRaw value: 5.09\nAlgorithm note: Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></rect>
+<text x="1532" y="4099" class="raw">5.09</text>
+<text x="86" y="4125" class="mode">v6<title>Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></text>
+<rect x="380" y="4112" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4112" width="496.0" height="17" fill="#de905f" rx="4"><title>Active Warps Per Scheduler | v6\nRaw value: 5.21\nAlgorithm note: Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></rect>
+<text x="1532" y="4125" class="raw">5.21</text>
+<text x="86" y="4151" class="mode">v7<title>cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></text>
+<rect x="380" y="4138" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4138" width="757.8" height="17" fill="#dc8a57" rx="4"><title>Active Warps Per Scheduler | v7\nRaw value: 7.96\nAlgorithm note: cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></rect>
+<text x="1532" y="4151" class="raw">7.96</text>
+<text x="86" y="4177" class="mode">v8<title>cp.async double buffering with TILE=8 for higher per-thread compute density.</title></text>
+<rect x="380" y="4164" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4164" width="259.9" height="17" fill="#db854f" rx="4"><title>Active Warps Per Scheduler | v8\nRaw value: 2.73\nAlgorithm note: cp.async double buffering with TILE=8 for higher per-thread compute density.</title></rect>
+<text x="1532" y="4177" class="raw">2.73</text>
+<text x="86" y="4203" class="mode">v9<title>Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></text>
+<rect x="380" y="4190" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4190" width="329.4" height="17" fill="#d98047" rx="4"><title>Active Warps Per Scheduler | v9\nRaw value: 3.46\nAlgorithm note: Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></rect>
+<text x="1532" y="4203" class="raw">3.46</text>
+<line x1="44" y1="4234" x2="1876" y2="4234" class="divider"/>
+<text x="64" y="4255" class="metric">13. One or More Eligible</text>
+<line x1="657.5" y1="4268" x2="657.5" y2="4538" class="grid"/>
+<line x1="935.0" y1="4268" x2="935.0" y2="4538" class="grid"/>
+<line x1="1212.5" y1="4268" x2="1212.5" y2="4538" class="grid"/>
+<line x1="1490.0" y1="4268" x2="1490.0" y2="4538" class="grid"/>
+<text x="86" y="4295" class="mode">library_cublas_gemm<title>cuBLAS generic GEMM baseline.</title></text>
+<rect x="380" y="4282" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4282" width="1110.0" height="17" fill="#85aedc" rx="4"><title>One or More Eligible | library_cublas_gemm\nRaw value: 75.23\nAlgorithm note: cuBLAS generic GEMM baseline.</title></rect>
+<text x="1532" y="4295" class="raw">75.23</text>
+<text x="86" y="4321" class="mode">v1<title>Basic shared-memory tiling baseline.</title></text>
+<rect x="380" y="4308" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4308" width="504.9" height="17" fill="#7ca8da" rx="4"><title>One or More Eligible | v1\nRaw value: 34.22\nAlgorithm note: Basic shared-memory tiling baseline.</title></rect>
+<text x="1532" y="4321" class="raw">34.22</text>
+<text x="86" y="4347" class="mode">v2<title>4x4 micro-tile to increase compute reuse per shared/global load.</title></text>
+<rect x="380" y="4334" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4334" width="740.7" height="17" fill="#74a3d8" rx="4"><title>One or More Eligible | v2\nRaw value: 50.20\nAlgorithm note: 4x4 micro-tile to increase compute reuse per shared/global load.</title></rect>
+<text x="1532" y="4347" class="raw">50.20</text>
+<text x="86" y="4373" class="mode">v3<title>Shared B layout experiment to study bank mapping and MIO pressure.</title></text>
+<rect x="380" y="4360" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4360" width="642.3" height="17" fill="#6c9dd5" rx="4"><title>One or More Eligible | v3\nRaw value: 43.53\nAlgorithm note: Shared B layout experiment to study bank mapping and MIO pressure.</title></rect>
+<text x="1532" y="4373" class="raw">43.53</text>
+<text x="86" y="4399" class="mode">v4<title>Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></text>
+<rect x="380" y="4386" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4386" width="746.3" height="17" fill="#6398d3" rx="4"><title>One or More Eligible | v4\nRaw value: 50.58\nAlgorithm note: Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></rect>
+<text x="1532" y="4399" class="raw">50.58</text>
+<text x="86" y="4425" class="mode">v5<title>Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></text>
+<rect x="380" y="4412" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4412" width="705.1" height="17" fill="#5b92d0" rx="4"><title>One or More Eligible | v5\nRaw value: 47.79\nAlgorithm note: Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></rect>
+<text x="1532" y="4425" class="raw">47.79</text>
+<text x="86" y="4451" class="mode">v6<title>Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></text>
+<rect x="380" y="4438" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4438" width="944.3" height="17" fill="#528dce" rx="4"><title>One or More Eligible | v6\nRaw value: 64.00\nAlgorithm note: Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></rect>
+<text x="1532" y="4451" class="raw">64.00</text>
+<text x="86" y="4477" class="mode">v7<title>cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></text>
+<rect x="380" y="4464" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4464" width="862.6" height="17" fill="#4a87cc" rx="4"><title>One or More Eligible | v7\nRaw value: 58.46\nAlgorithm note: cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></rect>
+<text x="1532" y="4477" class="raw">58.46</text>
+<text x="86" y="4503" class="mode">v8<title>cp.async double buffering with TILE=8 for higher per-thread compute density.</title></text>
+<rect x="380" y="4490" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4490" width="801.2" height="17" fill="#4281c9" rx="4"><title>One or More Eligible | v8\nRaw value: 54.30\nAlgorithm note: cp.async double buffering with TILE=8 for higher per-thread compute density.</title></rect>
+<text x="1532" y="4503" class="raw">54.30</text>
+<text x="86" y="4529" class="mode">v9<title>Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></text>
+<rect x="380" y="4516" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4516" width="642.4" height="17" fill="#397cc7" rx="4"><title>One or More Eligible | v9\nRaw value: 43.54\nAlgorithm note: Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></rect>
+<text x="1532" y="4529" class="raw">43.54</text>
+<line x1="44" y1="4560" x2="1876" y2="4560" class="divider"/>
+<text x="64" y="4581" class="metric">14. Warp Cycles Per Issued Instruction</text>
+<line x1="657.5" y1="4594" x2="657.5" y2="4864" class="grid"/>
+<line x1="935.0" y1="4594" x2="935.0" y2="4864" class="grid"/>
+<line x1="1212.5" y1="4594" x2="1212.5" y2="4864" class="grid"/>
+<line x1="1490.0" y1="4594" x2="1490.0" y2="4864" class="grid"/>
+<text x="86" y="4621" class="mode">library_cublas_gemm<title>cuBLAS generic GEMM baseline.</title></text>
+<rect x="380" y="4608" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4608" width="115.6" height="17" fill="#e49393" rx="4"><title>Warp Cycles Per Issued Instruction | library_cublas_gemm\nRaw value: 3.55\nAlgorithm note: cuBLAS generic GEMM baseline.</title></rect>
+<text x="1532" y="4621" class="raw">3.55</text>
+<text x="86" y="4647" class="mode">v1<title>Basic shared-memory tiling baseline.</title></text>
+<rect x="380" y="4634" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4634" width="1110.0" height="17" fill="#e38c8c" rx="4"><title>Warp Cycles Per Issued Instruction | v1\nRaw value: 34.08\nAlgorithm note: Basic shared-memory tiling baseline.</title></rect>
+<text x="1532" y="4647" class="raw">34.08</text>
+<text x="86" y="4673" class="mode">v2<title>4x4 micro-tile to increase compute reuse per shared/global load.</title></text>
+<rect x="380" y="4660" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4660" width="334.8" height="17" fill="#e18484" rx="4"><title>Warp Cycles Per Issued Instruction | v2\nRaw value: 10.28\nAlgorithm note: 4x4 micro-tile to increase compute reuse per shared/global load.</title></rect>
+<text x="1532" y="4673" class="raw">10.28</text>
+<text x="86" y="4699" class="mode">v3<title>Shared B layout experiment to study bank mapping and MIO pressure.</title></text>
+<rect x="380" y="4686" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4686" width="451.1" height="17" fill="#df7d7d" rx="4"><title>Warp Cycles Per Issued Instruction | v3\nRaw value: 13.85\nAlgorithm note: Shared B layout experiment to study bank mapping and MIO pressure.</title></rect>
+<text x="1532" y="4699" class="raw">13.85</text>
+<text x="86" y="4725" class="mode">v4<title>Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></text>
+<rect x="380" y="4712" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4712" width="332.9" height="17" fill="#dd7676" rx="4"><title>Warp Cycles Per Issued Instruction | v4\nRaw value: 10.22\nAlgorithm note: Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></rect>
+<text x="1532" y="4725" class="raw">10.22</text>
+<text x="86" y="4751" class="mode">v5<title>Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></text>
+<rect x="380" y="4738" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4738" width="347.2" height="17" fill="#db6e6e" rx="4"><title>Warp Cycles Per Issued Instruction | v5\nRaw value: 10.66\nAlgorithm note: Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></rect>
+<text x="1532" y="4751" class="raw">10.66</text>
+<text x="86" y="4777" class="mode">v6<title>Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></text>
+<rect x="380" y="4764" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4764" width="264.8" height="17" fill="#da6767" rx="4"><title>Warp Cycles Per Issued Instruction | v6\nRaw value: 8.13\nAlgorithm note: Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></rect>
+<text x="1532" y="4777" class="raw">8.13</text>
+<text x="86" y="4803" class="mode">v7<title>cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></text>
+<rect x="380" y="4790" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4790" width="443.6" height="17" fill="#d85f5f" rx="4"><title>Warp Cycles Per Issued Instruction | v7\nRaw value: 13.62\nAlgorithm note: cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></rect>
+<text x="1532" y="4803" class="raw">13.62</text>
+<text x="86" y="4829" class="mode">v8<title>cp.async double buffering with TILE=8 for higher per-thread compute density.</title></text>
+<rect x="380" y="4816" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4816" width="164.2" height="17" fill="#d65858" rx="4"><title>Warp Cycles Per Issued Instruction | v8\nRaw value: 5.04\nAlgorithm note: cp.async double buffering with TILE=8 for higher per-thread compute density.</title></rect>
+<text x="1532" y="4829" class="raw">5.04</text>
+<text x="86" y="4855" class="mode">v9<title>Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></text>
+<rect x="380" y="4842" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4842" width="258.9" height="17" fill="#d45151" rx="4"><title>Warp Cycles Per Issued Instruction | v9\nRaw value: 7.95\nAlgorithm note: Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></rect>
+<text x="1532" y="4855" class="raw">7.95</text>
+<line x1="44" y1="4886" x2="1876" y2="4886" class="divider"/>
+<text x="64" y="4907" class="metric">15. Registers Per Thread</text>
+<line x1="657.5" y1="4920" x2="657.5" y2="5190" class="grid"/>
+<line x1="935.0" y1="4920" x2="935.0" y2="5190" class="grid"/>
+<line x1="1212.5" y1="4920" x2="1212.5" y2="5190" class="grid"/>
+<line x1="1490.0" y1="4920" x2="1490.0" y2="5190" class="grid"/>
+<text x="86" y="4947" class="mode">library_cublas_gemm<title>cuBLAS generic GEMM baseline.</title></text>
+<rect x="380" y="4934" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4934" width="1110.0" height="17" fill="#97c2a0" rx="4"><title>Registers Per Thread | library_cublas_gemm\nRaw value: 128.00\nAlgorithm note: cuBLAS generic GEMM baseline.</title></rect>
+<text x="1532" y="4947" class="raw">128.00</text>
+<text x="86" y="4973" class="mode">v1<title>Basic shared-memory tiling baseline.</title></text>
+<rect x="380" y="4960" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4960" width="346.9" height="17" fill="#90bd99" rx="4"><title>Registers Per Thread | v1\nRaw value: 40.00\nAlgorithm note: Basic shared-memory tiling baseline.</title></rect>
+<text x="1532" y="4973" class="raw">40.00</text>
+<text x="86" y="4999" class="mode">v2<title>4x4 micro-tile to increase compute reuse per shared/global load.</title></text>
+<rect x="380" y="4986" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="4986" width="624.4" height="17" fill="#88b993" rx="4"><title>Registers Per Thread | v2\nRaw value: 72.00\nAlgorithm note: 4x4 micro-tile to increase compute reuse per shared/global load.</title></rect>
+<text x="1532" y="4999" class="raw">72.00</text>
+<text x="86" y="5025" class="mode">v3<title>Shared B layout experiment to study bank mapping and MIO pressure.</title></text>
+<rect x="380" y="5012" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5012" width="555.0" height="17" fill="#81b58c" rx="4"><title>Registers Per Thread | v3\nRaw value: 64.00\nAlgorithm note: Shared B layout experiment to study bank mapping and MIO pressure.</title></rect>
+<text x="1532" y="5025" class="raw">64.00</text>
+<text x="86" y="5051" class="mode">v4<title>Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></text>
+<rect x="380" y="5038" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5038" width="624.4" height="17" fill="#7ab186" rx="4"><title>Registers Per Thread | v4\nRaw value: 72.00\nAlgorithm note: Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></rect>
+<text x="1532" y="5051" class="raw">72.00</text>
+<text x="86" y="5077" class="mode">v5<title>Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></text>
+<rect x="380" y="5064" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5064" width="693.8" height="17" fill="#73ad7f" rx="4"><title>Registers Per Thread | v5\nRaw value: 80.00\nAlgorithm note: Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></rect>
+<text x="1532" y="5077" class="raw">80.00</text>
+<text x="86" y="5103" class="mode">v6<title>Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></text>
+<rect x="380" y="5090" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5090" width="563.7" height="17" fill="#6ca879" rx="4"><title>Registers Per Thread | v6\nRaw value: 65.00\nAlgorithm note: Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></rect>
+<text x="1532" y="5103" class="raw">65.00</text>
+<text x="86" y="5129" class="mode">v7<title>cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></text>
+<rect x="380" y="5116" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5116" width="555.0" height="17" fill="#65a472" rx="4"><title>Registers Per Thread | v7\nRaw value: 64.00\nAlgorithm note: cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></rect>
+<text x="1532" y="5129" class="raw">64.00</text>
+<text x="86" y="5155" class="mode">v8<title>cp.async double buffering with TILE=8 for higher per-thread compute density.</title></text>
+<rect x="380" y="5142" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5142" width="1092.7" height="17" fill="#5da06c" rx="4"><title>Registers Per Thread | v8\nRaw value: 126.00\nAlgorithm note: cp.async double buffering with TILE=8 for higher per-thread compute density.</title></rect>
+<text x="1532" y="5155" class="raw">126.00</text>
+<text x="86" y="5181" class="mode">v9<title>Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></text>
+<rect x="380" y="5168" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5168" width="823.8" height="17" fill="#569c65" rx="4"><title>Registers Per Thread | v9\nRaw value: 95.00\nAlgorithm note: Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></rect>
+<text x="1532" y="5181" class="raw">95.00</text>
+<line x1="44" y1="5212" x2="1876" y2="5212" class="divider"/>
+<text x="64" y="5233" class="metric">16. Dynamic Shared Memory Per Block</text>
+<line x1="657.5" y1="5246" x2="657.5" y2="5516" class="grid"/>
+<line x1="935.0" y1="5246" x2="935.0" y2="5516" class="grid"/>
+<line x1="1212.5" y1="5246" x2="1212.5" y2="5516" class="grid"/>
+<line x1="1490.0" y1="5246" x2="1490.0" y2="5516" class="grid"/>
+<text x="86" y="5273" class="mode">library_cublas_gemm<title>cuBLAS generic GEMM baseline.</title></text>
+<rect x="380" y="5260" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5260" width="489.7" height="17" fill="#f3c285" rx="4"><title>Dynamic Shared Memory Per Block | library_cublas_gemm\nRaw value: 30.72\nAlgorithm note: cuBLAS generic GEMM baseline.</title></rect>
+<text x="1532" y="5273" class="raw">30.72</text>
+<text x="86" y="5299" class="mode">v1<title>Basic shared-memory tiling baseline.</title></text>
+<rect x="380" y="5286" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5286" width="1.0" height="17" fill="#f2bd7c" rx="4"><title>Dynamic Shared Memory Per Block | v1\nRaw value: 0\nAlgorithm note: Basic shared-memory tiling baseline.</title></rect>
+<text x="1532" y="5299" class="raw">0</text>
+<text x="86" y="5325" class="mode">v2<title>4x4 micro-tile to increase compute reuse per shared/global load.</title></text>
+<rect x="380" y="5312" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5312" width="1.0" height="17" fill="#f1b974" rx="4"><title>Dynamic Shared Memory Per Block | v2\nRaw value: 0\nAlgorithm note: 4x4 micro-tile to increase compute reuse per shared/global load.</title></rect>
+<text x="1532" y="5325" class="raw">0</text>
+<text x="86" y="5351" class="mode">v3<title>Shared B layout experiment to study bank mapping and MIO pressure.</title></text>
+<rect x="380" y="5338" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5338" width="1.0" height="17" fill="#f1b56c" rx="4"><title>Dynamic Shared Memory Per Block | v3\nRaw value: 0\nAlgorithm note: Shared B layout experiment to study bank mapping and MIO pressure.</title></rect>
+<text x="1532" y="5351" class="raw">0</text>
+<text x="86" y="5377" class="mode">v4<title>Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></text>
+<rect x="380" y="5364" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5364" width="1.0" height="17" fill="#f0b163" rx="4"><title>Dynamic Shared Memory Per Block | v4\nRaw value: 0\nAlgorithm note: Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></rect>
+<text x="1532" y="5377" class="raw">0</text>
+<text x="86" y="5403" class="mode">v5<title>Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></text>
+<rect x="380" y="5390" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5390" width="1.0" height="17" fill="#efad5b" rx="4"><title>Dynamic Shared Memory Per Block | v5\nRaw value: 0\nAlgorithm note: Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></rect>
+<text x="1532" y="5403" class="raw">0</text>
+<text x="86" y="5429" class="mode">v6<title>Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></text>
+<rect x="380" y="5416" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5416" width="293.8" height="17" fill="#eea852" rx="4"><title>Dynamic Shared Memory Per Block | v6\nRaw value: 18.43\nAlgorithm note: Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></rect>
+<text x="1532" y="5429" class="raw">18.43</text>
+<text x="86" y="5455" class="mode">v7<title>cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></text>
+<rect x="380" y="5442" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5442" width="1110.0" height="17" fill="#eda44a" rx="4"><title>Dynamic Shared Memory Per Block | v7\nRaw value: 69.63\nAlgorithm note: cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></rect>
+<text x="1532" y="5455" class="raw">69.63</text>
+<text x="86" y="5481" class="mode">v8<title>cp.async double buffering with TILE=8 for higher per-thread compute density.</title></text>
+<rect x="380" y="5468" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5468" width="587.6" height="17" fill="#eda042" rx="4"><title>Dynamic Shared Memory Per Block | v8\nRaw value: 36.86\nAlgorithm note: cp.async double buffering with TILE=8 for higher per-thread compute density.</title></rect>
+<text x="1532" y="5481" class="raw">36.86</text>
+<text x="86" y="5507" class="mode">v9<title>Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></text>
+<rect x="380" y="5494" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5494" width="424.4" height="17" fill="#ec9c39" rx="4"><title>Dynamic Shared Memory Per Block | v9\nRaw value: 26.62\nAlgorithm note: Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></rect>
+<text x="1532" y="5507" class="raw">26.62</text>
+<line x1="44" y1="5538" x2="1876" y2="5538" class="divider"/>
+<text x="64" y="5559" class="metric">17. Executed IPC Active</text>
+<line x1="657.5" y1="5572" x2="657.5" y2="5842" class="grid"/>
+<line x1="935.0" y1="5572" x2="935.0" y2="5842" class="grid"/>
+<line x1="1212.5" y1="5572" x2="1212.5" y2="5842" class="grid"/>
+<line x1="1490.0" y1="5572" x2="1490.0" y2="5842" class="grid"/>
+<text x="86" y="5599" class="mode">library_cublas_gemm<title>cuBLAS generic GEMM baseline.</title></text>
+<rect x="380" y="5586" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5586" width="1110.0" height="17" fill="#b8a1d3" rx="4"><title>Executed IPC Active | library_cublas_gemm\nRaw value: 3.01\nAlgorithm note: cuBLAS generic GEMM baseline.</title></rect>
+<text x="1532" y="5599" class="raw">3.01</text>
+<text x="86" y="5625" class="mode">v1<title>Basic shared-memory tiling baseline.</title></text>
+<rect x="380" y="5612" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5612" width="505.2" height="17" fill="#b39ad0" rx="4"><title>Executed IPC Active | v1\nRaw value: 1.37\nAlgorithm note: Basic shared-memory tiling baseline.</title></rect>
+<text x="1532" y="5625" class="raw">1.37</text>
+<text x="86" y="5651" class="mode">v2<title>4x4 micro-tile to increase compute reuse per shared/global load.</title></text>
+<rect x="380" y="5638" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5638" width="741.2" height="17" fill="#af94cd" rx="4"><title>Executed IPC Active | v2\nRaw value: 2.01\nAlgorithm note: 4x4 micro-tile to increase compute reuse per shared/global load.</title></rect>
+<text x="1532" y="5651" class="raw">2.01</text>
+<text x="86" y="5677" class="mode">v3<title>Shared B layout experiment to study bank mapping and MIO pressure.</title></text>
+<rect x="380" y="5664" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5664" width="641.7" height="17" fill="#aa8dca" rx="4"><title>Executed IPC Active | v3\nRaw value: 1.74\nAlgorithm note: Shared B layout experiment to study bank mapping and MIO pressure.</title></rect>
+<text x="1532" y="5677" class="raw">1.74</text>
+<text x="86" y="5703" class="mode">v4<title>Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></text>
+<rect x="380" y="5690" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5690" width="744.9" height="17" fill="#a587c7" rx="4"><title>Executed IPC Active | v4\nRaw value: 2.02\nAlgorithm note: Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></rect>
+<text x="1532" y="5703" class="raw">2.02</text>
+<text x="86" y="5729" class="mode">v5<title>Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></text>
+<rect x="380" y="5716" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5716" width="704.4" height="17" fill="#a080c4" rx="4"><title>Executed IPC Active | v5\nRaw value: 1.91\nAlgorithm note: Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></rect>
+<text x="1532" y="5729" class="raw">1.91</text>
+<text x="86" y="5755" class="mode">v6<title>Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></text>
+<rect x="380" y="5742" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5742" width="944.1" height="17" fill="#9b7ac1" rx="4"><title>Executed IPC Active | v6\nRaw value: 2.56\nAlgorithm note: Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></rect>
+<text x="1532" y="5755" class="raw">2.56</text>
+<text x="86" y="5781" class="mode">v7<title>cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></text>
+<rect x="380" y="5768" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5768" width="862.9" height="17" fill="#9673be" rx="4"><title>Executed IPC Active | v7\nRaw value: 2.34\nAlgorithm note: cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></rect>
+<text x="1532" y="5781" class="raw">2.34</text>
+<text x="86" y="5807" class="mode">v8<title>cp.async double buffering with TILE=8 for higher per-thread compute density.</title></text>
+<rect x="380" y="5794" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5794" width="796.5" height="17" fill="#926dbb" rx="4"><title>Executed IPC Active | v8\nRaw value: 2.16\nAlgorithm note: cp.async double buffering with TILE=8 for higher per-thread compute density.</title></rect>
+<text x="1532" y="5807" class="raw">2.16</text>
+<text x="86" y="5833" class="mode">v9<title>Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></text>
+<rect x="380" y="5820" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5820" width="638.0" height="17" fill="#8d66b8" rx="4"><title>Executed IPC Active | v9\nRaw value: 1.73\nAlgorithm note: Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></rect>
+<text x="1532" y="5833" class="raw">1.73</text>
+<line x1="44" y1="5864" x2="1876" y2="5864" class="divider"/>
+<text x="64" y="5885" class="metric">18. Executed Instructions</text>
+<line x1="657.5" y1="5898" x2="657.5" y2="6168" class="grid"/>
+<line x1="935.0" y1="5898" x2="935.0" y2="6168" class="grid"/>
+<line x1="1212.5" y1="5898" x2="1212.5" y2="6168" class="grid"/>
+<line x1="1490.0" y1="5898" x2="1490.0" y2="6168" class="grid"/>
+<text x="86" y="5925" class="mode">library_cublas_gemm<title>cuBLAS generic GEMM baseline.</title></text>
+<rect x="380" y="5912" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5912" width="323.1" height="17" fill="#93c5cd" rx="4"><title>Executed Instructions | library_cublas_gemm\nRaw value: 41.98M\nAlgorithm note: cuBLAS generic GEMM baseline.</title></rect>
+<text x="1532" y="5925" class="raw">41.98M</text>
+<text x="86" y="5951" class="mode">v1<title>Basic shared-memory tiling baseline.</title></text>
+<rect x="380" y="5938" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5938" width="1110.0" height="17" fill="#8cc1ca" rx="4"><title>Executed Instructions | v1\nRaw value: 144.21M\nAlgorithm note: Basic shared-memory tiling baseline.</title></rect>
+<text x="1532" y="5951" class="raw">144.21M</text>
+<text x="86" y="5977" class="mode">v2<title>4x4 micro-tile to increase compute reuse per shared/global load.</title></text>
+<rect x="380" y="5964" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5964" width="367.3" height="17" fill="#84bdc6" rx="4"><title>Executed Instructions | v2\nRaw value: 47.72M\nAlgorithm note: 4x4 micro-tile to increase compute reuse per shared/global load.</title></rect>
+<text x="1532" y="5977" class="raw">47.72M</text>
+<text x="86" y="6003" class="mode">v3<title>Shared B layout experiment to study bank mapping and MIO pressure.</title></text>
+<rect x="380" y="5990" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="5990" width="415.8" height="17" fill="#7db9c3" rx="4"><title>Executed Instructions | v3\nRaw value: 54.02M\nAlgorithm note: Shared B layout experiment to study bank mapping and MIO pressure.</title></rect>
+<text x="1532" y="6003" class="raw">54.02M</text>
+<text x="86" y="6029" class="mode">v4<title>Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></text>
+<rect x="380" y="6016" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="6016" width="366.3" height="17" fill="#76b5c0" rx="4"><title>Executed Instructions | v4\nRaw value: 47.59M\nAlgorithm note: Adjusted shared layout/padding relative to v3 to reduce MIO pressure.</title></rect>
+<text x="1532" y="6029" class="raw">47.59M</text>
+<text x="86" y="6055" class="mode">v5<title>Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></text>
+<rect x="380" y="6042" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="6042" width="410.7" height="17" fill="#6eb1bc" rx="4"><title>Executed Instructions | v5\nRaw value: 53.35M\nAlgorithm note: Pipeline-oriented attempt; synchronization and shared/L1 pressure offset gains.</title></rect>
+<text x="1532" y="6055" class="raw">53.35M</text>
+<text x="86" y="6081" class="mode">v6<title>Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></text>
+<rect x="380" y="6068" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="6068" width="366.9" height="17" fill="#67adb9" rx="4"><title>Executed Instructions | v6\nRaw value: 47.67M\nAlgorithm note: Explicit cp.async double buffering with dynamic shared memory, TILE=4.</title></rect>
+<text x="1532" y="6081" class="raw">47.67M</text>
+<text x="86" y="6107" class="mode">v7<title>cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></text>
+<rect x="380" y="6094" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="6094" width="329.9" height="17" fill="#5fa9b5" rx="4"><title>Executed Instructions | v7\nRaw value: 42.86M\nAlgorithm note: cp.async variant with vectorized/float4 C stores and larger shared footprint.</title></rect>
+<text x="1532" y="6107" class="raw">42.86M</text>
+<text x="86" y="6133" class="mode">v8<title>cp.async double buffering with TILE=8 for higher per-thread compute density.</title></text>
+<rect x="380" y="6120" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="6120" width="301.5" height="17" fill="#58a5b2" rx="4"><title>Executed Instructions | v8\nRaw value: 39.17M\nAlgorithm note: cp.async double buffering with TILE=8 for higher per-thread compute density.</title></rect>
+<text x="1532" y="6133" class="raw">39.17M</text>
+<text x="86" y="6159" class="mode">v9<title>Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></text>
+<rect x="380" y="6146" width="1110" height="17" class="barbg" rx="4"/>
+<rect x="380" y="6146" width="336.2" height="17" fill="#51a1af" rx="4"><title>Executed Instructions | v9\nRaw value: 43.68M\nAlgorithm note: Asymmetric TILE_M=4, TILE_N=8 to reduce resource use while keeping N reuse.</title></rect>
+<text x="1532" y="6159" class="raw">43.68M</text>
+</svg>

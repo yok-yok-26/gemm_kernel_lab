@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1216" height="524" viewBox="0 0 1216 524">
+<style>
+text { font-family: Arial, Helvetica, sans-serif; fill: #17202a; }
+.title { font-size: 24px; font-weight: 700; }
+.subtitle { font-size: 13px; fill: #566573; }
+.axis { font-size: 12px; fill: #34495e; }
+.small { font-size: 11px; fill: #566573; }
+.celltext { font-size: 12px; font-weight: 700; fill: #111827; }
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="40" y="42" class="title">WMMA v14-v19 scale sweep: row-normalized TFLOP/s heatmap</text>
+<text x="40" y="66" class="subtitle">Each row uses its own color range; color answers which algorithm is best for that size. Cell text shows absolute mean TFLOP/s.</text>
+<text x="249.0" y="83" text-anchor="middle" class="axis">cuBLAS half</text>
+<text x="387.0" y="83" text-anchor="middle" class="axis">v14</text>
+<text x="525.0" y="83" text-anchor="middle" class="axis">v15</text>
+<text x="663.0" y="83" text-anchor="middle" class="axis">v16</text>
+<text x="801.0" y="83" text-anchor="middle" class="axis">v17</text>
+<text x="939.0" y="83" text-anchor="middle" class="axis">v18</text>
+<text x="1077.0" y="83" text-anchor="middle" class="axis">v19</text>
+<text x="162" y="137.0" text-anchor="end" class="axis">256^3</text>
+<rect x="180" y="105" width="138" height="54" fill="#2ca25f" stroke="#111827" stroke-width="2.5"><title>cuBLAS half 256^3: 8.13 TFLOP/s, 0.00413 ms</title></rect>
+<text x="249.0" y="137.0" text-anchor="middle" class="celltext">8.13</text>
+<rect x="318" y="105" width="138" height="54" fill="#f3f4f6" stroke="#ffffff" stroke-width="1"><title>v14 256^3: 5.45 TFLOP/s, 0.00616 ms</title></rect>
+<text x="387.0" y="137.0" text-anchor="middle" class="celltext">5.45</text>
+<rect x="456" y="105" width="138" height="54" fill="#f3f4f6" stroke="#ffffff" stroke-width="1"><title>v15 256^3: 5.45 TFLOP/s, 0.00616 ms</title></rect>
+<text x="525.0" y="137.0" text-anchor="middle" class="celltext">5.45</text>
+<rect x="594" y="105" width="138" height="54" fill="#f2f4f5" stroke="#ffffff" stroke-width="1"><title>v16 256^3: 5.46 TFLOP/s, 0.00615 ms</title></rect>
+<text x="663.0" y="137.0" text-anchor="middle" class="celltext">5.46</text>
+<rect x="732" y="105" width="138" height="54" fill="#f3f4f6" stroke="#ffffff" stroke-width="1"><title>v17 256^3: 5.45 TFLOP/s, 0.00616 ms</title></rect>
+<text x="801.0" y="137.0" text-anchor="middle" class="celltext">5.45</text>
+<rect x="870" y="105" width="138" height="54" fill="#f2f4f5" stroke="#ffffff" stroke-width="1"><title>v18 256^3: 5.46 TFLOP/s, 0.00615 ms</title></rect>
+<text x="939.0" y="137.0" text-anchor="middle" class="celltext">5.46</text>
+<rect x="1008" y="105" width="138" height="54" fill="#f2f4f5" stroke="#ffffff" stroke-width="1"><title>v19 256^3: 5.46 TFLOP/s, 0.00615 ms</title></rect>
+<text x="1077.0" y="137.0" text-anchor="middle" class="celltext">5.46</text>
+<text x="162" y="191.0" text-anchor="end" class="axis">512^3</text>
+<rect x="180" y="159" width="138" height="54" fill="#f3f4f6" stroke="#ffffff" stroke-width="1"><title>cuBLAS half 512^3: 16.38 TFLOP/s, 0.01639 ms</title></rect>
+<text x="249.0" y="191.0" text-anchor="middle" class="celltext">16.38</text>
+<rect x="318" y="159" width="138" height="54" fill="#38a768" stroke="#ffffff" stroke-width="1"><title>v14 512^3: 21.51 TFLOP/s, 0.01248 ms</title></rect>
+<text x="387.0" y="191.0" text-anchor="middle" class="celltext">21.51</text>
+<rect x="456" y="159" width="138" height="54" fill="#f3f4f6" stroke="#ffffff" stroke-width="1"><title>v15 512^3: 16.37 TFLOP/s, 0.01640 ms</title></rect>
+<text x="525.0" y="191.0" text-anchor="middle" class="celltext">16.37</text>
+<rect x="594" y="159" width="138" height="54" fill="#2ca25f" stroke="#111827" stroke-width="2.5"><title>v16 512^3: 21.84 TFLOP/s, 0.01229 ms</title></rect>
+<text x="663.0" y="191.0" text-anchor="middle" class="celltext">21.84</text>
+<rect x="732" y="159" width="138" height="54" fill="#9ed1b5" stroke="#ffffff" stroke-width="1"><title>v17 512^3: 18.72 TFLOP/s, 0.01434 ms</title></rect>
+<text x="801.0" y="191.0" text-anchor="middle" class="celltext">18.72</text>
+<rect x="870" y="159" width="138" height="54" fill="#2ca25f" stroke="#ffffff" stroke-width="1"><title>v18 512^3: 21.83 TFLOP/s, 0.01230 ms</title></rect>
+<text x="939.0" y="191.0" text-anchor="middle" class="celltext">21.83</text>
+<rect x="1008" y="159" width="138" height="54" fill="#2ca25f" stroke="#ffffff" stroke-width="1"><title>v19 512^3: 21.83 TFLOP/s, 0.01230 ms</title></rect>
+<text x="1077.0" y="191.0" text-anchor="middle" class="celltext">21.83</text>
+<text x="162" y="245.0" text-anchor="end" class="axis">1024^3</text>
+<rect x="180" y="213" width="138" height="54" fill="#7fc49e" stroke="#ffffff" stroke-width="1"><title>cuBLAS half 1024^3: 36.12 TFLOP/s, 0.05945 ms</title></rect>
+<text x="249.0" y="245.0" text-anchor="middle" class="celltext">36.12</text>
+<rect x="318" y="213" width="138" height="54" fill="#84c6a2" stroke="#ffffff" stroke-width="1"><title>v14 1024^3: 35.64 TFLOP/s, 0.06028 ms</title></rect>
+<text x="387.0" y="245.0" text-anchor="middle" class="celltext">35.64</text>
+<rect x="456" y="213" width="138" height="54" fill="#f3f4f6" stroke="#ffffff" stroke-width="1"><title>v15 1024^3: 25.56 TFLOP/s, 0.08401 ms</title></rect>
+<text x="525.0" y="245.0" text-anchor="middle" class="celltext">25.56</text>
+<rect x="594" y="213" width="138" height="54" fill="#48ad74" stroke="#ffffff" stroke-width="1"><title>v16 1024^3: 41.14 TFLOP/s, 0.05220 ms</title></rect>
+<text x="663.0" y="245.0" text-anchor="middle" class="celltext">41.14</text>
+<rect x="732" y="213" width="138" height="54" fill="#98ceb1" stroke="#ffffff" stroke-width="1"><title>v17 1024^3: 33.86 TFLOP/s, 0.06343 ms</title></rect>
+<text x="801.0" y="245.0" text-anchor="middle" class="celltext">33.86</text>
+<rect x="870" y="213" width="138" height="54" fill="#2ca25f" stroke="#111827" stroke-width="2.5"><title>v18 1024^3: 43.68 TFLOP/s, 0.04916 ms</title></rect>
+<text x="939.0" y="245.0" text-anchor="middle" class="celltext">43.68</text>
+<rect x="1008" y="213" width="138" height="54" fill="#2ca25f" stroke="#ffffff" stroke-width="1"><title>v19 1024^3: 43.64 TFLOP/s, 0.04921 ms</title></rect>
+<text x="1077.0" y="245.0" text-anchor="middle" class="celltext">43.64</text>
+<text x="162" y="299.0" text-anchor="end" class="axis">2048^3</text>
+<rect x="180" y="267" width="138" height="54" fill="#38a768" stroke="#ffffff" stroke-width="1"><title>cuBLAS half 2048^3: 52.39 TFLOP/s, 0.32790 ms</title></rect>
+<text x="249.0" y="299.0" text-anchor="middle" class="celltext">52.39</text>
+<rect x="318" y="267" width="138" height="54" fill="#81c5a0" stroke="#ffffff" stroke-width="1"><title>v14 2048^3: 43.56 TFLOP/s, 0.39437 ms</title></rect>
+<text x="387.0" y="299.0" text-anchor="middle" class="celltext">43.56</text>
+<rect x="456" y="267" width="138" height="54" fill="#f3f4f6" stroke="#ffffff" stroke-width="1"><title>v15 2048^3: 29.82 TFLOP/s, 0.57604 ms</title></rect>
+<text x="525.0" y="299.0" text-anchor="middle" class="celltext">29.82</text>
+<rect x="594" y="267" width="138" height="54" fill="#4aae76" stroke="#ffffff" stroke-width="1"><title>v16 2048^3: 50.27 TFLOP/s, 0.34176 ms</title></rect>
+<text x="663.0" y="299.0" text-anchor="middle" class="celltext">50.27</text>
+<rect x="732" y="267" width="138" height="54" fill="#96ceb0" stroke="#ffffff" stroke-width="1"><title>v17 2048^3: 41.04 TFLOP/s, 0.41857 ms</title></rect>
+<text x="801.0" y="299.0" text-anchor="middle" class="celltext">41.04</text>
+<rect x="870" y="267" width="138" height="54" fill="#2ca25f" stroke="#111827" stroke-width="2.5"><title>v18 2048^3: 53.86 TFLOP/s, 0.31901 ms</title></rect>
+<text x="939.0" y="299.0" text-anchor="middle" class="celltext">53.86</text>
+<rect x="1008" y="267" width="138" height="54" fill="#30a462" stroke="#ffffff" stroke-width="1"><title>v19 2048^3: 53.38 TFLOP/s, 0.32185 ms</title></rect>
+<text x="1077.0" y="299.0" text-anchor="middle" class="celltext">53.38</text>
+<text x="162" y="353.0" text-anchor="end" class="axis">4096^3</text>
+<rect x="180" y="321" width="138" height="54" fill="#2ca25f" stroke="#111827" stroke-width="2.5"><title>cuBLAS half 4096^3: 59.31 TFLOP/s, 2.31736 ms</title></rect>
+<text x="249.0" y="353.0" text-anchor="middle" class="celltext">59.31</text>
+<rect x="318" y="321" width="138" height="54" fill="#95cdaf" stroke="#ffffff" stroke-width="1"><title>v14 4096^3: 44.27 TFLOP/s, 3.10440 ms</title></rect>
+<text x="387.0" y="353.0" text-anchor="middle" class="celltext">44.27</text>
+<rect x="456" y="321" width="138" height="54" fill="#f3f4f6" stroke="#ffffff" stroke-width="1"><title>v15 4096^3: 30.81 TFLOP/s, 4.46123 ms</title></rect>
+<text x="525.0" y="353.0" text-anchor="middle" class="celltext">30.81</text>
+<rect x="594" y="321" width="138" height="54" fill="#5ab582" stroke="#ffffff" stroke-width="1"><title>v16 4096^3: 52.76 TFLOP/s, 2.60483 ms</title></rect>
+<text x="663.0" y="353.0" text-anchor="middle" class="celltext">52.76</text>
+<rect x="732" y="321" width="138" height="54" fill="#9fd1b6" stroke="#ffffff" stroke-width="1"><title>v17 4096^3: 42.85 TFLOP/s, 3.20758 ms</title></rect>
+<text x="801.0" y="353.0" text-anchor="middle" class="celltext">42.85</text>
+<rect x="870" y="321" width="138" height="54" fill="#40aa6e" stroke="#ffffff" stroke-width="1"><title>v18 4096^3: 56.42 TFLOP/s, 2.43594 ms</title></rect>
+<text x="939.0" y="353.0" text-anchor="middle" class="celltext">56.42</text>
+<rect x="1008" y="321" width="138" height="54" fill="#43ab70" stroke="#ffffff" stroke-width="1"><title>v19 4096^3: 56.03 TFLOP/s, 2.45293 ms</title></rect>
+<text x="1077.0" y="353.0" text-anchor="middle" class="celltext">56.03</text>
+<text x="162" y="407.0" text-anchor="end" class="axis">8192^3</text>
+<rect x="180" y="375" width="138" height="54" fill="#2ca25f" stroke="#111827" stroke-width="2.5"><title>cuBLAS half 8192^3: 60.98 TFLOP/s, 18.02960 ms</title></rect>
+<text x="249.0" y="407.0" text-anchor="middle" class="celltext">60.98</text>
+<rect x="318" y="375" width="138" height="54" fill="#cbe3d7" stroke="#ffffff" stroke-width="1"><title>v14 8192^3: 36.76 TFLOP/s, 29.91433 ms</title></rect>
+<text x="387.0" y="407.0" text-anchor="middle" class="celltext">36.76</text>
+<rect x="456" y="375" width="138" height="54" fill="#f3f4f6" stroke="#ffffff" stroke-width="1"><title>v15 8192^3: 30.58 TFLOP/s, 35.95237 ms</title></rect>
+<text x="525.0" y="407.0" text-anchor="middle" class="celltext">30.58</text>
+<rect x="594" y="375" width="138" height="54" fill="#bfdfce" stroke="#ffffff" stroke-width="1"><title>v16 8192^3: 38.54 TFLOP/s, 28.53190 ms</title></rect>
+<text x="663.0" y="407.0" text-anchor="middle" class="celltext">38.54</text>
+<rect x="732" y="375" width="138" height="54" fill="#cae3d7" stroke="#ffffff" stroke-width="1"><title>v17 8192^3: 36.90 TFLOP/s, 29.79513 ms</title></rect>
+<text x="801.0" y="407.0" text-anchor="middle" class="celltext">36.90</text>
+<rect x="870" y="375" width="138" height="54" fill="#bddecd" stroke="#ffffff" stroke-width="1"><title>v18 8192^3: 38.79 TFLOP/s, 28.34567 ms</title></rect>
+<text x="939.0" y="407.0" text-anchor="middle" class="celltext">38.79</text>
+<rect x="1008" y="375" width="138" height="54" fill="#bddecd" stroke="#ffffff" stroke-width="1"><title>v19 8192^3: 38.83 TFLOP/s, 28.31510 ms</title></rect>
+<text x="1077.0" y="407.0" text-anchor="middle" class="celltext">38.83</text>
+</svg>
